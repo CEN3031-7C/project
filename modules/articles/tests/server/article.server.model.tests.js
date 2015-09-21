@@ -24,7 +24,7 @@ describe('Article Model Unit Tests:', function () {
       displayName: 'Full Name',
       email: 'test@test.com',
       username: 'username',
-      password: 'password'
+      password: 'M3@n.jsI$Aw3$0m3'
     });
 
     user.save(function () {
@@ -40,6 +40,7 @@ describe('Article Model Unit Tests:', function () {
 
   describe('Method Save', function () {
     it('should be able to save without problems', function (done) {
+      this.timeout(10000);
       return article.save(function (err) {
         should.not.exist(err);
         done();

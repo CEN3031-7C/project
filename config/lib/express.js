@@ -26,7 +26,9 @@ module.exports.initLocalVariables = function (app) {
   // Setting application local variables
   app.locals.title = config.app.title;
   app.locals.description = config.app.description;
-  app.locals.secure = config.secure;
+  if (config.secure && config.secure.ssl === true) {
+    app.locals.secure = config.secure.ssl;
+  }
   app.locals.keywords = config.app.keywords;
   app.locals.googleAnalyticsTrackingID = config.app.googleAnalyticsTrackingID;
   app.locals.facebookAppId = config.facebook.clientID;
@@ -115,6 +117,12 @@ module.exports.initSession = function (app, db) {
     saveUninitialized: true,
     resave: true,
     secret: config.sessionSecret,
+    cookie: {
+      maxAge: config.sessionCookie.maxAge,
+      httpOnly: config.sessionCookie.httpOnly,
+      secure: config.sessionCookie.secure && config.secure.ssl
+    },
+    key: config.sessionKey,
     store: new MongoStore({
       mongooseConnection: db.connection,
       collection: config.sessionCollection
@@ -136,10 +144,16 @@ module.exports.initModulesConfiguration = function (app, db) {
  */
 module.exports.initHelmetHeaders = function (app) {
   // Use helmet to secure Express headers
+  var SIX_MONTHS = 15778476000;
   app.use(helmet.xframe());
   app.use(helmet.xssFilter());
   app.use(helmet.nosniff());
   app.use(helmet.ienoopen());
+  app.use(helmet.hsts({
+    maxAge: SIX_MONTHS,
+    includeSubdomains: true,
+    force: true
+  }));
   app.disable('x-powered-by');
 };
 
@@ -152,7 +166,7 @@ module.exports.initModulesClientRoutes = function (app) {
 
   // Globbing static routing
   config.folders.client.forEach(function (staticPath) {
-    app.use(staticPath.replace('/client', ''), express.static(path.resolve('./' + staticPath)));
+    app.use(staticPath, express.static(path.resolve('./' + staticPath)));
   });
 };
 

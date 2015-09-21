@@ -4,7 +4,7 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://meanapp:meanapp@ds027749.mongolab.com:27749/cen3031-fall-test/mean-dev',
     options: {
       user: '',
       pass: ''
@@ -65,5 +65,6 @@ module.exports = {
       }
     }
   },
-  livereload: true
+  livereload: true,
+  seedDB: process.env.MONGO_SEED || false
 };
