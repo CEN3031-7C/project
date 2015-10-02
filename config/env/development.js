@@ -4,10 +4,10 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-    uri: 'mongodb://meanapp:meanapp@ds027749.mongolab.com:27749/cen3031-fall-test/mean-dev',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://meanapp:meanapp@ds027749.mongolab.com:27749/cen3031-fall-test/mean-dev', //<-- We should probably delete this direct URL to our database! -Miles
     options: {
-      user: '',
-      pass: ''
+      user: '', //<---We need to specify these in environment variables or something -Miles
+      pass: ''  //<---ditto -Miles
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
