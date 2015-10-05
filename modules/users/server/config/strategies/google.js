@@ -27,7 +27,7 @@ module.exports = function (config) {
         lastName: profile.name.familyName,
         displayName: profile.displayName,
         email: profile.emails[0].value,
-        username: profile.username,
+        username: profile.name.givenName + ' ' + profile.name.familyName,
         profileImageURL: (providerData.picture) ? providerData.picture : undefined,
         provider: 'google',
         providerIdentifierField: 'id',
