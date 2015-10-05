@@ -108,7 +108,8 @@ exports.oauthCallback = function (strategy) {
     delete req.session.redirect_to;
 
     passport.authenticate(strategy, function (err, user, redirectURL) {
-      if (err) {
+      if (err) { //<-- We know that for google logins, we are getting here, meaning there is an error
+        console.log("pelaseasdfjdf");
         return res.redirect('/authentication/signin?err=' + encodeURIComponent(errorHandler.getErrorMessage(err)));
       }
       if (!user) {
@@ -120,6 +121,7 @@ exports.oauthCallback = function (strategy) {
         }
 
         return res.redirect(redirectURL || sessionRedirectURL || '/');
+        //return res.redirect('/');
       });
     })(req, res, next);
   };

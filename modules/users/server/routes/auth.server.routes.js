@@ -26,14 +26,14 @@ module.exports = function (app) {
   app.route('/api/auth/facebook/callback').get(users.oauthCallback('facebook'));
 
   // Setting the twitter oauth routes
-  app.route('/api/auth/twitter').get(users.oauthCall('twitter'));
+  app.route('/api/auth/twitter').get(users.oauthCall('twitter', null));
   app.route('/api/auth/twitter/callback').get(users.oauthCallback('twitter'));
 
   // Setting the google oauth routes
   app.route('/api/auth/google').get(users.oauthCall('google', {
     scope: [
-      'https://www.googleapis.com/auth/userinfo.profile',
-      'https://www.googleapis.com/auth/userinfo.email'
+      'profile',//'https://www.googleapis.com/auth/plus.login'//'profile'//'https://www.googleapis.com/auth/userinfo.profile',
+      'email'//'https://www.googleapis.com/auth/userinfo.email'
     ]
   }));
   app.route('/api/auth/google/callback').get(users.oauthCallback('google'));
