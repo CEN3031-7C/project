@@ -120,6 +120,7 @@ exports.oauthCallback = function (strategy) {
         }
 
         return res.redirect(redirectURL || sessionRedirectURL || '/');
+        //return res.redirect('/');
       });
     })(req, res, next);
   };

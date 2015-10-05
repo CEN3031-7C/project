@@ -6,8 +6,8 @@ module.exports = {
   db: {
     uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI,
     options: {
-      user: '', //<---We need to specify these in environment variables or something -Miles
-      pass: ''  //<---ditto -Miles
+      user: '',
+      pass: ''  
     },
     
     // Enable mongoose debug mode
@@ -28,7 +28,7 @@ module.exports = {
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',
     clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-    callbackURL: 'api/auth/facebook/callback' //callbackURL: '/api/auth/facebook/callback'
+    callbackURL: '/api/auth/facebook/callback' //callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
     clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
