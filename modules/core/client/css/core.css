@@ -222,3 +222,44 @@ body {
   padding-top: 25px;
   padding-bottom: 25px; 
 }
+
+
+/*------ - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/
+
+.eventBox {
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius:20%;
+  background: white;
+}
+
+.date {
+  height: 50px;
+  width: 100px;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+.name {
+  height: 50px;
+  width: 100px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.eventTime{
+  height: 50px;
+  width: 100px;
+  border: 2px solid yellow;
+  border-radius: 5px;
+}
+
+.attending{
+
+}
+
+#page { 
+   padding-top: 15%;
+ }
