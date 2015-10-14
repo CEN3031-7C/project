@@ -14,6 +14,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     // Home state routing
     $stateProvider
     .state('home', {
+      name: 'home',
       url: '/',
       templateUrl: 'modules/core/client/views/home.client.view.html'
     })
@@ -32,6 +33,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       }
     })
     .state('contact', {
+      name: 'contact',
       url: '/contact',
       templateUrl: 'modules/core/client/views/contact.client.view.html',
       data: {
@@ -39,6 +41,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       }
     })
     .state('events', {
+      name: 'events',
       url: '/events',
       templateUrl: 'modules/core/client/views/events.client.view.html',
       data: {
