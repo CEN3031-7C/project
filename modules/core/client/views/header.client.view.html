@@ -21,8 +21,8 @@
       </li>-->
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#about">Events</a></li>
-      <li><a href="#contact">Contacts</a></li>
-      <li><a href="#contact">Pending Events (admin only)</a></li>
+      <li><a ui-sref="contact">Contacts</a></li>
+      <li ng-show="authentication.admin"><a href="#contact">Pending Events (admin only)</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
       <li ui-sref-active="active">
