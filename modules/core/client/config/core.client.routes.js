@@ -36,17 +36,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       name: 'contact',
       url: '/contact',
       templateUrl: 'modules/core/client/views/contact.client.view.html',
-      data: {
-        ignoreState: true
-      }
     })
     .state('events', {
       name: 'events',
       url: '/events',
       templateUrl: 'modules/core/client/views/events.client.view.html',
-      data: {
-        ignoreState: true
-      }
     })
     .state('forbidden', {
       url: '/forbidden',
