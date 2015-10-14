@@ -1,0 +1,144 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  /*background-color: blue;*/
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.navbar-header {
+  color: blue;
+}
+
+.border-right {
+  border-right: 1px solid #ddd;
+}
+
+hr { 
+  display: block;
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-style: inset;
+  border-width: 1px;
+} 
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+.contact_header {
+  text-align: center;
+  color: orange;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contact_table {
+/*  position: absolute;*/
+  margin-left: 50px;
+  margin-right: 50px;
+  z-index: 20;
+  border-bottom: 2px solid orange;
+  border-top: 2px solid orange;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+
+#bottom {
+  text-align: center;
+  color: #E1E1E1;
+  background-color: #1E1E1E;
+  padding-top: 25px;
+  padding-bottom: 25px; 
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+}

@@ -197,3 +197,28 @@ body {
 }
 
                                           /* End of Home Page */
+
+.contact_header {
+  text-align: center;
+  color: orange;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contact_table {
+/*  position: absolute;*/
+  margin-left: 50px;
+  margin-right: 50px;
+  z-index: 20;
+  border-bottom: 2px solid orange;
+  border-top: 2px solid orange;
+  margin-bottom: 20px;
+}
+
+#bottom {
+  text-align: center;
+  color: #E1E1E1;
+  background-color: #1E1E1E;
+  padding-top: 25px;
+  padding-bottom: 25px; 
+}

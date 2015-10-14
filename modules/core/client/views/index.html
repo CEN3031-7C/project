@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+
+
+    <script src="script.js"></script>
+    <!-- Modules -->
+    <!--<script src="js/app.js"></script> -->
+
+    <!-- Controllers -->
+    <!-- <script src="js/controllers/HomeController.js"></script> -->
+	<title> Events</title>
+
+	</head>
+
+	<body ng-app="app">
+
+		<div class ="pad-section">
+	      <div class="row text-center">
+	        <div class="contact_header">
+	          <h1>
+	            <ul></ul>
+	            <ul>Events</ul></h1>
+	        </div>
+	      </div>
+	    </div>
+
+
+	    <div ng-controller="MainCtrl">
+
+		<div class="col" ng-repeat="x in events">
+		  <div class="col-sm-6 col-md-4 col-lg-3" >
+		    <div class="thumbnail" style="background-color:#CCFFFF; padding: 20px" >
+		      <img src="{{x.img}}" alt="..." style="max-height:200px">
+		      <div class="caption" >
+		        <h3 class="row text-center">{{x.name}}</h3>
+		        <h4 class="row text-center">{{x.date | date}}</h4>
+		        <h5 class="row text-center">{{x.location}}</h5>
+		        <p>{{x.description}}</p>
+		        <p class="row text-center"><a href="#" class="btn btn-primary" role="button">Add to Calendar</a> </p>
+		        <p class="row text-center">
+	        	<a class="attending" >{{x.attending}} attending</a>
+	        	</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- <div class="eventBox" id="page">
+			<div class="date" > Sunday, October 11 2015 </div>
+			<div class="name" > EventName </div>
+			<div class="eventTime" > 9AM </div>
+		</div>
+ -->
+
+    	<!-- <div class="main" ng-controller="HomeController">
+      		<div class="container">
+
+		        <h1>{{ test }}</h1>
+		        <h2>{{ promo }}</h2>
+
+		        <div ng-repeat="event in events" class="col-md-6"> 
+		  			<div class="thumbnail"> 
+	    				<img ng-src="{{ events.img }}"> 
+	    				<p class="title">{{ events.name }}</p> 
+					    <p class="location">{{ events.location }}</p> 
+					    <p class="date">{{ events.date | date }}</p> 
+					    <div class="rating">
+					    	<p class="attending" ng-click="plusOne($index)"> +{{events.attending}}</p>
+					    </div>
+		  			</div> 
+				</div>
+
+      		</div>
+    	</div>
+ -->
+ 		
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+	</body>
+
+
+</html>
+
