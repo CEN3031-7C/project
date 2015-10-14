@@ -1,4 +1,67 @@
-<section ng-controller="MainCtrl">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+
+
+    <script src="script.js"></script>
+    <!-- Modules -->
+    <!--<script src="js/app.js"></script> -->
+
+    <!-- Controllers -->
+    <!-- <script src="js/controllers/HomeController.js"></script> -->
+	<title> Events</title>
+
+	</head>
+
+	<body ng-app="app">
+		<!-- navbar-inverse makes it black background -->
+		<nav class="navbar navbar-inverse navbar-static-top navbar-inner " role="navigation">
+			<div class="container-fluid"> 
+				<div class="navbar-header"> 
+					<!-- reates button to expand with three bars-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		           	</button>
+		            <a class="navbar-brand" href="#login">WATER!!</a>
+		        </div>
+		            <!-- makes collapse but button doesn't show up -->
+		            <div id="navbar" class="navbar-collapse collapse">
+			            <ul class="nav navbar-nav">
+			                <li class="active"><a href="#home">Home</a></li>
+			                <li><a href="#calendar">Calendar of Events</a></li>
+			                <li><a href="#pending-events">Pending Events</a></li>
+			                <li><a href="#contacts">Contacts</a></li>
+			            </ul>
+			            <ul class="nav navbar-nav navbar-right">
+			                <li><a href="#Login">Login</a></li>
+			                <li><a href="#SignUp">Sign Up</a></li>
+			            </ul>
+              		</div>
+			</div> 
+		</nav>
 
 		<div class ="pad-section">
 	      <div class="row text-center">
@@ -22,7 +85,7 @@
 		        <h4 class="row text-center">{{x.date | date}}</h4>
 		        <h5 class="row text-center">{{x.location}}</h5>
 		        <p>{{x.description}}</p>
-		        <p class="row text-center"><a href="#" class="btn btn-primary" role="button">Add to Calendar</a> </p>
+		        <p class="row text-center"><a href="#" class="btn btn-primary" role="button" ng-click="plusOne($index)">Add to Calendar</a> </p>
 		        <p class="row text-center">
 	        	<a class="attending" >{{x.attending}} attending</a>
 	        	</p>
@@ -30,7 +93,45 @@
 		    </div>
 		  </div>
 		</div>
-</section>
+
+		</div> <!--MainCtrl end-->
+
+
+		<form class="form-horizontal">
+			<div class="form-group col-lg-6" >
+		    	<label for="inputEmail3" class="col-sm-2 control-label">Event Name</label>
+			    <div class="col-sm-10">
+			    	<input type="string" class="form-control" id="inputEmail3" placeholder="Event Name">
+			    </div>
+			</div>
+			<div class="form-group col-lg-6">
+			    <label for="inputEmail3" class="col-sm-2 control-label">	Event Date </label>
+		    	<div class="col-sm-10">
+		      		<input type="string" class="form-control" placeholder="Event Date">
+		    	</div>
+			</div>
+			<div class="form-group col-lg-6">
+			    <label for="inputPassword3" class="col-sm-2 control-label">	Event Location </label>
+		    	<div class="col-sm-10">
+		      		<input type="string" class="form-control" id="inputPassword3" placeholder="Event Location">
+		    	</div>
+			</div>
+			<div class="form-group col-lg-6">
+			    <label for="inputPassword3" class="col-sm-2 control-label">	Event Description </label>
+		    	<div class="col-sm-10">
+		      		<input type="string" class="form-control" id="inputPassword3" placeholder="Event Description">
+		    	</div>
+			</div>
+		
+
+			<div class="col-lg-6 col-lg-offset-5">
+					<label for="exampleInputFile" >File input </label>
+				    <input type="file" class="filestyle" data-input="false"  >
+				    <p class="help-block">upload picture for event</p>
+				    <button type="submit" class="btn btn-default">Submit</button>
+			</div>
+			</form>
+
 
 		<!-- <div class="eventBox" id="page">
 			<div class="date" > Sunday, October 11 2015 </div>
@@ -61,4 +162,16 @@
     	</div>
  -->
  		
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+	</body>
+
+
+</html>
 
