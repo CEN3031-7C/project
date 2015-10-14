@@ -13,6 +13,21 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
     // Home state routing
     $stateProvider
+    .state('contact', {
+      name: 'contact',
+      url: '/contact',
+      templateUrl: 'modules/core/client/views/contact.client.view.html',
+    })
+    .state('events', {
+      name: 'events',
+      url: '/events',
+      templateUrl: 'modules/core/client/views/events.client.view.html',
+    })
+    .state('calendar', {
+      name: 'calendar',
+      url: '/calendar',
+      templateUrl: 'modules/core/client/views/calendar.client.view.html',
+    })
     .state('home', {
       name: 'home',
       url: '/',
@@ -31,16 +46,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
-    })
-    .state('contact', {
-      name: 'contact',
-      url: '/contact',
-      templateUrl: 'modules/core/client/views/contact.client.view.html',
-    })
-    .state('events', {
-      name: 'events',
-      url: '/events',
-      templateUrl: 'modules/core/client/views/events.client.view.html',
     })
     .state('forbidden', {
       url: '/forbidden',

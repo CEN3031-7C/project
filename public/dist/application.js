@@ -406,6 +406,16 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/',
       templateUrl: 'modules/core/client/views/home.client.view.html'
     })
+    .state('contact', {
+      name: 'contact',
+      url: '/contact',
+      templateUrl: 'modules/core/client/views/contact.client.view.html',
+    })
+    .state('events', {
+      name: 'events',
+      url: '/events',
+      templateUrl: 'modules/core/client/views/events.client.view.html',
+    })
     .state('not-found', {
       url: '/not-found',
       templateUrl: 'modules/core/client/views/404.client.view.html',
@@ -419,16 +429,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
-    })
-    .state('contact', {
-      name: 'contact',
-      url: '/contact',
-      templateUrl: 'modules/core/client/views/contact.client.view.html',
-    })
-    .state('events', {
-      name: 'events',
-      url: '/events',
-      templateUrl: 'modules/core/client/views/events.client.view.html',
     })
     .state('forbidden', {
       url: '/forbidden',
