@@ -1,0 +1,37 @@
+<!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
+
+<section ng-controller="MapsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Maps Hey</h1>
+  </div>
+  <div class="list-group">
+    <!-- map -->
+    
+    <map center="[0,0]" zoom="1">
+
+        <marker ng-repeat='event in maps' position='[{{event.lat}},{{event.lon}}]' visible="true" on-click="gotolink(event,event)">
+      </marker>
+    
+    </map>
+
+    <a data-ng-repeat="event in maps" data-ng-href="#!/maps/{{event._id}}" class="list-group-item">
+
+      <h4 class="list-group-item-heading" data-ng-bind="event.title"></h4>
+
+      <p class="list-group-item-text" data-ng-bind="event.content"></p>
+      <p class="list-group-item-text" data-ng-bind="event.lat"></p>
+      <p class="list-group-item-text" data-ng-bind="event.lon"></p>
+    </a>
+
+  </div>
+  <div class="alert alert-warning text-center" ng-if="maps.$resolved && !maps.length">
+    No maps yet, why don't you <a ui-sref="maps.create">create one</a>?
+  </div>
+</section>
+<!--
+<script src='../../../../public/lib/lodash/lodash[.min].js'></script>
+<script src='../../../../public/lib/angular/angular[.min].js'></script>
+<script src='../../../../public/lib/angular-simple-logger/dist/angular-simple-logger/index[.min].js'></script>
+<script src='../../../../public/lib/angular-google-maps/dist/angular-google-maps[.min].js'></script>
+-->
+

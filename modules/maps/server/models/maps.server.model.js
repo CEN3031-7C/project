@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
 /**
  * Article Schema
  */
-var ArticleSchema = new Schema({
+var EventSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
@@ -25,22 +25,20 @@ var ArticleSchema = new Schema({
     default: '',
     trim: true
   },
-  /////
-    lat:{
+  lat:{
         type: Number,
         default: 0,
         trim: true
     },
-    lon:{
+  lon:{
         type: Number,
         default: 0,
         trim: true
-    },
-    ///////
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
   }
 });
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Event_2', EventSchema);

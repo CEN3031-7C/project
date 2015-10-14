@@ -1,16 +1,16 @@
-<section data-ng-controller="ArticlesController">
+<section ng-controller="MapsController">
   <div class="page-header">
     <h1>New Article</h1>
   </div>
   <div class="col-md-12">
-    <form name="articleForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+    <form name="eventForm" class="form-horizontal" ng-submit="create(eventForm.$valid)" novalidate>
       <fieldset>
-
-        <map center="[{{lat}},{{lon}}]" zoom ='5'>
+        <!-- lat -->
+      <map center="[{{lat}},{{lon}}]" zoom ='5'>
 
           <marker position="[{{lat}},{{lon}}]" visible="true"></marker>
           <!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
-        </map>
+      </map>
 
         <div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
           <label class="control-label" for="title">Title</label>
