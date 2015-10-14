@@ -20,10 +20,10 @@
         <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
       </li>-->
       
-      <li ui-sref-active="active"><a ng-switch-default ui-sref="home" ng-bind="Home">Home</a></li>
-      <li ui-sref-active="active"><a ng-switch-default ui-sref="events" ng-bind="Events">Events</a></li>
-      <li ui-sref-active="active"><a ng-switch-default ui-sref="contact" ng-bind="Contacts">Contacts</a></li>
-      <li ng-show="authentication.admin" ui-sref-active="active"><a href="#contact">Pending Events (admin only)</a></li>
+      <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+      <li ui-sref-active="active"><a ui-sref="events">Events</a></li>
+      <li ui-sref-active="active"><a ui-sref="contact">Contacts</a></li>
+      <li ng-show="authentication.admin"><a href="#contact">Pending Events (admin only)</a></li>
     
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
