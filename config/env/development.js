@@ -7,7 +7,7 @@ module.exports = {
     uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI,
     options: {
       user: 'test',
-      pass: 'test'  
+      pass: 'test'
     },
     
     // Enable mongoose debug mode
