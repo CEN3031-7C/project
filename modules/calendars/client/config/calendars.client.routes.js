@@ -12,7 +12,7 @@ angular.module('calendars').config(['$stateProvider',
 		}).
 		state('calendars.list', {
 			url: '',
-			templateUrl: 'modules/calendars/views/calendar.client.view.html'
+			templateUrl: 'modules/calendars/client/views/calendar.client.view.html'
 		}).
 		state('calendars.create', {
 			url: '/create',
@@ -33,7 +33,7 @@ angular.module('calendars').config(['$stateProvider',
 		}).
 		state('contact.list', {
 			url: '',
-			templateUrl: 'modules/calendars/views/contact.client.view.html'
+			templateUrl: 'modules/calendars/client/views/contact.client.view.html'
 		});
 	}
 ]);
