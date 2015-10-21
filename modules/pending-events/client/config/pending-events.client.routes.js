@@ -12,7 +12,7 @@ angular.module('pending-events').config(['$stateProvider',
 		}).
 		state('pending-events.list', {
 			url: '',
-			templateUrl: 'modules/pending-events/views/list-pending-events.client.view.html'
+			templateUrl: 'modules/pending-events/client/views/events.client.view.html'//'modules/pending-events/views/list-pending-events.client.view.html'
 		}).
 		state('pending-events.create', {
 			url: '/create',
