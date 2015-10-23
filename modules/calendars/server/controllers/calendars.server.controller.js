@@ -92,13 +92,25 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
 		//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
-		gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
+		//gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
+		gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
+			if (err) {
+    			console.log('Error occurred: ', err);
+ 			 } else {
+  			    //console.log('Result: ', result);
+  			    for(var i = 0; i < result.items.length; i++){
+  			    	console.log('Test: ', result.items[i].summary);
+  			    }
+  			    //console.log('Test: ', result.items.length);
+  			    res.jsonp(result.items);
+  			}
+		});
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(calendars);
+			//res.jsonp(calendars);
 		}
 	});
 };
