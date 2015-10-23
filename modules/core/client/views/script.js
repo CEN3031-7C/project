@@ -43,7 +43,7 @@ myApp.controller('MainCtrl', function ($scope){
     $scope.events[index].attending += 1;
   };
   $scope.minusOne = function(index) {
-    $scope.events[index].attending += 1;
+    $scope.events[index].attending -= 1;
   };
 
 
