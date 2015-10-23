@@ -4,10 +4,14 @@
 angular.module('pending-events').run(['Menus',
 	function(Menus) {
 		// Add the Pending events dropdown item
-		Menus.addMenuItem('topbar', {
+		/*Menus.addMenuItem('topbar', {
 			title: 'Pending events',
 			state: 'pending-events.list',
 			roles: ['admin']
-		});
+		});*/
+		Menus.addSubMenuItem('topbar', 'admin', {
+	      title: 'Pending Events',
+	      state: 'admin.pending-events.list'
+	    });
 	}
 ]);

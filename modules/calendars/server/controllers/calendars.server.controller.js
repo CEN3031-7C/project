@@ -9,6 +9,23 @@ var _ = require('lodash'),
 	Calendar = mongoose.model('Calendar'),
 	errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
+var google = require('../../../../node_modules/googleapis/lib/googleapis.js');
+//var urlshortener = google.urlshortener('v1');
+var gcalendars = google.calendar('v3');
+
+var printResult = function(err, result) {
+  if (err) {
+    console.log('Error occurred: ', err);
+  } else {
+    console.log('Result: ', result);
+  }
+};
+
+//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
+//urlshortener.url.insert({ resource: {
+//    longUrl: 'http://somelongurl.com' }
+//}, printResult);
+
 /**
  * Create a Calendar
  */
@@ -74,6 +91,8 @@ exports.delete = function(req, res) {
  * List of Calendars
  */
 exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
+		//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
+		gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
