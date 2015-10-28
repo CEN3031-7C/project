@@ -87,30 +87,47 @@ exports.delete = function(req, res) {
 	});
 };
 
+
+function jsonConcat(o1, o2) {
+	for (var key in o2) {
+	 	o1[key] = o2[key];
+	}
+	return o1;
+}
+
 /**
  * List of Calendars
  */
 exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
 		//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
 		//gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
-		gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
-			if (err) {
-    			console.log('Error occurred: ', err);
- 			 } else {
-  			    //console.log('Result: ', result);
-  			    for(var i = 0; i < result.items.length; i++){
-  			    	console.log('Test: ', result.items[i].summary);
-  			    }
-  			    //console.log('Test: ', result.items.length);
-  			    res.jsonp(result.items);
-  			}
-		});
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
 			//res.jsonp(calendars);
+			gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
+			if (err) {
+    			console.log('Error occurred: ', err);
+ 			 } else {
+  			    var returnJSON = {items: []};
+  	
+  			    for(var i = 0; i < result.items.length - 1; i++){
+  			    	//console.log('Test: ', result.items[i].summary);
+  			    	
+
+					returnJSON.items.push(result.items[i]);
+
+					returnJSON.items[i].user = calendars[i].user;
+
+					//console.log('Test 2: ', returnJSON);
+  			    }
+  			    
+  			    res.jsonp(returnJSON.items);
+  		
+  			}
+		});
 		}
 	});
 };
