@@ -33,6 +33,11 @@ var ManageAppSchema = new Schema({
 		type: String,
 		default: '',
 		require: 'Please fill image url'
+	},
+	appLink: {
+		type: String,
+		default: '',
+		require: 'Please add link to app'
 	}
 });
 

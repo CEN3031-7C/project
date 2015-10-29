@@ -11,7 +11,8 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			var manageApp = new ManageApps ({
 				name: this.name,
 				description: this.description,
-				imageURL: this.imageURL
+				imageURL: this.imageURL,
+				appLink: this.appLink
 			});
 
 			// Redirect after save
