@@ -15,10 +15,14 @@
                     <!-- Enter the description of the app -->
                     <label class="control-label" for="description">Description of the App</label>
                     <div class="controls">
-                        <input maxlength="455" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
+                        <textarea rows="4" maxlength="455" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
+                        </textarea>
                     </div>
                     <!-- Upload picture or give link -->
-
+                    <label class="control-label" for="imageURL">Link to an App's image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="imageURL" id="imageURL" class="form-control" placeholder="image URL" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-default">

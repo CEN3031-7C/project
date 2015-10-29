@@ -28,6 +28,11 @@ var ManageAppSchema = new Schema({
 		type: String,
 		default: '',
 		require: 'Please fill apps description',
+	},
+	imageURL: {
+		type: String,
+		default: '',
+		require: 'Please fill image url'
 	}
 });
 

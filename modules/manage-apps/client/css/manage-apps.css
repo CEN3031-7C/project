@@ -1,9 +1,10 @@
+
+
 .app-image-list {
   height: 100%;
   width: 100%;
   
-  min-height: 150px;
-  max-height: 150px;
-  min-width: 150px;
-  max-width: 150px;
+  display:block;
+  max-height: 100px;
+  max-width: 100px;
 }
