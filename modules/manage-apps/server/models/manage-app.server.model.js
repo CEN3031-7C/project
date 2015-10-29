@@ -13,7 +13,7 @@ var ManageAppSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Manage app name',
+		required: 'Please fill apps name',
 		trim: true
 	},
 	created: {
@@ -23,6 +23,11 @@ var ManageAppSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	description: {
+		type: String,
+		default: '',
+		require: 'Please fill apps description',
 	}
 });
 

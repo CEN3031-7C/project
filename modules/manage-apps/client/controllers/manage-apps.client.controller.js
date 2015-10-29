@@ -9,12 +9,13 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 		$scope.create = function() {
 			// Create new Manage app object
 			var manageApp = new ManageApps ({
-				name: this.name
+				name: this.name,
+				description: this.description
 			});
 
 			// Redirect after save
 			manageApp.$save(function(response) {
-				$location.path('manage-apps/' + response._id);
+				$location.path('admin/manage-apps/' + response._id);
 
 				// Clear form fields
 				$scope.name = '';
@@ -34,7 +35,7 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				}
 			} else {
 				$scope.manageApp.$remove(function() {
-					$location.path('manage-apps');
+					$location.path('admin/manage-apps');
 				});
 			}
 		};
@@ -44,7 +45,7 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			var manageApp = $scope.manageApp ;
 
 			manageApp.$update(function() {
-				$location.path('manage-apps/' + manageApp._id);
+				$location.path('admin/manage-apps/' + manageApp._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

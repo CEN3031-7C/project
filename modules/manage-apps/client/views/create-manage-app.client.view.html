@@ -1,15 +1,24 @@
 <section data-ng-controller="ManageAppsController">
     <div class="page-header">
-        <h1>New Manage app</h1>
+        <h1>New App</h1>
+
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <!-- Enter the name of the app -->
+                    <label class="control-label" for="name">Name of the App</label>
                     <div class="controls">
                         <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
                     </div>
+                    <!-- Enter the description of the app -->
+                    <label class="control-label" for="description">Description of the App</label>
+                    <div class="controls">
+                        <input maxlength="455" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
+                    </div>
+                    <!-- Upload picture or give link -->
+
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-default">

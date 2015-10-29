@@ -1,20 +1,33 @@
 <section data-ng-controller="ManageAppsController" data-ng-init="find()">
-       
+
+   
     <div class="page-header">
         <h1>Manage apps</h1>
     </div>
+    <a href="/#!/admin/manage-apps/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New App</button></a>
     <div class="list-group">
-        <a data-ng-repeat="manageApp in manageApps" data-ng-href="/#!/manage-apps/{{manageApp._id}}" class="list-group-item">
+        <a data-ng-repeat="manageApp in manageApps" data-ng-href="/#!/admin/manage-apps/{{manageApp._id}}" class="list-group-item">
 			<small class="list-group-item-text">
-				Posted on
+				Added on
 				<span data-ng-bind="manageApp.created | date:'medium'"></span>
 				by
 				<span data-ng-bind="manageApp.user.displayName"></span>
 			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
+    		<div class="container-fluid">	
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="app-image-list" ng-src="https://status.slack.com/img/allgood@2x.png">
+                    </div>
+                    <div class="col-md-10">
+                        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
+                        <p data-ng-bind="manageApp.description">
+                        </p>
+                    </div>
+                </div>
+            </div>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!manageApps.$resolved || manageApps.length">
-    	No Manage apps yet, why don't you <a href="/#!/manage-apps/create">create one</a>?
+    	No Manage apps yet, why don't you <a href="/#!/admin/manage-apps/create">create one</a>?
     </div> 
 </section>
