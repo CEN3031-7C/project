@@ -1,0 +1,20 @@
+<section data-ng-controller="ManageAppsController" data-ng-init="find()">
+       
+    <div class="page-header">
+        <h1>Manage apps</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="manageApp in manageApps" data-ng-href="/#!/manage-apps/{{manageApp._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="manageApp.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="manageApp.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!manageApps.$resolved || manageApps.length">
+    	No Manage apps yet, why don't you <a href="/#!/manage-apps/create">create one</a>?
+    </div> 
+</section>

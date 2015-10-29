@@ -18,7 +18,7 @@ angular.module('pending-events').config(['$stateProvider',
 			url: '/create',
 			templateUrl: 'modules/pending-events/views/create-pending-event.client.view.html'
 		}).
-		state('admin.pendin-events.view', {
+		state('admin.pending-events.view', {
 			url: '/:pendingEventId',
 			templateUrl: 'modules/pending-events/views/view-pending-event.client.view.html'
 		}).
