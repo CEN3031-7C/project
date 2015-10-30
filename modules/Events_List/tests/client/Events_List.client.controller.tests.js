@@ -57,17 +57,17 @@
 			});
 
 			// Create a sample Events_List array that includes the new Events_List
-			var sampleEvents_List = [sampleEvents_List];
+			var sampleEvents_ListArray = [sampleEvents_List];
 
 			// Set GET response
-			$httpBackend.expectGET('api/Events_List').respond(sampleEvents_List);
+			$httpBackend.expectGET('api/Events_List').respond(sampleEvents_ListArray);
 
 			// Run controller functionality
 			scope.find();
 			$httpBackend.flush();
 
 			// Test scope value
-			expect(scope.Events_List).toEqualData(sampleEvents_List);
+			expect(scope.Events_List).toEqualData(sampleEvents_ListArray);
 		}));
 
 		it('$scope.findOne() should create an array with one Events_List object fetched from XHR using a Events_ListId URL parameter', inject(function(Events_List) {
