@@ -1,18 +1,18 @@
-<section data-ng-controller="CalendarsController" data-ng-init="find()">
+<section data-ng-controller="Events_ListController" data-ng-init="find()">
     <div class="page-header">
-	<h1 data-ng-bind="calendar.name ">Current Events</h1>
+	<h1 data-ng-bind="Events_List.name ">Current Events</h1>
     </div>
     <div class="container">
 		<div class="row">
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-			  <a data-ng-repeat="calendar in calendars" data-ng-href="/#!/calendars/{{calendar._id}}" >
+			  <a data-ng-repeat="Events_List in Events_List" data-ng-href="/#!/Events_List/{{Events_List._id}}" >
 				<ul class="event-list">
 					<li>
 						<!-- To display the start & end date of the event -->	
-						<span data-ng-bind="calendar.event.start.dateTime | date:'medium'"></span>
-						<span data-ng-bind="calendar.event.end.dateTime | date:'medium'"></span>
+						<span data-ng-bind="Events_List.event.start.dateTime | date:'medium'"></span>
+						<span data-ng-bind="Events_List.event.end.dateTime | date:'medium'"></span>
 						
-						<!-- We will replace this image by one from the calendar or the event, or use upload -->
+						<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
 						<div class="info">
 						<!-- Event Info -->
@@ -23,18 +23,13 @@
 								<li style="width:33%;"><a href="#Event's website"><span class="fa fa-globe"></span> Website</a></li>
 								<li style="width:33%;"><a href="#Feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
 							</ul>
-						</div>
-						
+						</div>						
 					</li>
-
 				</ul>
 			  </a>
 			</div>
 		</div>
-	</div>
-
-  
-      </div>	
-  
+	</div>  
+      </div>	  
     </div>
-	
+</section>
