@@ -92,13 +92,33 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
 		//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
-		gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
+		//gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(calendars);
+			//res.jsonp(calendars);
+			gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
+				if (err) {
+	    			console.log('Error occurred: ', err);
+	 			 } else {
+	  			    var returnJSON = {items: []};
+	  	
+	  			    for(var i = 0; i < result.items.length - 1; i++){
+	  			    	//console.log('Test: ', result.items[i].summary);
+	  			    	
+						returnJSON.items.push(result.items[i]);	//First, we get the info from google calendars
+
+						returnJSON.items[i].user = calendars[i].user;	//We then add the info that we want from our Mongo Database (additional stuff)
+
+						//console.log('Test 2: ', returnJSON);
+	  			    }
+
+	  			    res.jsonp(returnJSON.items);
+	  		
+	  			}
+			});
 		}
 	});
 };

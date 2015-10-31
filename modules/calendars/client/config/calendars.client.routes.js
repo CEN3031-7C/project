@@ -16,15 +16,15 @@ angular.module('calendars').config(['$stateProvider',
 		}).
 		state('calendars.create', {
 			url: '/create',
-			templateUrl: 'modules/calendars/views/create-calendar.client.view.html'
+			templateUrl: 'modules/calendars/client/views/create-calendar.client.view.html'
 		}).
 		state('calendars.view', {
 			url: '/:calendarId',
-			templateUrl: 'modules/calendars/views/view-calendar.client.view.html'
+			templateUrl: 'modules/calendars/client/views/view-calendar.client.view.html'
 		}).
 		state('calendars.edit', {
 			url: '/:calendarId/edit',
-			templateUrl: 'modules/calendars/views/edit-calendar.client.view.html'
+			templateUrl: 'modules/calendars/client/views/edit-calendar.client.view.html'
 		}).
 		state('contact', {
 			abstract: true,

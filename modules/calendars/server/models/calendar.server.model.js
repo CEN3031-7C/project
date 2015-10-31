@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Calendar Schema
  */
 var CalendarSchema = new Schema({
-	name: {
+	summary: {
 		type: String,
 		default: '',
 		required: 'Please fill Calendar name',
