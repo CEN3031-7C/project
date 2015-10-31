@@ -87,14 +87,6 @@ exports.delete = function(req, res) {
 	});
 };
 
-
-function jsonConcat(o1, o2) {
-	for (var key in o2) {
-	 	o1[key] = o2[key];
-	}
-	return o1;
-}
-
 /**
  * List of Calendars
  */
@@ -108,26 +100,25 @@ exports.list = function(req, res) { Calendar.find().sort('-created').populate('u
 		} else {
 			//res.jsonp(calendars);
 			gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
-			if (err) {
-    			console.log('Error occurred: ', err);
- 			 } else {
-  			    var returnJSON = {items: []};
-  	
-  			    for(var i = 0; i < result.items.length - 1; i++){
-  			    	//console.log('Test: ', result.items[i].summary);
-  			    	
+				if (err) {
+	    			console.log('Error occurred: ', err);
+	 			 } else {
+	  			    var returnJSON = {items: []};
+	  	
+	  			    for(var i = 0; i < result.items.length - 1; i++){
+	  			    	//console.log('Test: ', result.items[i].summary);
+	  			    	
+						returnJSON.items.push(result.items[i]);	//First, we get the info from google calendars
 
-					returnJSON.items.push(result.items[i]);
+						returnJSON.items[i].user = calendars[i].user;	//We then add the info that we want from our Mongo Database (additional stuff)
 
-					returnJSON.items[i].user = calendars[i].user;
+						//console.log('Test 2: ', returnJSON);
+	  			    }
 
-					//console.log('Test 2: ', returnJSON);
-  			    }
-  			    
-  			    res.jsonp(returnJSON.items);
-  		
-  			}
-		});
+	  			    res.jsonp(returnJSON.items);
+	  		
+	  			}
+			});
 		}
 	});
 };
