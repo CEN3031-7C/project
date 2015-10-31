@@ -111,6 +111,7 @@ exports.list = function(req, res) { Calendar.find().sort('-created').populate('u
 						returnJSON.items.push(result.items[i]);	//First, we get the info from google calendars
 
 						returnJSON.items[i].user = calendars[i].user;	//We then add the info that we want from our Mongo Database (additional stuff)
+						returnJSON.items[i].imageURL = calendars[i].imageURL;
 
 						//console.log('Test 2: ', returnJSON);
 	  			    }
