@@ -9,7 +9,7 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Calendar object
 			var calendar = new Calendars ({
-				name: this.name
+				summary: this.summary
 			});
 
 			// Redirect after save
@@ -17,7 +17,7 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 				$location.path('calendars/' + response._id);
 
 				// Clear form fields
-				$scope.name = '';
+				$scope.summary = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

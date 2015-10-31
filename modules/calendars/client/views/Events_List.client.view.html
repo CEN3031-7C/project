@@ -1,4 +1,6 @@
-    @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+<head>
+<style>
+  @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
     body {
 		padding: 60px 0px;
@@ -164,3 +166,39 @@
 			padding: 10px 0px 9px;
 		}
 	}
+	</style>
+	</head>
+<section data-ng-controller="CalendarsController" data-ng-init="find()">
+    <div class="page-header">
+	<!--<h1 data-ng-bind="Calendars.name ">Current Events</h1>-->
+    </div>
+    <div class="container">
+		<div class="row">
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+			  <a data-ng-repeat="calendar in calendars" data-ng-href="/#!/calendars/{{calendar._id}}" >
+				<ul class="event-list">
+					<li>
+						<!-- To display the start & end date of the event -->	
+						<span data-ng-bind="calendar.start.dateTime | date:'medium'"></span>
+						<span data-ng-bind="calendar.end.dateTime | date:'medium'"></span>
+						
+						<!-- We will replace this image by one from the Events_List or the event, or use upload -->
+						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+						<div class="info">
+						<!-- Event Info -->
+							<h2 class="title" data-ng-bind="calendar.summary"></h2>
+							
+							<!--The following will be linked to a feedback page, and the actual Event Page -->
+							<ul>
+								<li style="width:33%;"><a href="#Event's website"><span class="fa fa-globe"></span> Website</a></li>
+								<li style="width:33%;"><a href="#Feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+							</ul>
+						</div>						
+					</li>
+				</ul>
+			  </a>
+			</div>
+		</div>
+	</div> 
+   
+</section>
