@@ -14,6 +14,10 @@ angular.module('calendars').config(['$stateProvider',
 			url: '',
 			templateUrl: 'modules/calendars/client/views/calendar.client.view.html'
 		}).
+		state('calendars.eventslist', {
+			url: '/eventsList',
+			templateUrl: 'modules/calendars/client/views/Events_List.client.view.html'
+		}).
 		state('calendars.create', {
 			url: '/create',
 			templateUrl: 'modules/calendars/client/views/create-calendar.client.view.html'
