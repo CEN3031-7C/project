@@ -42,9 +42,10 @@
 		line-height: 1;
 	}
 	.event-list > li time > .month {
+		margin-top:11px;
 		display: block;
-		font-size: 24pt;
-		font-weight: 900;
+		font-size: 18pt;
+		font-weight: 700;
 		line-height: 1;
 	}
 	.event-list > li > img {
@@ -175,9 +176,12 @@
 				<ul class="event-list">			
 										
 						<li data-ng-repeat="calendar in calendars" data-ng-href="/#!/calendars/{{calendar._id}}">	
-							
+						
 						<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+						<time >
+							<span class="month" data-ng-bind="calendar.created | date:'medium'"></span>
+						</time>	
 						<div class="info">
 						<!-- Event Info -->		
 							
@@ -186,8 +190,7 @@
 							<style>
 							p{margin-left:10px;}
 							</style>
-							<p>Posted on
-							<span data-ng-bind="calendar.created | date:'medium'"></span>
+							<p>							
 							<br>
 							by
 							<span data-ng-bind="calendar.user.displayName"></span>
@@ -196,7 +199,7 @@
 							<!--The following will be linked to a feedback page, and the actual Event Page -->
 							<ul>
 								<li style="width:33%;"><a href="#Event's website"><span class="fa fa-globe"></span> Website</a></li>
-								<li style="width:33%;"><a href="#Feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+								<li style="width:33%;"><a data-ng-href="/#!/calendars/{{calendar._id}}"><span class="fa fa-envelope"></span> Feedback</a></li>
 							</ul>							
 						</div>	
 					</li>						
