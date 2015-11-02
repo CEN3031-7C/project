@@ -1,3 +1,6 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
 .content {
   margin-top: 50px;
 }
@@ -50,29 +53,21 @@ body {
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
-/* Carousel base class */
-.carousel {
-  height: 500px;
-  margin-bottom: 60px;
+/*Carousel*/
+.cimage{
+  width: 100%;
+  height: auto;
+  max-height: 375px;
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
+.slides_control {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  left:0%;
+  top:20px;
 }
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
-}
-
+/*End Carousel*/
 
 /* Featurettes
 ------------------------- */
@@ -93,13 +88,6 @@ body {
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
-
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
 
   .featurette-heading {
     font-size: 50px;
@@ -199,25 +187,23 @@ hr {
 
  /* ---- ISSA's css */
 
-    /*@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
-    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");  */
     body {
-    padding: 60px 0;
+    padding: 60px 0px;
     background-color: rgb(220, 220, 220);
   }
     
     .event-list {
     list-style: none;
     font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
   }
   .event-list > li {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgb(51, 51, 51);
-    box-shadow: 0 0 5px rgba(51, 51, 51, 0.7);
-    padding: 0;
-    margin: 0 0 20px;
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
   }
   .event-list > li > time {
     display: inline-block;
@@ -241,9 +227,10 @@ hr {
     line-height: 1;
   }
   .event-list > li time > .month {
+    margin-top:11px;
     display: block;
-    font-size: 24pt;
-    font-weight: 900;
+    font-size: 18pt;
+    font-weight: 700;
     line-height: 1;
   }
   .event-list > li > img {
@@ -256,24 +243,24 @@ hr {
   .event-list > li > .info > .title {
     font-size: 17pt;
     font-weight: 700;
-    margin: 0;
+    margin: 0px;
   }
   .event-list > li > .info > .desc {
     font-size: 13pt;
     font-weight: 300;
-    margin: 0;
+    margin: 0px;
   }
   .event-list > li > .info > ul,
   .event-list > li > .social > ul {
     display: table;
     list-style: none;
-    margin: 10px 0 0;
-    padding: 0;
+    margin: 10px 0px 0px;
+    padding: 0px;
     width: 100%;
     text-align: center;
   }
   .event-list > li > .social > ul {
-    margin: 0;
+    margin: 0px;
   }
   .event-list > li > .info > ul > li,
   .event-list > li > .social > ul > li {
@@ -282,7 +269,7 @@ hr {
     color: rgb(30, 30, 30);
     font-size: 11pt;
     font-weight: 300;
-        padding: 3px 0;
+        padding: 3px 0px;
   }
     .event-list > li > .info > ul > li > a {
     display: block;
@@ -291,10 +278,10 @@ hr {
     text-decoration: none;
   } 
     .event-list > li > .social > ul > li {    
-        padding: 0;
+        padding: 0px;
     }
     .event-list > li > .social > ul > li > a {
-        padding: 3px 0;
+        padding: 3px 0px;
   } 
   .event-list > li > .info > ul > li:hover,
   .event-list > li > .social > ul > li:hover {
@@ -308,7 +295,7 @@ hr {
       display: block;
       width: 100%;
       height: 120px;
-      padding: 0;
+      padding: 0px;
     }
     .event-list > li > time,
     .event-list > li > img  {
@@ -327,8 +314,8 @@ hr {
     .event-list > li > img {
       width: 120px;
       height: 120px;
-      padding: 0;
-      margin: 0;
+      padding: 0px;
+      margin: 0px;
     }
     .event-list > li > .info {
       position: relative;
@@ -338,17 +325,17 @@ hr {
     } 
     .event-list > li > .info > .title, 
     .event-list > li > .info > .desc {
-      padding: 0 10px;
+      padding: 0px 10px;
     }
     .event-list > li > .info > ul {
       position: absolute;
-      left: 0;
-      bottom: 0;
+      left: 0px;
+      bottom: 0px;
     }
     .event-list > li > .social {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 0px;
+      right: 0px;
       display: block;
       width: 40px;
     }
@@ -357,11 +344,11 @@ hr {
         }
     .event-list > li > .social > ul > li {      
       display: block;
-            padding: 0;
+            padding: 0px;
     }
     .event-list > li > .social > ul > li > a {
       display: block;
       width: 40px;
-      padding: 10px 0 9px;
+      padding: 10px 0px 9px;
     }
   }

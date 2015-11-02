@@ -20,6 +20,11 @@ var CalendarSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	imageURL: {
+		type: String,
+		default: '',
+		require: 'Please fill image url'
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
