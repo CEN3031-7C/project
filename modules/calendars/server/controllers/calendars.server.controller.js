@@ -99,7 +99,7 @@ exports.list = function(req, res) { Calendar.find().sort('-created').populate('u
 			});
 		} else {
 			//res.jsonp(calendars);
-			gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, function(err, result){
+			gcalendars.events.list({calendarId: 'watereevents@gmail.com', key: ' AIzaSyBis_Ck10Drh3n2TVkYr5ej9YyzYNLPPGk'}, function(err, result){
 				if (err) {
 	    			console.log('Error occurred: ', err);
 	 			 } else {
