@@ -19,9 +19,11 @@ angular.module('calendars').run(['Menus',
 	      title: 'Events List',
 	      state: 'calendars.eventslist'
 	    });
+		/*
 	    Menus.addSubMenuItem('topbar', 'calendars', {
 	      title: 'Old Events List',
 	      state: 'calendars.list'
 	    });
+	    */
 	}
 ]);
