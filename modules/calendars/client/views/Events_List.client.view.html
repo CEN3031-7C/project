@@ -4,7 +4,7 @@
     </div>				
 				<ul class="event-list">			
 										
-						<li data-ng-repeat="calendar in calendars" data-ng-href="/#!/calendars/{{calendar._id}}">	
+						<li data-ng-repeat="calendar in calendars" >	
 						
 						<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 
@@ -25,7 +25,8 @@
 							<p>							
 							<br>
 							by
-							<span data-ng-bind="calendar.user.displayName"></span>
+							Dr. Kati 
+							<!--span data-ng-bind="calendar.user.displayName"></span-->
 							</p>
 							</small>
 							<!--The following will be linked to a feedback page, and the actual Event Page -->
