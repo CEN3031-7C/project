@@ -10,6 +10,10 @@ angular.module('calendars').config(['$stateProvider',
 			url: '/calendars',
 			template: '<ui-view/>'
 		}).
+		state('calendars.gCalendar', {
+			url: '/gCalendar',
+			templateUrl: 'modules/calendars/client/views/Google_Calendar.client.view.html'
+		}).
 		state('calendars.list', {
 			url: '',
 			templateUrl: 'modules/calendars/client/views/calendar.client.view.html'
@@ -31,12 +35,7 @@ angular.module('calendars').config(['$stateProvider',
 			url: '/:calendarId/edit',
 			templateUrl: 'modules/calendars/client/views/edit-calendar.client.view.html'
 		}).
-/*
-		state('calendars.Google_calendar', {
-			url: '/Google_Calendar',
-			templateUrl: 'modules/calendars/client/views/Google_Calendar.client.view.html'
-		}).
-*/
+
 		state('contact', {
 			abstract: true,
 			url: '/contact',

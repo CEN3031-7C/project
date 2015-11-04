@@ -19,11 +19,11 @@ angular.module('calendars').run(['Menus',
 	      title: 'Events List',
 	      state: 'calendars.eventslist'
 	    });
-/*
+
 	    Menus.addSubMenuItem('topbar', 'calendars', {
 	      title: 'Google Calendar',
-	      state: 'calendars.Google_calendar'
+	      state: 'calendars.gCalendar'
 	    });
-*/
+
 	}
 ]);
