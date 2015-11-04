@@ -26,10 +26,17 @@ angular.module('calendars').config(['$stateProvider',
 			url: '/:calendarId',
 			templateUrl: 'modules/calendars/client/views/view-calendar.client.view.html'
 		}).
+
 		state('calendars.edit', {
 			url: '/:calendarId/edit',
 			templateUrl: 'modules/calendars/client/views/edit-calendar.client.view.html'
 		}).
+/*
+		state('calendars.Google_calendar', {
+			url: '/Google_Calendar',
+			templateUrl: 'modules/calendars/client/views/Google_Calendar.client.view.html'
+		}).
+*/
 		state('contact', {
 			abstract: true,
 			url: '/contact',

@@ -104,15 +104,18 @@ exports.list = function(req, res) { Calendar.find().sort('-created').populate('u
 	    			console.log('Error occurred: ', err);
 	 			 } else {
 	  			    var returnJSON = {items: []};
-	  	
-	  			    for(var i = 0; i < result.items.length - 1; i++){
+	  	// ISSA: I changed the Loop from 0 to length -1 to be from 0 to length
+
+	  			    for(var i = 0; i < result.items.length; i++){
 	  			    	//console.log('Test: ', result.items[i].summary);
 	  			    	
 						returnJSON.items.push(result.items[i]);	//First, we get the info from google calendars
+		// I commit out the following two lines:
+						//returnJSON.items[i].user = calendars[i].user;	//We then add the info that we want from our Mongo Database (additional stuff)
+						//returnJSON.items[i].imageURL = calendars[i].imageURL;
 
-						returnJSON.items[i].user = calendars[i].user;	//We then add the info that we want from our Mongo Database (additional stuff)
-						returnJSON.items[i].imageURL = calendars[i].imageURL;
-
+		// I added this line, which only display the user of index [1]
+						returnJSON.items[i].user = calendars[1].user;
 						//console.log('Test 2: ', returnJSON);
 	  			    }
 
