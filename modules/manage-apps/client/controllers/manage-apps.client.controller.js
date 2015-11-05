@@ -64,7 +64,7 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			if (manageApp) {
 				manageApp.hidden = false;
 			}
-		}
+		};
 
 		// Find a list of Manage apps
 		$scope.find = function() {
