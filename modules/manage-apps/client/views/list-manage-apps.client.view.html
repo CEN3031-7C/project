@@ -15,18 +15,35 @@
                 by
                 <span data-ng-bind="manageApp.user.displayName"></span>
             </small>
+            <!-- EDIT BUTTONS -->
             <div class="pull-right">
+                
+                <!-- push up -->
+                <a class="btn btn-primary" data-ng-click="pushUp(manageApp);">
+                    <i class="glyphicon glyphicon-menu-up"></i>
+                </a>
+
+                <!-- push down -->
+                <a class="btn btn-primary" data-ng-click="pushDown(manageApp);">
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </a>
+
+                <!-- hide app -->
                 <a class="btn btn-primary" data-ng-click="hide(manageApp);" ng-show="!manageApp.hidden">
                     <i class="glyphicon glyphicon-minus"></i>
                 </a>
 
+                <!-- show app -->
                 <a class="btn btn-primary" data-ng-click="show(manageApp);" ng-show="manageApp.hidden">
                     <i class="glyphicon glyphicon-plus"></i>
                 </a>
 
+                <!-- edit app -->
                 <a class="btn btn-primary" href="/#!/admin/manage-apps/{{manageApp._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i>
                 </a>
+
+                <!-- delete app -->
                 <a class="btn btn-danger" data-ng-click="remove(manageApp);">
                     <i class="glyphicon glyphicon-trash"></i>
                 </a>

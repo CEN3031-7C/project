@@ -66,6 +66,41 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			}
 		};
 
+		$scope.pushUp = function(manageApp) {
+			//console.log("The size of Array is", $scope.manageApps.length);
+			var i;
+			for (i = 0; i < $scope.manageApps.length; i++) {
+				console.log(i);
+				if ($scope.manageApps [i] === manageApp) {
+					if (i === 0) {
+						//console.log("We are at the beginning of the Array");
+						return;
+					}
+					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i-1].name);
+					$scope.manageApps [i] = $scope.manageApps [i-1];
+					$scope.manageApps [i-1] = manageApp;
+					return;
+				}
+			}
+		};
+
+		$scope.pushDown = function(manageApp) {
+			//console.log("The size of Array is", $scope.manageApps.length);
+			var i;
+			for (i = 0; i < $scope.manageApps.length; i++) {
+				if ($scope.manageApps [i] === manageApp) {
+					if (i === $scope.manageApps.length -1) {
+						//console.log("We are at the end of the Array");
+						return;
+					}
+					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i+1].name);
+					$scope.manageApps [i] = $scope.manageApps [i+1];
+					$scope.manageApps [i+1] = manageApp;
+					return;
+				}
+			}
+		};
+
 		// Find a list of Manage apps
 		$scope.find = function() {
 			$scope.manageApps = ManageApps.query();
