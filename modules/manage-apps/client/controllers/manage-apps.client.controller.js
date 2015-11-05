@@ -28,7 +28,8 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 
 		// Remove existing Manage app
 		$scope.remove = function( manageApp ) {
-			if ( manageApp ) { manageApp.$remove();
+			if ( manageApp ) { 
+				manageApp.$remove();
 
 				for (var i in $scope.manageApps ) {
 					if ($scope.manageApps [i] === manageApp ) {
@@ -52,6 +53,18 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				$scope.error = errorResponse.data.message;
 			});
 		};
+
+		$scope.hide = function(manageApp) {
+			if (manageApp) {
+				manageApp.hidden = true;
+			}
+		};
+
+		$scope.show = function(manageApp) {
+			if (manageApp) {
+				manageApp.hidden = false;
+			}
+		}
 
 		// Find a list of Manage apps
 		$scope.find = function() {

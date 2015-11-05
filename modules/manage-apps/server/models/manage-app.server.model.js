@@ -38,6 +38,10 @@ var ManageAppSchema = new Schema({
 		type: String,
 		default: '',
 		require: 'Please add link to app'
+	},
+	hidden: {
+		type: Boolean,
+		default: false,
 	}
 });
 

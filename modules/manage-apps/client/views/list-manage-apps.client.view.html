@@ -9,23 +9,33 @@
     
     <div class="list-group">
         <div data-ng-repeat="manageApp in manageApps" class="list-group-item">
-            <small class="list-group-item-text">
+            <small class="list-group-item-text" ng-show="!manageApp.hidden">
                 Added on
                 <span data-ng-bind="manageApp.created | date:'medium'"></span>
                 by
                 <span data-ng-bind="manageApp.user.displayName"></span>
             </small>
             <div class="pull-right">
+                <a class="btn btn-primary" data-ng-click="hide(manageApp);" ng-show="!manageApp.hidden">
+                    <i class="glyphicon glyphicon-minus"></i>
+                </a>
+
+                <a class="btn btn-primary" data-ng-click="show(manageApp);" ng-show="manageApp.hidden">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
+
                 <a class="btn btn-primary" href="/#!/admin/manage-apps/{{manageApp._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i>
                 </a>
-                <a class="btn btn-primary" data-ng-click="remove(manageApp);">
+                <a class="btn btn-danger" data-ng-click="remove(manageApp);">
                     <i class="glyphicon glyphicon-trash"></i>
                 </a>
+
             </div>    
 
-            <div class="container-fluid">   
-                <div class="row">
+            <div class="container-fluid">  
+                <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name" ng-show="manageApp.hidden"></h4> 
+                <div class="row" ng-show="!manageApp.hidden">
                     <div class="col-xs-2">
                         <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
                     </div>
