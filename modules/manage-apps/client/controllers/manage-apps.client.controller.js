@@ -4,6 +4,8 @@
 angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps',
 	function($scope, $stateParams, $location, Authentication, ManageApps ) {
 		$scope.authentication = Authentication;
+		$scope.manageApps = ManageApps.query();
+
 
 		// Create new Manage app
 		$scope.create = function() {
@@ -12,8 +14,12 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				name: this.name,
 				description: this.description,
 				imageURL: this.imageURL,
-				appLink: this.appLink
+				appLink: this.appLink,
+				hidden: false,
+				position: $scope.getPosition()
 			});
+
+			console.log($scope.getPosition());
 
 			// Redirect after save
 			manageApp.$save(function(response) {
@@ -21,6 +27,10 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 
 				// Clear form fields
 				$scope.name = '';
+				$scope.description = '';
+				$scope.imageURL = '';
+				$scope.appLink = '';
+
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -58,30 +68,38 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			if (manageApp) {
 				manageApp.hidden = true;
 			}
+			manageApp.$update();
 		};
 
 		$scope.show = function(manageApp) {
 			if (manageApp) {
 				manageApp.hidden = false;
 			}
+			manageApp.$update();
 		};
 
 		$scope.pushUp = function(manageApp) {
 			//console.log("The size of Array is", $scope.manageApps.length);
 			var i;
 			for (i = 0; i < $scope.manageApps.length; i++) {
-				console.log(i);
 				if ($scope.manageApps [i] === manageApp) {
 					if (i === 0) {
 						//console.log("We are at the beginning of the Array");
 						return;
 					}
 					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i-1].name);
+					var x = $scope.manageApps[i].position;
+					var y = $scope.manageApps[i-1].position;
+					$scope.manageApps[i].position = y;
+					$scope.manageApps[i-1].position = x;	
 					$scope.manageApps [i] = $scope.manageApps [i-1];
 					$scope.manageApps [i-1] = manageApp;
-					return;
+					$scope.manageApps[i].$update();
+					$scope.manageApps[i-1].$update();
+					break;
 				}
 			}
+				
 		};
 
 		$scope.pushDown = function(manageApp) {
@@ -94,17 +112,32 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 						return;
 					}
 					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i+1].name);
+					var x = $scope.manageApps[i].position;
+					var y = $scope.manageApps[i+1].position;
+					$scope.manageApps[i].position = y;
+					$scope.manageApps[i+1].position = x;
 					$scope.manageApps [i] = $scope.manageApps [i+1];
 					$scope.manageApps [i+1] = manageApp;
-					return;
+					$scope.manageApps[i].$update();
+					$scope.manageApps[i+1].$update();	
+					break;
 				}
 			}
+			
 		};
 
 		// Find a list of Manage apps
 		$scope.find = function() {
 			$scope.manageApps = ManageApps.query();
 		};
+
+		$scope.getPosition = function() {
+			return $scope.manageApps.length;
+		};
+
+		//$scope.count = function () {
+		//	return req;
+		//};
 
 		// Find existing Manage app
 		$scope.findOne = function() {

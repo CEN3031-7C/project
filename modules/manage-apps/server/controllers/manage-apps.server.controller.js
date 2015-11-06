@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
 /**
  * List of Manage apps
  */
-exports.list = function(req, res) { ManageApp.find().sort('-created').populate('user', 'displayName').exec(function(err, manageApps) {
+exports.list = function(req, res) { ManageApp.find().sort('-position').populate('user', 'displayName').exec(function(err, manageApps) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -94,3 +94,7 @@ exports.manageAppByID = function(req, res, next, id) { ManageApp.findById(id).po
 		next();
 	});
 };
+
+//exports.count = function(req, res) {
+//	res = ManageApp.count(); 	
+//};

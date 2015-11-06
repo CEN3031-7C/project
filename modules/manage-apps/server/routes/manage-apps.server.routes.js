@@ -9,6 +9,10 @@ module.exports = function(app) {
 		.get(manageApps.list).all(manageAppsPolicy.isAllowed)
 		.post(manageApps.create);
 
+	app.route('/api/manage-apps/create').all()
+		.get(manageApps.list).all(manageAppsPolicy.isAllowed)
+		.post(manageApps.create);
+
 	app.route('/api/manage-apps/:manageAppId').all(manageAppsPolicy.isAllowed)
 		.get(manageApps.read)
 		.put(manageApps.update)
