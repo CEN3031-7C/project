@@ -24,25 +24,11 @@ var ManageAppSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	description: {
-		type: String,
-		default: '',
-		require: 'Please fill apps description',
-	},
-	imageURL: {
-		type: String,
-		default: '',
-		require: 'Please fill image url'
-	},
-	appLink: {
-		type: String,
-		default: '',
-		require: 'Please add link to app'
-	},
-	hidden: {
-		type: Boolean,
-		default: false,
-	}
+	description: String,
+	imageURL: String,
+	appLink: String,
+	hidden: Boolean,
+	position: Number,
 });
 
 mongoose.model('ManageApp', ManageAppSchema);
