@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',
-  function ($scope, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps',
+  function ($scope, Authentication, ManageApps) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
     
     // Code for functionality of carousel
-	  $scope.myInterval = 3000;
-	  $scope.slides = [
+	$scope.myInterval = 3000;
+	$scope.slides = [
 	    {
 	      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLuVXxIKXJ63Ep-hzVWfb7jXLczDZXa1q6heVO4NsQz8PbJY4M'
 	    },
@@ -21,5 +21,11 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	      image: 'https://cdn.evbuc.com/images/14141724/14144367315/1/logo.jpg'
 	    }
     ];
+
+    //to load all the articles from manage-apps shard
+    $scope.find = function() {
+           console.log("Called find()!");
+            $scope.manageApps = ManageApps.query();
+    };
   }
 ]);
