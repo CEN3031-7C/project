@@ -24,7 +24,11 @@ var CalendarSchema = new Schema({
 	summary: String,
 	link: String,
 	pending: Boolean,
-	hidden: Boolean
+	hidden: Boolean,
+	feedback: {
+		type: String,
+		default: "No Feedback"
+	}
 });
 
 mongoose.model('Calendar', CalendarSchema);
