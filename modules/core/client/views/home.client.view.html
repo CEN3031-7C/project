@@ -27,8 +27,8 @@
     </div>
 
     <!-- Manage Apps List -->
-    <hr class="featurette-divider">
-      <h2 class="featurette-heading text-center">Recommended Applications</h2>
+    <hr class="featurette-divider" ng-show="appsToShow();">
+      <h2 class="featurette-heading text-center" style="margin-top: 0px" ng-show="appsToShow();">Recommended Applications</h2>
     <div class="list-group">
         <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0)">
             <div class="container-fluid">  
