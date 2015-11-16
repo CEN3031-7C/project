@@ -1,5 +1,12 @@
 'use strict';
 
+var _ = require('lodash'),
+ path = require('path'),
+ mongoose = require('mongoose'),
+ ManageApp = mongoose.model('ManageApp'),
+ errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+
+
 /**
  * Render the main application page
  */
@@ -39,4 +46,15 @@ exports.renderNotFound = function (req, res) {
       res.send('Path not found');
     }
   });
+};
+
+exports.list = function(req, res) { console.log("Hey!"); ManageApp.find().sort('position').populate('user', 'displayName').exec(function(err, manageApps) {
+   if (err) {
+     return res.status(400).send({
+       message: errorHandler.getErrorMessage(err)
+     });
+   } else {
+     res.jsonp(manageApps);
+   }
+ });
 };

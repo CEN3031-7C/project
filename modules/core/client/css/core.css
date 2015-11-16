@@ -39,6 +39,20 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+/* App List CSS on front page */
+
+
+.app-image-list {
+  height: 100%;
+  width: 100%;
+  
+  display:block;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+/* App List end */
+
 /* Beginning of Home Page */
 
 /* GLOBAL STYLES
