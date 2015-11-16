@@ -22,9 +22,19 @@ angular.module('calendars').config(['$stateProvider',
 			url: '/eventsList',
 			templateUrl: 'modules/calendars/client/views/Events_List.client.view.html'
 		}).
+		//submit feedback
+		state('calendars.feedback', {
+			url: '/:calendarId/feedback',
+			templateUrl: 'modules/calendars/client/views/Event.feedback.client.view.html'
+		}).
 		state('calendars.create', {
 			url: '/create',
 			templateUrl: 'modules/calendars/client/views/create-calendar.client.view.html'
+		}).
+		//submit an event
+		state('calendars.submitevent', {
+			url: '/submitEvent',
+			templateUrl: 'modules/calendars/client/views/submit-event.client.view.html'
 		}).
 		state('calendars.view', {
 			url: '/:calendarId',

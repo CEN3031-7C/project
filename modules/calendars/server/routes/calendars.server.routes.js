@@ -9,6 +9,14 @@ module.exports = function(app) {
 		.get(calendars.list).all(calendarsPolicy.isAllowed)
 		.post(calendars.create);
 
+	app.route('/api/calendars/create').all()
+		.get(calendars.list).all(calendarsPolicy.isAllowed)
+		.post(calendars.create);
+/*
+	app.route('/api/calendars/submitEvent').all()
+		.get(calendars.list).all(calendarsPolicy.isAllowed)
+		.post(calendars.create);
+*/
 	app.route('/api/calendars/:calendarId').all(calendarsPolicy.isAllowed)
 		.get(calendars.read)
 		.put(calendars.update)

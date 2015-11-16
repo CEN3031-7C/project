@@ -20,6 +20,9 @@ exports.invokeRolesPolicies = function() {
 		}, {
 			resources: '/api/calendars/:calendarId',
 			permissions: '*'
+		}, {
+			resources: '/api/calendars/:calendarId/submitEvent',
+			permissions: '*'
 		}]
 	}, {
 		roles: ['user'],
