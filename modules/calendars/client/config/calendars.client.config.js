@@ -25,5 +25,10 @@ angular.module('calendars').run(['Menus',
 	      state: 'calendars.gCalendar'
 	    });
 
+	    Menus.addSubMenuItem('topbar', 'admin', {
+	      title: 'Manage Events',
+	      state: 'calendars.manageevents'
+	    });
+
 	}
 ]);
