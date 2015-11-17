@@ -1,0 +1,46 @@
+<section data-ng-controller="NewsFeedsController">
+    <div class="page-header">
+        <h1>New News feed</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <!-- Enter the title of the article -->
+                    <label class="control-label" for="title">Title of the News Article</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="title" id="title" class="form-control" placeholder="Title" required>
+                    </div>
+                     <!-- Enter the author  -->
+                    <label class="control-label" for="author">Name of the author</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="author" id="author" class="form-control" placeholder="Author's name" required>
+                    </div>
+                    <!-- Enter the description of the app -->
+                    <label class="control-label" for="body_text">The body of the article</label>
+                    <div class="controls">
+                        <textarea rows="4" maxlength="9999" type="text" data-ng-model="dbody_text" id="body_text" class="form-control" placeholder="body_text" required>
+                        </textarea>
+                    </div>
+                    <!-- Upload picture or give link -->
+                    <label class="control-label" for="imageURL">Link to an Articles image/label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="imageURL" id="imageURL" class="form-control" placeholder="Image URL" required>
+                    </div>
+                    <!-- link to the app -->
+                    <label class="control-label" for="appLink">Link to the Article</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="articleLink" id="articleLink" class="form-control" placeholder="Link to the Article" required>
+                    </div>
+                    <!--article date -->
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
