@@ -33,13 +33,15 @@
                         <input type="text" data-ng-model="articleLink" id="articleLink" class="form-control" placeholder="Link to the Article" required>
                     </div>
                     <!--article date -->
-                    <label class="control-label" for="date">Date of the article</label>                                                   
-                    <p class="input-group">
-                        <input type="date" class="form-control" uib-datepicker-popup ng-model="date" is-open="status.opened" min-date="minDate" max-date                    ="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                    </p> 
+                    <label class="control-label" for="date">Date of the article</label>
+                    <br>
+                    <div style="display:inline-block; min-height:250px; max-height:250px; background: rgba(0, 0, 0, 0.0)">
+                        <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+                    </div>                                                   
+                    
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" value="Submit" class="btn btn-default">
                 </div>
                 <div data-ng-show="error" class="text-danger">
                     <strong data-ng-bind="error"></strong>

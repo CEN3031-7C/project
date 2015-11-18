@@ -124,7 +124,7 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 
 
 		$scope.getPosition = function() {
-			return $scope.manageApps.length;
+			return $scope.newsFeeds.length;
 		};
 
 		// Find a list of News feeds
@@ -138,5 +138,19 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 				newsFeedId: $stateParams.newsFeedId
 			});
 		};
+
+
+		// $scope.getDayClass = function(date, mode) {
+  //   		if (mode === 'day') {
+  //     			var dayToCheck = new Date(date).setHours(0,0,0,0);
+  //     				for (var i=0;i<$scope.events.length;i++){
+  //       				var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+		// 				if (dayToCheck === currentDay) {
+  //         					return $scope.events[i].status;
+  //      					}
+  //     				}
+  //   			}
+  //   		return '';
+  // 		};
 	}
 ]);
