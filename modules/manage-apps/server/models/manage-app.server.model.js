@@ -28,7 +28,7 @@ var ManageAppSchema = new Schema({
 	imageURL: String,
 	appLink: String,
 	hidden: Boolean,
-	position: Number,
+	position: Number
 });
 
 mongoose.model('ManageApp', ManageAppSchema);

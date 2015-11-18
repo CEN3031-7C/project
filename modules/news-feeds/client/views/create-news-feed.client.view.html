@@ -19,20 +19,24 @@
                     <!-- Enter the description of the app -->
                     <label class="control-label" for="body_text">The body of the article</label>
                     <div class="controls">
-                        <textarea rows="4" maxlength="9999" type="text" data-ng-model="dbody_text" id="body_text" class="form-control" placeholder="body_text" required>
+                        <textarea rows="4" maxlength="9999" type="text" data-ng-model="body_text" id="body_text" class="form-control" placeholder="Articles body" required>
                         </textarea>
                     </div>
                     <!-- Upload picture or give link -->
-                    <label class="control-label" for="imageURL">Link to an Articles image/label>
+                    <label class="control-label" for="imageURL">Link to an Articles image</label>
                     <div class="controls">
                         <input type="text" data-ng-model="imageURL" id="imageURL" class="form-control" placeholder="Image URL" required>
                     </div>
                     <!-- link to the app -->
-                    <label class="control-label" for="appLink">Link to the Article</label>
+                    <label class="control-label" for="articleLink">Link to the Article</label>
                     <div class="controls">
                         <input type="text" data-ng-model="articleLink" id="articleLink" class="form-control" placeholder="Link to the Article" required>
                     </div>
                     <!--article date -->
+                    <label class="control-label" for="date">Date of the article</label>                                                   
+                    <p class="input-group">
+                        <input type="date" class="form-control" uib-datepicker-popup ng-model="date" is-open="status.opened" min-date="minDate" max-date                    ="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    </p> 
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-default">

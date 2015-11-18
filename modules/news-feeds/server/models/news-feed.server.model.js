@@ -26,9 +26,11 @@ var NewsFeedSchema = new Schema({
 	},
 	author: String,
 	body_text: String,
-	imgURL: String,
+	imageURL: String,
 	date: Date,
-	articleLink: String
+	articleLink: String,
+	hidden: Boolean,
+	position: Number
 });
 
 mongoose.model('NewsFeed', NewsFeedSchema);

@@ -2,16 +2,72 @@
     <div class="page-header">
         <h1>News feeds</h1>
     </div>
+
+    <a href="/#!/admin/news-feed/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Article</button></a>
+
     <div class="list-group">
-        <a data-ng-repeat="newsFeed in newsFeeds" data-ng-href="/#!/admin/news-feed/{{newsFeed._id}}" class="list-group-item">
-			<small class="list-group-item-text">
+        <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item">
+			
+            <small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="newsFeed.created | date:'medium'"></span>
 				by
 				<span data-ng-bind="newsFeed.user.displayName"></span>
 			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="newsFeed.name"></h4>
-        </a>
+            <!-- EDIT BUTTONS -->
+            <div class="pull-right">
+                 <!--expand -->
+                <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}">
+                    <i class="glyphicon glyphicon-fullscreen"></i>
+                </a>
+
+                <!-- push up -->
+                <a class="btn btn-primary" data-ng-click="pushUp(newsFeed);">
+                    <i class="glyphicon glyphicon-menu-up"></i>
+                </a>
+    
+                <!-- push down -->
+                <a class="btn btn-primary" data-ng-click="pushDown(newsFeed);">
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </a>
+    
+                <!-- hide app -->
+                <a class="btn btn-primary" data-ng-click="hide(newsFeed);" ng-show="!newsFeed.hidden">
+                    <i class="glyphicon glyphicon-minus"></i>
+                </a>
+    
+                <!-- show app -->
+                <a class="btn btn-primary" data-ng-click="show(newsFeed);" ng-show="newsFeed.hidden">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
+    
+                <!-- edit app -->
+                <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+    
+                <!-- delete app -->
+                <a class="btn btn-danger" data-ng-click="remove(newsFeed);">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+    
+            </div> 
+			<div class="container-fluid">
+                
+                <h4 class="list-group-item-heading" data-ng-bind="newsFeed.title" ng-show="newsFeed.hidden"></h4>
+                <div class="row" ng-show="!newsFeed.hidden">
+                    <div class="col-xs-2">
+                        <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
+                    </div>
+                    <div class="col-xs-10">
+                        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="newsFeed.title"></h4>
+                        <p data-ng-bind="newsFeed.body_text">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!newsFeeds.$resolved || newsFeeds.length">
     	No News feeds yet, why don't you <a href="/#!/admin/news-feed/create">create one</a>?
