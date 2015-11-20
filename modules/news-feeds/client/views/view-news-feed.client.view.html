@@ -17,13 +17,12 @@
     
 	    </div> 
 		<div class="container-fluid">               
-		    <h4 class="list-group-item-heading" data-ng-bind="newsFeed.title" ng-show="newsFeed.hidden"></h4>
-	        <div class="row" ng-show="!newsFeed.hidden">
+		    
+	        <div class="row">
 	            <div class="col-xs-2">
 	                <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
 	            </div>
     	        <div class="col-xs-10" style="white-space:pre-wrap;">
-        	        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="newsFeed.title"></h4>
             	    <p data-ng-bind="newsFeed.body_text">
                 	</p>
 	            </div>

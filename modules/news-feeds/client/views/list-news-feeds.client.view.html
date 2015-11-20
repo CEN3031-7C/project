@@ -1,6 +1,6 @@
 <section data-ng-controller="NewsFeedsController" data-ng-init="find()">
     <div class="page-header">
-        <h1>News feeds</h1>
+        <h1>News Feed</h1>
     </div>
 
     <a href="/#!/admin/news-feed/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Article</button></a>
@@ -49,15 +49,16 @@
             </div> 
 			<div class="container-fluid">
                 
-                <h4 class="list-group-item-heading" data-ng-bind="newsFeed.title" ng-show="newsFeed.hidden"></h4>
+                <h4 class="list-group-item-heading" data-ng-bind="newsFeed.title" ng-show="newsFeed.hidden" style="margin-top: 10px"></h4>
+
                 <div class="row" ng-show="!newsFeed.hidden">
                     <div class="col-xs-2">
                         <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
                     </div>
-                    <div class="col-xs-10"style="white-space:pre-wrap; text-overflow:ellipsis;">
+                    <div class="col-xs-10" style="white-space:pre-wrap;">
                         <h2 class="list-group-item-heading" data-ng-bind="newsFeed.title"></h2>
                         <small class="pull-left"> By {{newsFeed.author}} on {{newsFeed.date | date : mediumDate}} </small>
-                        <p data-ng-bind="newsFeed.body_text">
+                        <p>{{ getPreview(newsFeed) }}
                         </p>
                     </div>
                 </div>

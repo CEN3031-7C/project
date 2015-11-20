@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
 /**
  * List of News feeds
  */
-exports.list = function(req, res) { NewsFeed.find().sort('-created').populate('user', 'displayName').exec(function(err, newsFeeds) {
+exports.list = function(req, res) { NewsFeed.find().sort('-position').populate('user', 'displayName').exec(function(err, newsFeeds) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

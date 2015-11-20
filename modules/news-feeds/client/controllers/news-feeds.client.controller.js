@@ -4,6 +4,7 @@
 angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stateParams', '$location', 'Authentication', 'NewsFeeds',
 	function($scope, $stateParams, $location, Authentication, NewsFeeds ) {
 		$scope.authentication = Authentication;
+		//$scope.preview = $scope.newsFeed.body_text.substring(0, 300);
 
 		// Create new News feed
 		$scope.create = function() {
@@ -14,7 +15,8 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 				body_text: this.body_text,
 				imageURL: this.imageURL,
 				articleLink: this.articleLink,
-				date: this.date
+				date: this.date,
+				position: $scope.getPosition()
 
 			});
 
@@ -118,8 +120,7 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 					$scope.newsFeeds[i+1].$update();	
 					break;
 				}
-			}
-			
+			}			
 		};
 
 
@@ -139,18 +140,11 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 			});
 		};
 
-
-		// $scope.getDayClass = function(date, mode) {
-  //   		if (mode === 'day') {
-  //     			var dayToCheck = new Date(date).setHours(0,0,0,0);
-  //     				for (var i=0;i<$scope.events.length;i++){
-  //       				var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-		// 				if (dayToCheck === currentDay) {
-  //         					return $scope.events[i].status;
-  //      					}
-  //     				}
-  //   			}
-  //   		return '';
-  // 		};
+		$scope.getPreview = function(newsFeed) {
+			var preview;
+			preview = newsFeed.body_text.substring(0, 450);
+			preview = preview + "...";
+			return preview;
+		};
 	}
 ]);
