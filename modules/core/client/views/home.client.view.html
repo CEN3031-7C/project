@@ -26,25 +26,47 @@
       </div>
     </div>
 
+    <!--News articles -->
+    <hr class="featurette-divider" ng-show="newsToShow();">
+    <h2 class="featurette-heading text-center" style="margin-top: 0px" ng-show="newsToShow();">News Articles</h2>
+
+    <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item" style="background: rgba(0, 0, 0, 0.0)">   
+      <div class="container-fluid">
+        <div class="row" ng-show="!newsFeed.hidden">
+          <div class="col-xs-2">
+            <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
+          </div>
+          <div class="col-xs-10" style="white-space:pre-wrap;">
+            <h2 class="list-group-item-heading" data-ng-bind="newsFeed.title"></h2>
+            <small class="pull-left"> By {{newsFeed.author}} on {{newsFeed.date | date : mediumDate}} </small>
+            <p>{{ getPreview(newsFeed) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end of News articles -->
+
     <!-- Manage Apps List -->
     <hr class="featurette-divider" ng-show="appsToShow();">
-      <h2 class="featurette-heading text-center" style="margin-top: 0px" ng-show="appsToShow();">Recommended Applications</h2>
+    <h2 class="featurette-heading text-center" style="margin-top: 0px" ng-show="appsToShow();">Recommended Applications</h2>
     <div class="list-group">
-        <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0)">
-            <div class="container-fluid">  
-                <div class="row" >
-                    <div class="col-xs-2">
-                        <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
-                    </div>
-                    <div class="col-xs-10">
-                        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
-                        <p data-ng-bind="manageApp.description">
-                        </p>
-                        <a ng-href="{{manageApp.appLink}}"><span class="fa fa-globe"></span> Website</a>
-                    </div>
-                </div>
+      <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0)">
+        <div class="container-fluid">  
+          <div class="row" >
+            <div class="col-xs-2">
+              <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
             </div>
+            <div class="col-xs-10">
+              <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
+              <p data-ng-bind="manageApp.description">
+              </p>
+              <a ng-href="{{manageApp.appLink}}"><span class="fa fa-globe"></span> Website</a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Manage Apps End -->
