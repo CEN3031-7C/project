@@ -8,12 +8,7 @@
     <div class="list-group">
         <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item">
 			
-            <small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="newsFeed.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="newsFeed.user.displayName"></span>
-			</small>
+            
             <!-- EDIT BUTTONS -->
             <div class="pull-right">
                  <!--expand -->
@@ -59,8 +54,9 @@
                     <div class="col-xs-2">
                         <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
                     </div>
-                    <div class="col-xs-10">
-                        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="newsFeed.title"></h4>
+                    <div class="col-xs-10"style="white-space:pre-wrap; text-overflow:ellipsis;">
+                        <h2 class="list-group-item-heading" data-ng-bind="newsFeed.title"></h2>
+                        <small class="pull-left"> By {{newsFeed.author}} on {{newsFeed.date | date : mediumDate}} </small>
                         <p data-ng-bind="newsFeed.body_text">
                         </p>
                     </div>
