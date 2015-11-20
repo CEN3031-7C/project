@@ -2,6 +2,10 @@
     <div class="page-header">	
 		<h1> Current Events</h1>
     </div>				
+	
+	<!-- submit an event -->
+    <a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Submit Event</button></a>
+
 	<ul class="event-list">												
 		<li data-ng-repeat="calendar in calendars" >				
 			<!-- We will replace this image by one from the Events_List or the event, or use upload -->
@@ -29,7 +33,7 @@
 				<!--p data-ng-bind="calendar.imageURL" />-->
 				<ul>
 					<li style="width:33%;"><a href="#Event's website"><span class="fa fa-globe"></span> Website</a></li>
-					<li style="width:33%;"><a data-ng-href="/#!/calendars/{{calendar._id}}"><span class="fa fa-envelope"></span> Feedback</a></li>
+					<li style="width:33%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
 				</ul>							
 			</div>	
 		</li>						

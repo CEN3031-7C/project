@@ -9,37 +9,34 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Calendars Permissions
+ * Invoke News feeds Permissions
  */
 exports.invokeRolesPolicies = function() {
 	acl.allow([{
 		roles: ['admin'],
 		allows: [{
-			resources: '/api/calendars',
+			resources: '/api/news-feeds',
 			permissions: '*'
 		}, {
-			resources: '/api/calendars/:calendarId',
-			permissions: '*'
-		}, {
-			resources: '/api/calendars/:calendarId/submitEvent',
+			resources: '/api/news-feeds/:newsFeedId',
 			permissions: '*'
 		}]
 	}, {
 		roles: ['user'],
 		allows: [{
-			resources: '/api/calendars',
+			resources: '/api/news-feeds',
 			permissions: ['get', 'post']
 		}, {
-			resources: '/api/calendars/:calendarId',
+			resources: '/api/news-feeds/:newsFeedId',
 			permissions: ['get']
 		}]
 	}, {
 		roles: ['guest'],
 		allows: [{
-			resources: '/api/calendars',
+			resources: '/api/news-feeds',
 			permissions: ['get']
 		}, {
-			resources: '/api/calendars/:calendarId',
+			resources: '/api/news-feeds/:newsFeedId',
 			permissions: ['get']
 		}]
 	}]);
@@ -51,8 +48,8 @@ exports.invokeRolesPolicies = function() {
 exports.isAllowed = function(req, res, next) {
 	var roles = (req.user) ? req.user.roles : ['guest'];
 
-	// If an calendar is being processed and the current user created it then allow any manipulation
-	if (req.calendar && req.user && req.calendar.user.id === req.user.id) {
+	// If an newsFeed is being processed and the current user created it then allow any manipulation
+	if (req.newsFeed && req.user && req.newsFeed.user.id === req.user.id) {
 		return next();
 	}
 

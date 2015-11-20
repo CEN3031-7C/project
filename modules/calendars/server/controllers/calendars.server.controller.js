@@ -87,9 +87,11 @@ exports.delete = function(req, res) {
 	});
 };
 
-/**
+
+/*
  * List of Calendars
  */
+ 
 exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
 		//urlshortener.url.get({ shortUrl: 'http://goo.gl/DdUKX' }, printResult);
 		//gcalendars.events.list({calendarId: 'eecf6gh212hbtsl4c750q9d6rk@group.calendar.google.com', key: 'AIzaSyCfsxDnK7heHQqY6_3hAW17s512VpjOKds'}, printResult);
@@ -127,7 +129,20 @@ exports.list = function(req, res) { Calendar.find().sort('-created').populate('u
 	});
 };
 
-/**
+/*
+exports.list = function(req, res) { Calendar.find().sort('-created').populate('user', 'displayName').exec(function(err, calendars) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(calendars);
+		}
+	});
+};
+/*
+
+/*
  * Calendar middleware
  */
 exports.calendarByID = function(req, res, next, id) { Calendar.findById(id).populate('user', 'displayName').exec(function(err, calendar) {

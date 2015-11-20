@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps',
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps', 
   function ($scope, Authentication, ManageApps) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
-    
+    $scope.isCollapsed = false;
+
     // Code for functionality of carousel
 	$scope.myInterval = 3000;
 	$scope.slides = [

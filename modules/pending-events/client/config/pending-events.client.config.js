@@ -10,7 +10,7 @@ angular.module('pending-events').run(['Menus',
 			roles: ['admin']
 		});*/
 		Menus.addSubMenuItem('topbar', 'admin', {
-	      title: 'Pending Events',
+	      title: 'Manage Events',
 	      state: 'admin.pending-events.list'
 	    });
 	}

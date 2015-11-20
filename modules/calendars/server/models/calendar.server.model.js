@@ -10,24 +10,24 @@ var mongoose = require('mongoose'),
  * Calendar Schema
  */
 var CalendarSchema = new Schema({
-	summary: {
-		type: String,
-		default: '',
-		required: 'Please fill Calendar name',
-		trim: true
-	},
 	created: {
 		type: Date,
 		default: Date.now
 	},
-	imageURL: {
-		type: String,
-		default: '',
-		require: 'Please fill image url'
-	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	title: String,
+	imageURL: String,
+	date: String,
+	summary: String,
+	link: String,
+	pending: Boolean,
+	hidden: Boolean,
+	feedback: {
+		type: String,
+		default: "No Feedback"
 	}
 });
 
