@@ -8,8 +8,15 @@
 .navbar-nav > li > a {
   color: white;
 }
+
+.navbar-nav > li > a:focus {
+  color: white;
+  background-color: #0021a5;
+}
+
 .navbar-nav > li > a:hover {
   color: #0021a5;
+  background-color: white;
 }
 
 .navbar-static-top, .navbar-fixed-top, .navbar-fixed-bottom {
@@ -18,16 +25,30 @@
 }
 
 .dropdown-menu > li > a  {
-  color: white;
+  color: black;
   background-color: white;
 }
 
 .nav .open > a {
   color: #0021a5;
+  background-color: white;
 }
 
-.dropdown-menu > li > a > expanded-styling {
-  color: black;
+.navbar .navbar-nav .open 
+.dropdown-menu > .active > a {
+  color: white;
+  background-color: #0021a5;
+  background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
+  background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
+  border-bottom: 1px solid #f56f02;
+}
+.navbar .navbar-nav .open 
+.dropdown-menu > .active > a:hover {
+  color: white;
+  background-color: #0021a5;
+  background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
+  background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
+  border-bottom: 1px solid #f56f02;
 }
 /*nav bar end */
 
