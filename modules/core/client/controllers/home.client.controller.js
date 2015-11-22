@@ -13,7 +13,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	      image: 'http://i.imgur.com/6yDXeff.jpg'
 	    },
 	    {
-	      image: 'http://www.irrec.ifas.ufl.edu/images/slider/StudentsLinearGarden.jpg'
+	      image: 'http://khalil-shreateh.com/khalil.shtml/images/articles/facebook/trolling.jpg'
 	    },
 	    {
 	      image: 'http://i.imgur.com/2hlP4Wt.jpg'
