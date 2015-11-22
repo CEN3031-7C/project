@@ -9,6 +9,10 @@ module.exports = function(app) {
 		.get(manageEvents.list).all(manageEventsPolicy.isAllowed)
 		.post(manageEvents.create);
 
+	app.route('/api/manage-events/create').all()
+		.get(manageEvents.list).all(manageEventsPolicy.isAllowed)
+		.post(manageEvents.create);
+
 	app.route('/api/manage-events/:manageEventId').all(manageEventsPolicy.isAllowed)
 		.get(manageEvents.read)
 		.put(manageEvents.update)

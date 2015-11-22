@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
 /**
  * List of Manage events
  */
-exports.list = function(req, res) { ManageEvent.find().sort('-created').populate('user', 'displayName').exec(function(err, manageEvents) {
+exports.list = function(req, res) { ManageEvent.find().sort('-date').populate('user', 'displayName').exec(function(err, manageEvents) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

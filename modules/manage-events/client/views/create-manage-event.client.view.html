@@ -1,4 +1,4 @@
-<section data-ng-controller="ManageEventsController">
+<section data-ng-controller="ManageEventsController" ng-init="find()">
     <div class="page-header">
         <h1>New Manage event</h1>
     </div>
@@ -6,9 +6,40 @@
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">Name of the Event</label>
                     <div class="controls">
                         <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                    <!-- same as manage-app except for date -->
+                    <label class="control-label" for="date">Date of the Event</label>
+                    <div class="controls">
+                        <input type="date" ng-model="date" id="date" class="form-control" placeholder="Date" required>
+                    </div>
+                    
+                    <!-- <div class="col-md-6"> -->
+                           <!--  <p class="input-group">
+                              <input type="date" class="form-control" uib-datepicker-popup ng-model="date" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
+                            </p>
+                        </div> -->
+                    <!-- </div> -->
+                    <!-- Enter the description of the app -->
+                    <label class="control-label" for="description">Description of the Event</label>
+                    <div class="controls">
+                        <textarea rows="4" maxlength="455" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
+                        </textarea>
+                    </div>
+                    <!-- Upload picture or give link -->
+                    <label class="control-label" for="imageURL">Link to an App's image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="imageURL" id="imageURL" class="form-control" placeholder="Image URL" required>
+                    </div>
+                    <!-- link to the app -->
+                    <label class="control-label" for="appLink">Link to the Event page</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="link" id="link" class="form-control" placeholder="Link to the Event" required>
                     </div>
                 </div>
                 <div class="form-group">
