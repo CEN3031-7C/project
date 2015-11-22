@@ -4,6 +4,7 @@ var _ = require('lodash'),
  path = require('path'),
  mongoose = require('mongoose'),
  ManageApp = mongoose.model('ManageApp'),
+ NewsFeed = mongoose.model('NewsFeed'),
  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 
@@ -48,13 +49,3 @@ exports.renderNotFound = function (req, res) {
   });
 };
 
-exports.list = function(req, res) { console.log("Hey!"); ManageApp.find().sort('position').populate('user', 'displayName').exec(function(err, manageApps) {
-   if (err) {
-     return res.status(400).send({
-       message: errorHandler.getErrorMessage(err)
-     });
-   } else {
-     res.jsonp(manageApps);
-   }
- });
-};
