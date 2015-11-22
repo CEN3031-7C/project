@@ -12,7 +12,7 @@
                     </div>
                     <label class="control-label" for="description">Description of the Event</label>
                     <div class="controls">
-                        <textarea rows="4" maxlength="455" type="text" data-ng-model="manageEvent.description" id="description" class="form-control" placeholder="Description" required>
+                        <textarea rows="2" maxlength="512" type="text" data-ng-model="manageEvent.description" id="description" class="form-control" placeholder="Description" required>
                         </textarea>
                     </div>
                     <label class="control-label" for="imageURL">Link to an Event's image</label>
@@ -23,21 +23,14 @@
                     <div class="controls">
                         <input type="text" data-ng-model="manageEvent.link" id="manageEvent.link" class="form-control" placeholder="Link to the Event" required>
                     </div>
-                    <label class="control-label" for="date">Date of the Event</label>
                     <div style="display:inline-block; min-height:290px;">
+                        <label class="control-label" for="date">Date of the Event</label>
                         <datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
                     </div>
-                    <label class="control-label" for="date">        Date of the Event</label>
-                    <div class="dropdown">
-                    <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
-                    <div class="input-group"><input type="text" class="form-control" data-ng-model="data.dateDropDownInput"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                    </div>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
-                    </ul>
-                    </div>
-
+                    <div>
+                        <label class="control-label" for="eventLink">Time the Event</label>
+                        <timepicker data-ng-model="manageEvent.date" hour-step="1" minute-step="15" show-meridian="true"><timepicker>
+                    </div>                    
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">

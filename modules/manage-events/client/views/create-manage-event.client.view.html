@@ -15,7 +15,16 @@
                     <div class="controls">
                         <input type="date" ng-model="date" id="date" class="form-control" placeholder="Date" required>
                     </div>
-                    
+                    <div>
+                        <label for="exampleInput">Time of the Event</label>
+                        <input type="time" id="date" name="input" ng-model="date" placeholder="Time" required />
+                        <div role="alert">
+                            <span class="error" ng-show="myForm.input.$error.required">
+                             Required!</span>
+                            <span class="error" ng-show="myForm.input.$error.time">
+                             Not a valid time!</span>
+                       </div>
+                    </div>
                     <!-- <div class="col-md-6"> -->
                            <!--  <p class="input-group">
                               <input type="date" class="form-control" uib-datepicker-popup ng-model="date" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
@@ -41,6 +50,9 @@
                     <div class="controls">
                         <input type="text" data-ng-model="link" id="link" class="form-control" placeholder="Link to the Event" required>
                     </div>
+
+
+
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-default">
