@@ -2,7 +2,7 @@
 	<div class="page-header">
 		<h1 data-ng-bind="newsFeed.title"></h1>
 	</div>
-	<div class="list-group">
+	<div class="well well-sm">
         <!-- EDIT BUTTONS -->
          <div class="pull-right">  
 	        <!-- edit app -->
@@ -23,6 +23,7 @@
 	                <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
 	            </div>
     	        <div class="col-xs-10" style="white-space:pre-wrap;">
+            	    <h4 data-ng-bind="newsFeed.title"></h4>
             	    <p data-ng-bind="newsFeed.body_text">
                 	</p>
 	            </div>
