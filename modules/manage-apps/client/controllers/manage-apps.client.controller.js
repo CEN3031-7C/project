@@ -2,9 +2,9 @@
 
 // Manage apps controller
 angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps',
-	function($scope, $stateParams, $location, Authentication, ManageApps ) {
+	function($scope, $stateParams, $location, Authentication, ManageApps, $modal) {
 		$scope.authentication = Authentication;
-		$scope.manageApps = ManageApps.query();
+		//$scope.manageApps = ManageApps.query();
 
 
 		// Create new Manage app
@@ -145,5 +145,39 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				manageAppId: $stateParams.manageAppId
 			});
 		};
+
+		$scope.open = function (size) {
+
+    		var modalInstance = $modal.open({
+      			animation: true,
+      			templateUrl: 'modules/manage-apps/client/views/edit-manage-app.client.view.html',
+      			controller: 'ModalInstanceCtrl',
+      			size: size,
+      			resolve: {
+        			items: function () {
+          			return $scope.items;
+        			}
+      			}
+    		});	
+    		modalInstance.result.then(function (selectedItem) {
+     			$scope.selected = selectedItem;
+    		}, function () {
+    		});
+  		};
 	}
 ]);
+angular.module('manage-apps').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
