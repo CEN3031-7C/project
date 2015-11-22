@@ -19,10 +19,15 @@
 
 .dropdown-menu > li > a  {
   color: white;
+  background-color: white;
 }
 
 .nav .open > a {
   color: #0021a5;
+}
+
+.dropdown-menu > li > a > expanded-styling {
+  color: black;
 }
 /*nav bar end */
 
