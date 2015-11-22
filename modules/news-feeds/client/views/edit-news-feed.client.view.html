@@ -1,0 +1,52 @@
+<section data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit News feed</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <!-- Enter the title of the article -->
+                    <label class="control-label" for="title">Title of the News Article</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="newsFeed.title" id="title" class="form-control" placeholder="Title" required>
+                    </div>
+                     <!-- Enter the author  -->
+                    <label class="control-label" for="author">Name of the author</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="newsFeed.author" id="author" class="form-control" placeholder="Author's name" required>
+                    </div>
+                    <!-- Enter the description of the app -->
+                    <label class="control-label" for="body_text">The body of the article</label>
+                    <div class="controls">
+                        <textarea rows="4" maxlength="9999" type="text" data-ng-model="newsFeed.body_text" id="body_text" class="form-control" placeholder="Articles body" required>
+                        </textarea>
+                    </div>
+                    <!-- Upload picture or give link -->
+                    <label class="control-label" for="imageURL">Link to an Articles image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="newsFeed.imageURL" id="imageURL" class="form-control" placeholder="Image URL" required>
+                    </div>
+                    <!-- link to the app -->
+                    <label class="control-label" for="articleLink">Link to the Article</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="newsFeed.articleLink" id="articleLink" class="form-control" placeholder="Link to the Article" required>
+                    </div>
+                    <!--article date -->
+                    <label class="control-label" for="date">Date of the article</label>
+                    <br>
+                    <div style="display:inline-block; min-height:250px; max-height:250px; background: rgba(0, 0, 0, 0.0)">
+                        <datepicker ng-model="newsFeed.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+                    </div>                                                   
+                    
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

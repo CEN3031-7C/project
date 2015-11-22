@@ -1,6 +1,67 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
+
+
+/* navbar */
+
+.navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-nav > li > a:focus {
+  color: white;
+  background-color: #0021a5;
+}
+
+.navbar-nav > li > a:hover {
+  color: #0021a5;
+  background-color: white;
+}
+
+.navbar-static-top, .navbar-fixed-top, .navbar-fixed-bottom {
+  border-radius: 0;
+  border-bottom: 1px solid #f56f02;
+}
+
+.dropdown-menu > li > a  {
+  color: black;
+  background-color: white;
+}
+
+.nav .open > a {
+  color: #0021a5;
+  background-color: white;
+}
+
+.navbar .navbar-nav .open 
+.dropdown-menu > .active > a {
+  color: white;
+  background-color: #0021a5;
+  background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
+  background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
+  border-bottom: 1px solid #f56f02;
+  border-top: 1px solid #f56f02;
+}
+.navbar .navbar-nav .open 
+.dropdown-menu > .active > a:hover {
+  color: white;
+  background-color: #0021a5;
+  background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
+  background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
+  border-bottom: 1px solid #f56f02;
+  border-top: 1px solid #f56f02;
+}
+
+.navbar .navbar-nav .open 
+ .dropdown-menu > .active > a {
+  
+ }
+/*nav bar end */
+
+
+
+
 .content {
   margin-top: 50px;
 }
@@ -52,6 +113,14 @@ a:hover .header-profile-image {
 }
 
 /* App List end */
+
+/* Article list */
+
+.web-link {
+  margin: 0px;
+}
+
+/* Article list end */
 
 /* Beginning of Home Page */
 

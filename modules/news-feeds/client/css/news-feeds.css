@@ -1,0 +1,15 @@
+
+
+.app-image-list {
+  height: 100%;
+  width: 100%;
+  
+  display:block;
+  max-height: 100px;
+  max-width: 100px;
+  margin-top: 30px;
+}
+
+.page-header {
+	border-bottom: 0px;
+}

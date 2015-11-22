@@ -26,44 +26,58 @@
       </div>
     </div>
 
-    <!-- Manage Apps List -->
-    <hr class="featurette-divider" ng-show="appsToShow();">
-      <h2 class="featurette-heading text-center" style="margin-top: 0px" ng-show="appsToShow();">Recommended Applications</h2>
-    <div class="list-group">
-        <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0)">
-            <div class="container-fluid">  
-                <div class="row" >
-                    <div class="col-xs-2">
-                        <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
-                    </div>
-                    <div class="col-xs-10">
-                        <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
-                        <p data-ng-bind="manageApp.description">
-                        </p>
-                        <a ng-href="{{manageApp.appLink}}"><span class="fa fa-globe"></span> Website</a>
-                    </div>
-                </div>
-            </div>
+    <!--News articles -->
+    <hr class="featurette-divider" ng-show="newsToShow();">
+    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="newsToShow();">News Articles</h2>
+    <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item" ng-show="!newsFeed.hidden" style="background: rgba(0, 0, 0, 0.0)">   
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-2">
+            <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
+          </div>
+          <div class="col-xs-10" style="white-space:pre-wrap;">
+            <h2 class="list-group-item-heading" data-ng-bind="newsFeed.title"></h2>
+            <small class="pull-left"> By {{newsFeed.author}} on {{newsFeed.date | date : mediumDate}} </small>
+            <p>{{ getPreview(newsFeed) }}</p>
+            <a ng-href="{{newsFeed.articleLink}}" class="pull-left" ><span class="fa fa-globe"></span> Website</a>
+          </div>
         </div>
+      </div>
     </div>
 
+    <!--end of News articles class="pull-left"-->
+
+    <!-- Manage Apps List -->
+    <hr class="featurette-divider" ng-show="appsToShow();">
+    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="appsToShow();">Recommended Applications</h2>  
+    <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0)">
+      <div class="container-fluid">  
+        <div class="row" >
+          <div class="col-xs-2">
+            <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
+          </div>
+          <div class="col-xs-10">
+            <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name"></h4>
+            <p data-ng-bind="manageApp.description">
+            </p>
+            <a ng-href="{{manageApp.appLink}}"><span class="fa fa-globe"></span> Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+   
 
     <!-- Manage Apps End -->
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-offset-4 col-md-4">
-        <h2 class="featurette-heading">Related Sites</h2>
-      </div>
-    </div>
-
+    <h2 class="featurette-heading text-center" style="margin-top: 0px; margin-bottom: 80px">Related Sites</h2>
     <div class ="row featurette">
       <div class="col-md-2">
         <a href="www.ufl.edu"><img class="featurette-link img-responsive center-block" src="http://cdn3.sbnation.com/imported_assets/562347/modufseal.jpg"/></a>
       </div>
       <div class="col-md-offset-2 col-md-3">
-        <a href="ifas.ufl.edu"><img class="featurette-link img-responsive center-block" src="http://orange.ifas.ufl.edu/templates/images/uf_sig_ifas_blue.gif"/></a>
+        <a href="http://www.ifas.ufl.edu/"><img class="featurette-link img-responsive center-block" src="http://orange.ifas.ufl.edu/templates/images/uf_sig_ifas_blue.gif"/></a>
       </div>
       <div class="col-md-offset-2 col-md-2">
         <a href="twitter.com"><img class="featurette-link img-responsive center-block" src="http://sandy-lo.com/wp-content/uploads/2013/02/twittericon.png"/></a>

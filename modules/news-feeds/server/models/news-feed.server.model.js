@@ -7,13 +7,13 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 /**
- * Manage app Schema
+ * News feed Schema
  */
-var ManageAppSchema = new Schema({
-	name: {
+var NewsFeedSchema = new Schema({
+	title: {
 		type: String,
 		default: '',
-		required: 'Please fill apps name',
+		required: 'Please fill News feed name',
 		trim: true
 	},
 	created: {
@@ -24,11 +24,13 @@ var ManageAppSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	description: String,
+	author: String,
+	body_text: String,
 	imageURL: String,
-	appLink: String,
+	date: Date,
+	articleLink: String,
 	hidden: Boolean,
 	position: Number
 });
 
-mongoose.model('ManageApp', ManageAppSchema);
+mongoose.model('NewsFeed', NewsFeedSchema);

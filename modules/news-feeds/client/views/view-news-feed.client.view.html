@@ -1,0 +1,32 @@
+<section data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="newsFeed.title"></h1>
+	</div>
+	<div class="list-group">
+        <!-- EDIT BUTTONS -->
+         <div class="pull-right">  
+	        <!-- edit app -->
+	        <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
+	            <i class="glyphicon glyphicon-edit"></i>
+	        </a>
+    
+	        <!-- delete app -->
+	        <a class="btn btn-danger" data-ng-click="remove(newsFeed);">
+	            <i class="glyphicon glyphicon-trash"></i>
+	        </a>
+    
+	    </div> 
+		<div class="container-fluid">               
+		    
+	        <div class="row">
+	            <div class="col-xs-2">
+	                <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
+	            </div>
+    	        <div class="col-xs-10" style="white-space:pre-wrap;">
+            	    <p data-ng-bind="newsFeed.body_text">
+                	</p>
+	            </div>
+    	    </div>
+    	</div>      
+    </div>
+</section>
