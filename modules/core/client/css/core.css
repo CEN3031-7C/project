@@ -41,6 +41,7 @@
   background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
   background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
   border-bottom: 1px solid #f56f02;
+  border-top: 1px solid #f56f02;
 }
 .navbar .navbar-nav .open 
 .dropdown-menu > .active > a:hover {
@@ -49,7 +50,13 @@
   background-image: linear-gradient(to bottom, #0021a5 0%, #0021a5 100%);
   background-image: linear-gradient(rgb(0, 33, 165) 0%, rgb(0, 33, 165) 100%);
   border-bottom: 1px solid #f56f02;
+  border-top: 1px solid #f56f02;
 }
+
+.navbar .navbar-nav .open 
+ .dropdown-menu > .active > a {
+  
+ }
 /*nav bar end */
 
 
