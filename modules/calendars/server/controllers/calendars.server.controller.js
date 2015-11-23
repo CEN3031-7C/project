@@ -7,6 +7,8 @@ var _ = require('lodash'),
 	path = require('path'),
 	mongoose = require('mongoose'),
 	Calendar = mongoose.model('Calendar'),
+	ManageEvent = mongoose.model('ManageEvent'),
+
 	errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 var google = require('../../../../node_modules/googleapis/lib/googleapis.js');
