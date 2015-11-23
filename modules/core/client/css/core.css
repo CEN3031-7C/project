@@ -15,6 +15,7 @@
 
 .body {
   padding: 0px;
+  background-color: white;
 }
 
 .navbar-nav > li > a:focus {
@@ -280,7 +281,6 @@ hr {
 
     body {
     padding: 60px 0px;
-    background-color: rgb(220, 220, 220);
   }
     
     .event-list {

@@ -1,8 +1,8 @@
 'use strict';
 
 // Manage apps controller
-angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps',
-	function($scope, $stateParams, $location, Authentication, ManageApps, $modal) {
+angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps','$uibModal',
+	function($scope, $stateParams, $location, Authentication, ManageApps, $uibModal, items) {
 		$scope.authentication = Authentication;
 		//$scope.manageApps = ManageApps.query();
 
@@ -146,35 +146,34 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			});
 		};
 
-		$scope.open = function (size) {
+		$scope.items = ['item1', 'item2', 'item3'];
 
-    		var modalInstance = $modal.open({
+		$scope.open = function (size, manageApp) {
+
+    		var modalInstance = $uibModal.open({
       			animation: true,
-      			templateUrl: 'modules/manage-apps/client/views/edit-manage-app.client.view.html',
+      			templateUrl: 'myModalContent.html',
       			controller: 'ModalInstanceCtrl',
       			size: size,
       			resolve: {
-        			items: function () {
-          			return $scope.items;
-        			}
+      				manageApp: function() {
+      					return $scope.manageApp;
+      				}
       			}
-    		});	
-    		modalInstance.result.then(function (selectedItem) {
-     			$scope.selected = selectedItem;
-    		}, function () {
     		});
+    		modalInstance.result.then(function (selectedItem) {
+      			$scope.selected = selectedItem;
+   			}, function () {
+    		});	 		
   		};
 	}
 ]);
-angular.module('manage-apps').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('manage-apps').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+  
 
   $scope.ok = function () {
-    $uibModalInstance.close($scope.selected.item);
+    $uibModalInstance.close();
   };
 
   $scope.cancel = function () {
