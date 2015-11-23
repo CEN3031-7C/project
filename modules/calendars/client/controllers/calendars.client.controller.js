@@ -1,8 +1,8 @@
 'use strict';
 
 // Calendars controller
-angular.module('calendars').controller('CalendarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Calendars',
-	function($scope, $stateParams, $location, Authentication, Calendars ) {
+angular.module('calendars').controller('CalendarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Calendars', 'ManageEvents',
+	function($scope, $stateParams, $location, Authentication, Calendars, ManageEvents ) {
 		$scope.authentication = Authentication;
 
 		// Create new Calendar
@@ -52,7 +52,9 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 
 		// Find a list of Calendars
 		$scope.find = function() {
+			console.log("Called find()!");
 			$scope.calendars = Calendars.query();
+			$scope.ManageEvents = ManageEvents.query();
 		};
 
 		// Find existing Calendar
