@@ -32,6 +32,7 @@ var printResult = function(err, result) {
  * Create a Calendar
  */
 exports.create = function(req, res) {
+	console.log('createMongo called');
 	var calendar = new Calendar(req.body);
 	calendar.user = req.user;
 
@@ -42,6 +43,26 @@ exports.create = function(req, res) {
 			});
 		} else {
 			res.jsonp(calendar);
+		}
+	});
+};
+
+/**
+ * Create mongoDB event
+ */
+
+ exports.createMongo = function(req, res) {
+ 	console.log('createMongo called');
+	var manageEvent = new ManageEvent(req.body);
+	manageEvent.user = req.user;
+
+	manageEvent.save(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(manageEvent);
 		}
 	});
 };

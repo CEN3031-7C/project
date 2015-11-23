@@ -14,10 +14,37 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 
 			// Redirect after save
 			calendar.$save(function(response) {
-				$location.path('calendars/' + response._id);
+				$location.path('calendars/eventsList');
 
 				// Clear form fields
 				$scope.summary = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+		// Create new Manage event object
+		$scope.createMongo = function() {
+			console.log("BLAAAAAAAAAAAAAAAAAAAA");
+			var manageEvent = new ManageEvents ({
+				name: this.name,
+				description: this.description,
+				date: this.date,
+				imageURL: this.imageURL,
+				link: this.link,
+				hidden: false,
+				position: $scope.getPosition()
+			});
+
+			// Redirect after save
+			manageEvent.$save(function(response) {
+				$location.path('admin/manage-events');
+
+				// Clear form fields
+				$scope.name = '';
+				$scope.description = '';
+				$scope.imageURL = '';
+				$scope.link = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -42,7 +69,6 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 		// Update existing Calendar
 		$scope.update = function() {
 			var calendar = $scope.calendar ;
-
 			calendar.$update(function() {
 				$location.path('calendars/' + calendar._id);
 			}, function(errorResponse) {
@@ -54,7 +80,7 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 		$scope.find = function() {
 			console.log("Called find()!");
 			$scope.calendars = Calendars.query();
-			$scope.ManageEvents = ManageEvents.query();
+			$scope.manageEvents = ManageEvents.query();
 		};
 
 		// Find existing Calendar
@@ -62,6 +88,10 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 			$scope.calendar = Calendars.get({ 
 				calendarId: $stateParams.calendarId
 			});
+		};
+
+		$scope.getPosition = function() {
+			return $scope.manageEvents.length;
 		};
 	}
 ]);
