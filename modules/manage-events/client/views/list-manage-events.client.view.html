@@ -15,30 +15,30 @@
       </ul>
     </span> -->
 
-    <div class="list-group">
-        <div data-ng-repeat="manageEvent in manageEvents"  class="list-group-item"> 
+    <!-- <div class="list-group">
+        <div data-ng-repeat="manageEvent in manageEvents"  class="list-group-item">  -->
         <!-- <a data-ng-repeat="manageEvent in manageEvents"  class="list-group-item" popover-placement="left" popover="On the Bottom!" type="button" class="btn btn-default"> -->
         <!-- data-ng-href="/#!/admin/manage-events/{{manageEvent._id}}/edit" -->
            <!--  <div> -->
            <!-- <button popover-placement="bottom" popover="On the Bottom!" type="button" class="btn btn-default"> -->
-    			<small class="list-group-item-text">
+    			<!-- <small class="list-group-item-text">
     				Posted on
     				<span data-ng-bind="manageEvent.created | date:'medium'"></span>
     				by
     				<span data-ng-bind="manageEvent.user.displayName"></span>
-                    
+
     			</small>
                 
-                <div class="pull-right">
+                <div class="pull-right"> -->
                     <!-- edit app -->
-                    <a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
+                    <!-- <a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
-                    </a>   
+                    </a>  -->  
                     <!-- delete app -->
-                    <a class="btn btn-danger" data-ng-click="remove(manageEvent);">
+                <!--     <a class="btn btn-danger" data-ng-click="remove(manageEvent);">
                         <i class="glyphicon glyphicon-trash"></i>
                     </a> 
-                </div>
+                </div> -->
                 
            <!--  </button> -->
            <!--  </div> -->
@@ -47,44 +47,47 @@
                         <i class="glyphicon glyphicon-trash"></i>
                 </a>
             </div> -->
-			<h4 class="list-group-item-heading" data-ng-bind="manageEvent.name"></h4>
+		<!-- 	<h4 class="list-group-item-heading" data-ng-bind="manageEvent.name"></h4>
 
         </div>
-    </div>
+    </div> -->
 
     <ul class="event-list">                                             
-        <li data-ng-repeat="manageEvent in manageEvents" class="list-group-item">>                
-            <!-- We will replace this image by one from the Events_List or the event, or use upload -->
-            <img alt="No Picture" src="manageEvent.imageURL">
-            <!--img src="{{calendar.imageURL}}"-->
-            <!--img class="app-image-list center-block" ng-src="{{calendar.imageURL}}"-->
+        <li data-ng-repeat="manageEvent in manageEvents" class="list-group-item">                
+        <img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
             <time >
-                <span class="month" data-ng-bind="manageEvent.date | date:'medium'"></span>
+                <span class="month" data-ng-bind="manageEvent.date | date:'mediumDate'"></span>
+                <span class="month" data-ng-bind="manageEvent.date | date:'shortTime'"></span>
             </time> 
+
             <div class="info">
-                <!-- Event Info -->                                 
-                <h2 class="title" data-ng-bind="manageEvent.description"></h2>
+                <!-- Event Info --> 
+                <h2 class="title"> <b>{{manageEvent.name}}</b> <sub>by <em>{{manageEvent.user.displayName}}</em></sub></h2>
+               <!--  <h2 class="title" data-ng-bind="manageEvent.name"> </h2> -->
                 <small class="list-group-item-text" >
                     <style>
                         p{margin-left:10px;}
-                    </style>
-                    <p>                         
-                        <br>
-                        by
-                        <span data-ng-bind="manageEvent.user.displayName"></span>
-                        <!--span data-ng-bind="calendar.user.displayName"></span-->
+                    </style>   
+                    <br>                      
+                    <p>
+                        <span data-ng-bind="manageEvent.description"></span>
                     </p>
                 </small>
                 <!--The following will be linked to a feedback page, and the actual Event Page -->
                 <!--p data-ng-bind="calendar.imageURL" />-->
                 <ul>
-                    <li style="width:33%;"><a href="#Event's website"><span class="fa fa-globe"></span> Website</a></li>
-                    <li style="width:33%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+                    <li style="width:20%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
+                    <li style="width:20%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+                    <li style="width:1%;"><a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i></a></li>
+                    <li style="width:1%;"><a class="btn btn-danger" data-ng-click="remove(manageEvent);">
+                    <i class="glyphicon glyphicon-trash"></i></a></li>
+                </a> 
                 </ul>                           
             </div>  
+            
         </li>                       
-    </ul>               
-
+    </ul>
     <div class="alert alert-warning text-center" data-ng-hide="!manageEvents.$resolved || manageEvents.length">
     	No events yet, would you like to <a href="/#!/admin/manage-events/create">create one</a>?
     </div>
