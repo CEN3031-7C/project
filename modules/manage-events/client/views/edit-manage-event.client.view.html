@@ -1,0 +1,44 @@
+<section data-ng-controller="ManageEventsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Manage event</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name of the Event</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="manageEvent.name" id="name" class="form-control" placeholder="Event Title" required>
+                    </div>
+                    <label class="control-label" for="description">Description of the Event</label>
+                    <div class="controls">
+                        <textarea rows="2" maxlength="512" type="text" data-ng-model="manageEvent.description" id="description" class="form-control" placeholder="Description" required>
+                        </textarea>
+                    </div>
+                    <label class="control-label" for="imageURL">Link to an Event's image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="manageEvent.imageURL" id="imageURL" class="form-control" placeholder="https://www.imageURL.com" required>
+                    </div>
+                    <label class="control-label" for="eventLink">Link to the Event</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="manageEvent.link" id="manageEvent.link" class="form-control" placeholder="Link to the Event" required>
+                    </div>
+                    <div style="display:inline-block; min-height:290px;" >
+                        <label class="control-label" for="date">Date of the Event</label>
+                        <datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+                    </div>
+                    <div >
+                        <label class="control-label" for="eventLink">Time the Event</label>
+                        <timepicker data-ng-model="manageEvent.date" hour-step="1" minute-step="15" show-meridian="true"><timepicker>
+                    </div>                    
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
