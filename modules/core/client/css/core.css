@@ -9,6 +9,15 @@
   color: white;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
+
+.body {
+  padding: 0px;
+  background-color: white;
+}
+
 .navbar-nav > li > a:focus {
   color: white;
   background-color: #0021a5;
@@ -63,7 +72,7 @@
 
 
 .content {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .undecorated-link:hover {
   text-decoration: none;
@@ -140,13 +149,13 @@ body {
 .cimage{
   width: 100%;
   height: auto;
-  max-height: 375px;
+  max-height: 500px;
 }
 .slides_control {
   position: relative;
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 500px;
   left:0%;
   top:20px;
 }
@@ -272,7 +281,6 @@ hr {
 
     body {
     padding: 60px 0px;
-    background-color: rgb(220, 220, 220);
   }
     
     .event-list {
