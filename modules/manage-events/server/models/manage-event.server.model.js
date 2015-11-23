@@ -31,8 +31,7 @@ var ManageEventSchema = new Schema({
 	},
 	link : String,
 	imageURL : String,
-	pending : Boolean,
-	hidden  : Boolean
+	pending : Boolean
 });	
 
 //IMPLEMENT FOR FEEDBACK

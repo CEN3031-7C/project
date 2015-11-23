@@ -15,7 +15,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 				date: this.date,
 				imageURL: this.imageURL,
 				link: this.link,
-				hidden: false,
+				pending: false,
 				position: $scope.getPosition()
 			});
 
