@@ -25,7 +25,7 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 
 		// Create new Manage event object
 		$scope.createMongo = function() {
-			console.log("BLAAAAAAAAAAAAAAAAAAAA");
+			console.log("createMongo");
 			var manageEvent = new ManageEvents ({
 				name: this.name,
 				description: this.description,
@@ -37,6 +37,7 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 			});
 
 			// Redirect after save
+			console.log("createMongoSave");
 			manageEvent.$save(function(response) {
 				$location.path('calendars/eventsList');
 

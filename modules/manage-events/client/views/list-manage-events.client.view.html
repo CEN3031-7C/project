@@ -1,9 +1,11 @@
 <section class="container" data-ng-controller="ManageEventsController" data-ng-init="find()">
     <div class="page-header">
-        <h1>Manage events</h1>
+        <br>
+        <h1>Manage events
+        <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-info">Create an Event</button></a>
+        </h1>
     </div>
-
-    <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Event</button></a>
+    <br>
 <!--     <span dropdown on-toggle="toggled(open)">
       <a href id="simple-dropdown" dropdown-toggle>
         Click me for a dropdown, yo!
@@ -74,13 +76,23 @@
                     </p>
                 </small>
                 <ul>
-                    <li style="width:20%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
-                    <li style="width:20%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
-                    <li style="width:1%;"><a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
+                    <li style="width:40%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
+                    <li style="width:40%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+                    <li style="width:2%;"><a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i></a></li>
-                    <li style="width:1%;"><a class="btn btn-danger" data-ng-click="remove(manageEvent);">
+                    <li style="width:0.5%;"></li>
+                    <li style="width:2%;"><a class="btn btn-danger" data-ng-click="remove(manageEvent);">
                     <i class="glyphicon glyphicon-trash"></i></a></li>
-                </a> 
+                    <li style="width:0.5%;"></li>
+                    <!-- hide app -->
+                    <li style="width:2%;"> <a class="btn btn-warning" data-ng-click="show(manageEvent);" ng-show="manageEvent.pending">
+                        <i class="glyphicon glyphicon-floppy-saved"></i>
+                    </a>   
+                    <!-- show app -->
+                    <a class="btn btn-success" data-ng-click="hide(manageEvent);" ng-show="!manageEvent.pending">
+                        <i class="glyphicon glyphicon-check"></i>
+                    </a>
+                    </li> 
                 </ul>                           
             </div>  
             
