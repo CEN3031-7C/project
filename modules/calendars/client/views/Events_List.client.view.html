@@ -8,7 +8,7 @@
     <a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Submit Event</button></a>
 
 	<ul class="event-list">												
-		<li data-ng-repeat="manageEvent in manageEvents"> 			
+		<li data-ng-repeat="manageEvent in manageEvents" ng-show="!manageEvent.pending"> 			
 			<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 			<img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
 			<!--img src="{{calendar.imageURL}}"-->
