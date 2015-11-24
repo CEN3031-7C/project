@@ -25,20 +25,21 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 
 		// Create new Manage event object
 		$scope.createMongo = function() {
-			console.log("BLAAAAAAAAAAAAAAAAAAAA");
+			console.log("createMongo");
 			var manageEvent = new ManageEvents ({
 				name: this.name,
 				description: this.description,
 				date: this.date,
 				imageURL: this.imageURL,
 				link: this.link,
-				hidden: false,
+				pending: true,
 				position: $scope.getPosition()
 			});
 
 			// Redirect after save
+			console.log("createMongoSave");
 			manageEvent.$save(function(response) {
-				$location.path('admin/manage-events');
+				$location.path('calendars/eventsList');
 
 				// Clear form fields
 				$scope.name = '';

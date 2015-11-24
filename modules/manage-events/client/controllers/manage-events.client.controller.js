@@ -75,14 +75,14 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 
 		$scope.hide = function(manageEvent) {
 			if (manageEvent) {
-				manageEvent.hidden = true;
+				manageEvent.pending = true;
 			}
 			manageEvent.$update();
 		};
 
 		$scope.show = function(manageEvent) {
 			if (manageEvent) {
-				manageEvent.hidden = false;
+				manageEvent.pending = false;
 			}
 			manageEvent.$update();
 		};
