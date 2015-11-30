@@ -1,10 +1,9 @@
 'use strict';
 
 // Manage apps controller
-angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps','$uibModal',
-	function($scope, $stateParams, $location, Authentication, ManageApps, $uibModal, items) {
+angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps','$uibModal', '$log',
+	function($scope, $stateParams, $location, Authentication, ManageApps, $uibModal, $log) {
 		$scope.authentication = Authentication;
-		//$scope.manageApps = ManageApps.query();
 
 
 		// Create new Manage app
@@ -135,10 +134,6 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			return $scope.manageApps.length;
 		};
 
-		//$scope.count = function () {
-		//	return req;
-		//};
-
 		// Find existing Manage app
 		$scope.findOne = function() {
 			$scope.manageApp = ManageApps.get({ 
@@ -146,37 +141,30 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 			});
 		};
 
-		$scope.items = ['item1', 'item2', 'item3'];
+		//modal to edit the app
 
-		$scope.open = function (size, manageApp) {
-
-    		var modalInstance = $uibModal.open({
-      			animation: true,
-      			templateUrl: 'myModalContent.html',
-      			controller: 'ModalInstanceCtrl',
+		$scope.modalUpdate = function (size, selectedApp) {
+			console.log("Well then");
+	    	var modalInstance = $uibModal.open({
+  		    	animation: $scope.animationsEnabled,
+      			templateUrl: 'modules/manage-apps/client/views/edit-app-modal.client.view.html',
+      			controller: function ($scope, $uibModalInstance, app) {
+      				$scope.app = app;
+      			},
       			size: size,
       			resolve: {
-      				manageApp: function() {
-      					return $scope.manageApp;
-      				}
+        			app: function () {
+        				return selectedApp;
+        			}
       			}
     		});
-    		modalInstance.result.then(function (selectedItem) {
+
+		    modalInstance.result.then(function (selectedItem) {
       			$scope.selected = selectedItem;
-   			}, function () {
-    		});	 		
+    		}, function () {
+      			$log.info('Modal dismissed at: ' + new Date());
+    		});
   		};
+
 	}
 ]);
-angular.module('manage-apps').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance) {
-
-  
-
-  $scope.ok = function () {
-    $uibModalInstance.close();
-  };
-
-  $scope.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
