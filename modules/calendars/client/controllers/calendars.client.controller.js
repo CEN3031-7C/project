@@ -2,7 +2,7 @@
 
 // Calendars controller
 angular.module('calendars').controller('CalendarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Calendars', 'ManageEvents',
-	function($scope, $stateParams, $location, Authentication, Calendars, ManageEvents ) {
+	function($scope, $stateParams, $location, Authentication, Calendars, ManageEvents) {
 		$scope.authentication = Authentication;
 
 		// Create new Calendar

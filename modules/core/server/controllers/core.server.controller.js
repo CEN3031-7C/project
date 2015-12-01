@@ -5,6 +5,7 @@ var _ = require('lodash'),
  mongoose = require('mongoose'),
  ManageApp = mongoose.model('ManageApp'),
  NewsFeed = mongoose.model('NewsFeed'),
+ ManageContact = mongoose.model('ManageContact'),
  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 

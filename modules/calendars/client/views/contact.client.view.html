@@ -1,84 +1,27 @@
-  <!--<script src="script.js"></script>-->
-  <section class="container">
-    <div class="contact_header">
-      <h1>Contact Information By County</h1>
-    </div>
-    <div class="contact_table">          
+<section ui-view ng-controller="HomeController" ng-init="find()">
+   <!-- Carousel
+  ==================================================
+  <!-- Featurettes -->
+  <div class="container marketing" style="margin-top: 20px;">
+
+    <!--Contact List-->
+    <hr class="featurette-divider" ng-show="contactToShow();">
+    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="contactToShow();">Contact Information By County</h2>
+	<div class="contact_table">
+    <div data-ng-repeat="manageContact in manageContacts"  class="list-group-item" ng-show="!manageContact.hidden" style="background: rgba(0, 0, 0, 0.0)">
+
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>County</th>
-            <th>Zip Code</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
+            <th data-ng-bind="manageContact.county"></th>
+            <th data-ng-bind="manageContact.zip_code"></th>
+            <th data-ng-bind="manageContact.name"></th>
+            <th data-ng-bind="manageContact.email"></th>
+            <th data-ng-bind="manageContact.phone_number"></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-          <tr>
-            <td>Alachua</td>
-            <td>32601</td>
-            <td>Joe Blow</td>
-            <td>joeblows@ufl.edu</td>
-            <td>352-111-1111</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+     </table>
+		</div>
+  </div>
+  </div><!-- /.container -->
+</section>

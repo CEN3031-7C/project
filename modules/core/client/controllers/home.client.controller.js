@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps', 'NewsFeeds',
-  function ($scope, Authentication, ManageApps, NewsFeeds) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps', 'NewsFeeds', 'ManageContacts',
+  function ($scope, Authentication, ManageApps, NewsFeeds, ManageContacts) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
     $scope.isCollapsed = false;
@@ -31,6 +31,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         console.log("Called find()!");
         $scope.manageApps = ManageApps.query();
         $scope.newsFeeds = NewsFeeds.query();
+        $scope.manageContacts = ManageContacts.query();
     };
 
     //see if there is any apps to showcase
