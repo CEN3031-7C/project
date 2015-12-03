@@ -1,8 +1,8 @@
 'use strict';
 
 // Manage apps controller
-angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps','$uibModal', '$log',
-	function($scope, $stateParams, $location, Authentication, ManageApps, $uibModal, $log) {
+angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageApps',
+	function($scope, $stateParams, $location, Authentication, ManageApps) {
 		$scope.authentication = Authentication;
 
 
@@ -140,31 +140,5 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				manageAppId: $stateParams.manageAppId
 			});
 		};
-
-		//modal to edit the app
-
-		$scope.modalUpdate = function (size, selectedApp) {
-			console.log("Well then");
-	    	var modalInstance = $uibModal.open({
-  		    	animation: $scope.animationsEnabled,
-      			templateUrl: 'modules/manage-apps/client/views/edit-app-modal.client.view.html',
-      			controller: function ($scope, $uibModalInstance, app) {
-      				$scope.app = app;
-      			},
-      			size: size,
-      			resolve: {
-        			app: function () {
-        				return selectedApp;
-        			}
-      			}
-    		});
-
-		    modalInstance.result.then(function (selectedItem) {
-      			$scope.selected = selectedItem;
-    		}, function () {
-      			$log.info('Modal dismissed at: ' + new Date());
-    		});
-  		};
-
 	}
 ]);

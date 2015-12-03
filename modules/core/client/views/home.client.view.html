@@ -2,11 +2,11 @@
    <!-- Carousel
   ================================================== -->
   <div class = "slides_control">
-    <carousel interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
+    <uib-carousel interval="myInterval">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
         <img class = "cimage" ng-src="{{slide.image}}">
-      </slide>
-    </carousel>
+      </uib-slide>
+    </uib-carousel>
   </div><!-- /.carousel -->
 
   <!-- Featurettes -->
@@ -27,8 +27,8 @@
     </div>
 
     <!--News articles -->
-    <hr class="featurette-divider" ng-show="newsToShow();">
-    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="newsToShow();">News Articles</h2>
+    <hr class="featurette-divider" ng-show="!newsToShow();">
+    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="!newsToShow();">News Articles</h2>
     <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item" ng-show="!newsFeed.hidden" style="background: rgba(0, 0, 0, 0.0)">   
       <div class="container-fluid">
         <div class="row">
