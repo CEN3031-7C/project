@@ -2,19 +2,36 @@
 
 // Imgs controller
 angular.module('imgs').controller('ImgsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Imgs',
-	function($scope, $stateParams, $location, Authentication, Imgs ) {
+	function($scope, $stateParams, $location, Authentication, Imgs) {
 		$scope.authentication = Authentication;
+
+		// Find a list of Imgs
+		$scope.find = function() {
+			$scope.imgs = Imgs.query();
+		};
+
+		// Find existing Img
+		$scope.findOne = function() {
+			$scope.img = Imgs.get({ 
+				imgId: $stateParams.imgId
+			});
+		};
+
+		$scope.getPosition = function() {
+			return $scope.imgs.length;
+		};
 
 		// Create new Img
 		$scope.create = function() {
 			// Create new Img object
 			var img = new Imgs ({
-				name: this.name
+				name: this.name,
+				position: $scope.getPosition()
 			});
 
 			// Redirect after save
 			img.$save(function(response) {
-				$location.path('imgs/' + response._id);
+				$location.path('admin/imgs');
 
 				// Clear form fields
 				$scope.name = '';
@@ -34,7 +51,7 @@ angular.module('imgs').controller('ImgsController', ['$scope', '$stateParams', '
 				}
 			} else {
 				$scope.img.$remove(function() {
-					$location.path('imgs');
+					$location.path('admin/imgs');
 				});
 			}
 		};
@@ -44,22 +61,50 @@ angular.module('imgs').controller('ImgsController', ['$scope', '$stateParams', '
 			var img = $scope.img ;
 
 			img.$update(function() {
-				$location.path('imgs/' + img._id);
+				$location.path('admin/imgs/' + img._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
 		};
 
-		// Find a list of Imgs
-		$scope.find = function() {
-			$scope.imgs = Imgs.query();
+		$scope.pushUp = function(img) {
+			var i;
+			for (i = 0; i < $scope.imgs.length; i++) {
+				if ($scope.imgs[i] === img) {
+					if (i === 0) {
+						return;
+					}
+					var x = $scope.imgs[i].position;
+					var y = $scope.imgs[i-1].position;
+					$scope.imgs[i].position = y;
+					$scope.imgs[i-1].position = x;	
+					$scope.imgs[i] = $scope.imgs[i-1];
+					$scope.imgs[i-1] = img;
+					$scope.imgs[i].$update();
+					$scope.imgs[i-1].$update();
+					break;
+				}
+			}
 		};
 
-		// Find existing Img
-		$scope.findOne = function() {
-			$scope.img = Imgs.get({ 
-				imgId: $stateParams.imgId
-			});
+		$scope.pushDown = function(img) {
+			var i;
+			for (i = 0; i < $scope.imgs.length; i++) {
+				if ($scope.imgs[i] === img) {
+					if (i === $scope.imgs.length -1) {
+						return;
+					}
+					var x = $scope.imgs[i].position;
+					var y = $scope.imgs[i+1].position;
+					$scope.imgs[i].position = y;
+					$scope.imgs[i+1].position = x;
+					$scope.imgs[i] = $scope.imgs[i+1];
+					$scope.imgs[i+1] = img;
+					$scope.imgs[i].$update();
+					$scope.imgs[i+1].$update();	
+					break;
+				}
+			}			
 		};
 	}
 ]);

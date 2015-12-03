@@ -3,11 +3,15 @@
   ================================================== -->
   <div class = "slides_control">
     <carousel interval="myInterval">
-      <slide ng-repeat="slide in slides" active="slide.active">
-        <img class = "cimage" ng-src="{{slide.image}}">
+      <slide ng-repeat="img in imgs" active="img.active">
+        <img class = "cimage" ng-src="{{img.name}}">
       </slide>
     </carousel>
   </div><!-- /.carousel -->
+
+  <div align="center">
+    <a href="/admin/imgs"><button style="margin-top: 50px;" type="button" class="btn btn-warning" ng-show="authentication.user">Edit Images</button></a>
+  </div>
 
   <!-- Featurettes -->
   <div class="container marketing">

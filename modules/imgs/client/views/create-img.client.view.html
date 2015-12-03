@@ -1,14 +1,14 @@
-<section data-ng-controller="ImgsController">
+<section class="container" data-ng-controller="ImgsController" ng-init="find()">
     <div class="page-header">
-        <h1>New Img</h1>
+        <h1>New Image</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">URL</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="URL" required>
                     </div>
                 </div>
                 <div class="form-group">

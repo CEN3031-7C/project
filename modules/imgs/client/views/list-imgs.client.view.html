@@ -1,19 +1,43 @@
-<section data-ng-controller="ImgsController" data-ng-init="find()">
-    <div class="page-header">
-        <h1>Imgs</h1>
+<section class="container" data-ng-controller="ImgsController" data-ng-init="find()">
+    <div class="page-header" align="center">
+        <h1>Images</h1>
     </div>
-    <div class="list-group">
-        <a data-ng-repeat="img in imgs" data-ng-href="/#!/imgs/{{img._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="img.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="img.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="img.name"></h4>
-        </a>
+
+    <div align="center">
+    <a href="/admin/imgs/create"><button style="margin-bottom: 25px;" type="button" class="btn btn-warning">Add New Image</button></a>
+    </div>
+
+    <div data-ng-repeat="img in imgs">
+        <div class="well well-sm" align="center">
+            <div class="media">
+                <img class="media-img" width="200" height="200" ng-src="{{img.name}}"/> 
+            </div>
+            <div class="media">
+                <div class="media-body">
+                    <!-- EDIT BUTTONS -->
+                    <div class ="media-right media-middle"> 
+                        <!-- push image up -->
+                        <a class="btn btn-primary" data-ng-click="pushUp(img);" >
+                            <i class="glyphicon glyphicon-menu-up"></i>
+                        </a>  
+                        <!-- push image down -->
+                        <a class="btn btn-primary" data-ng-click="pushDown(img);">
+                            <i class="glyphicon glyphicon-menu-down"></i>
+                        </a>      
+                        <!-- edit image -->
+                        <a class="btn btn-primary" href="/admin/imgs/{{img._id}}/edit">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>    
+                        <!-- delete image -->
+                        <a class="btn btn-danger" data-ng-click="remove(img);">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!imgs.$resolved || imgs.length">
-    	No Imgs yet, why don't you <a href="/#!/imgs/create">create one</a>?
+        No Imgs yet, why don't you <a href="/admin/imgs/create">create one</a>?
     </div>
 </section>

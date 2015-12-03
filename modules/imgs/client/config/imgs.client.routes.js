@@ -5,26 +5,26 @@ angular.module('imgs').config(['$stateProvider',
 	function($stateProvider) {
 		// Imgs state routing
 		$stateProvider.
-		state('imgs', {
+		state('admin.imgs', {
 			abstract: true,
 			url: '/imgs',
 			template: '<ui-view/>'
 		}).
-		state('imgs.list', {
+		state('admin.imgs.list', {
 			url: '',
-			templateUrl: 'modules/imgs/views/list-imgs.client.view.html'
+			templateUrl: 'modules/imgs/client/views/list-imgs.client.view.html'
 		}).
-		state('imgs.create', {
+		state('admin.imgs.create', {
 			url: '/create',
-			templateUrl: 'modules/imgs/views/create-img.client.view.html'
+			templateUrl: 'modules/imgs/client/views/create-img.client.view.html'
 		}).
-		state('imgs.view', {
+		state('admin.imgs.view', {
 			url: '/:imgId',
-			templateUrl: 'modules/imgs/views/view-img.client.view.html'
+			templateUrl: 'modules/imgs/client/views/view-img.client.view.html'
 		}).
-		state('imgs.edit', {
+		state('admin.imgs.edit', {
 			url: '/:imgId/edit',
-			templateUrl: 'modules/imgs/views/edit-img.client.view.html'
+			templateUrl: 'modules/imgs/client/views/edit-img.client.view.html'
 		});
 	}
 ]);

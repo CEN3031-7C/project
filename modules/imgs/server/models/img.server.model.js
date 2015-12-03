@@ -23,7 +23,8 @@ var ImgSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	}
+	},
+	position: Number
 });
 
 mongoose.model('Img', ImgSchema);
