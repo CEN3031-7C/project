@@ -1,15 +1,13 @@
 <section data-ng-controller="CalendarsController" data-ng-init="find()">
 <section class="container">
-    <div class="page-header">
-    	<br>	
+    <div class="page-header text-center">	
 		<h1> Upcoming Events
-		<a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-info btn-xs">Submit an Event</button></a>
 		</h1>
-    </div>				
+    </div>		
+    <a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Submit an Event</button></a>		
 	
 	<!-- submit an event -->
     
-	<br>
 	<ul class="event-list">												
 		<li data-ng-repeat="manageEvent in manageEvents" ng-show="!manageEvent.pending"> 			
 			<!-- We will replace this image by one from the Events_List or the event, or use upload -->
