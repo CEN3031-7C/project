@@ -6,8 +6,7 @@ angular.module('calendars').run(['Menus',
 		// Add the Calendars dropdown item
 		Menus.addMenuItem('topbar', {
 			title: 'Events',
-			state: 'calendars',
-			type: 'dropdown',
+			state: 'calendars.eventslist',
 			roles: ['*']
 		});
 		Menus.addMenuItem('topbar', {
@@ -15,16 +14,6 @@ angular.module('calendars').run(['Menus',
 			state: 'contact.list',
 			roles: ['*']
 		});
-		Menus.addSubMenuItem('topbar', 'calendars', {
-	      title: 'Events List',
-	      state: 'calendars.eventslist'
-	    });
-
-	    Menus.addSubMenuItem('topbar', 'calendars', {
-	      title: 'Google Calendar',
-	      state: 'calendars.gCalendar'
-	    });
-
 	    Menus.addSubMenuItem('topbar', 'admin', {
 	      title: 'Manage Events',
 	      state: 'calendars.manageevents'
