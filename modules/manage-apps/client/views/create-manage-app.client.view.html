@@ -1,4 +1,4 @@
-<section data-ng-controller="ManageAppsController">
+<section data-ng-controller="ManageAppsController" data-ng-init="find()">
 <section class="container">   
     <div class="page-header">
         <h1>New App</h1>
@@ -16,7 +16,7 @@
                     <!-- Enter the description of the app -->
                     <label class="control-label" for="description">Description of the App</label>
                     <div class="controls">
-                        <textarea rows="4" maxlength="455" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
+                        <textarea rows="4" maxlength="2500" type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description" required>
                         </textarea>
                     </div>
                     <!-- Upload picture or give link -->
@@ -25,7 +25,7 @@
                         <input type="text" data-ng-model="imageURL" id="imageURL" class="form-control" placeholder="Image URL" required>
                     </div>
                     <!-- link to the app -->
-                    <label class="control-label" for="appLink">Link to the App</label>
+                    <label class="control-label" for="appLink">Link to the App <small>(Please include http:// or https:// in the link)</small></label>
                     <div class="controls">
                         <input type="text" data-ng-model="appLink" id="appLink" class="form-control" placeholder="Link to the App" required>
                     </div>

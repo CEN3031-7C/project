@@ -22,11 +22,11 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     	var i;
     	for (i = 0; i < $scope.manageApps.length; i++) {
     		if ($scope.manageApps[i].hidden === false) {
-    			//console.log("returning true for apps to show");
+    			console.log("returning true for apps to show");
     			return true;
     		}
     	}
-    	//console.log("returning false for apps to show");
+    	console.log("returning false for apps to show");
     	return false;
     };
 
@@ -35,11 +35,11 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         var i;
         for (i = 0; i < $scope.newsFeeds.length; i++) {
             if ($scope.newsFeeds[i].hidden === false) {
-                //console.log("returning true for apps to show");
+                console.log("returning true for news to show");
                 return true;
             }
         }
-        //console.log("returning false for apps to show");
+        console.log("returning false for news to show");
         return false;
     };
 

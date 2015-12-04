@@ -1,12 +1,23 @@
 <section ui-view ng-controller="HomeController" ng-init="find()">
    <!-- Carousel
   ================================================== -->
+<<<<<<< HEAD
   <div class="slides_control">
     <carousel interval="myInterval">
       <slide ng-repeat="img in imgs" active="img.active">
         <img class = "img-responsive cimage" ng-src="{{img.name}}">
       </slide>
     </carousel>
+=======
+  <div class = "slides_control">
+
+    <uib-carousel interval="myInterval">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
+        <img class = "cimage" ng-src="{{slide.image}}">
+      </uib-slide>
+    </uib-carousel>
+
+>>>>>>> 948761f1fc35661369cbc0564b22bdc4b39cdb7a
   </div><!-- /.carousel -->
 
   <div align="center">
