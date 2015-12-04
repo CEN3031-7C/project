@@ -87,55 +87,6 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 			manageEvent.$update();
 		};
 
-		$scope.pushUp = function(manageEvent) {
-			//console.log("The size of Array is", $scope.manageApps.length);
-			var i;
-			for (i = 0; i < $scope.manageEvent.length; i++) {
-				if ($scope.manageEvent [i] === manageEvent) {
-					if (i === 0) {
-						//console.log("We are at the beginning of the Array");
-						return;
-					}
-					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i-1].name);
-					var x = $scope.manageEvents[i].position;
-					var y = $scope.manageEvents[i-1].position;
-					$scope.manageEvents[i].position = y;
-					$scope.manageEvents[i-1].position = x;	
-					$scope.manageEvents [i] = $scope.manageEvent [i-1];
-					$scope.manageEvents [i-1] = manageEvent;
-					$scope.manageEvents[i].$update();
-					$scope.manageE[i-1].$update();
-					break;
-				}
-			}
-				
-		};
-
-		$scope.pushDown = function(manageEvent) {
-			//console.log("The size of Array is", $scope.manageApps.length);
-			var i;
-			for (i = 0; i < $scope.manageEvents.length; i++) {
-				if ($scope.manageEvents [i] === manageEvent) {
-					if (i === $scope.manageEvents.length -1) {
-						//console.log("We are at the end of the Array");
-						return;
-					}
-					//console.log("Switching ", $scope.manageApps[i].name, " with " , $scope.manageApps[i+1].name);
-					var x = $scope.manageEvents[i].position;
-					var y = $scope.manageEvents[i+1].position;
-					$scope.manageEvents[i].position = y;
-					$scope.manageEvents[i+1].position = x;
-					$scope.manageEvents [i] = $scope.manageEvents [i+1];
-					$scope.manageEvents[i+1] = manageEvent;
-					$scope.manageEvents[i].$update();
-					$scope.manageEvents[i+1].$update();	
-					break;
-				}
-			}
-			
-		};
-
-
 		$scope.getPosition = function() {
 			return $scope.manageEvents.length;
 		};
