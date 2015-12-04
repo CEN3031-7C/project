@@ -1,14 +1,15 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps', 'NewsFeeds',
-  function ($scope, Authentication, ManageApps, NewsFeeds) {
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', 'ManageApps', 'NewsFeeds', 'Imgs',
+  function ($scope, Authentication, ManageApps, NewsFeeds, Imgs) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
     $scope.isCollapsed = false;
 
     // Code for functionality of carousel
 	$scope.myInterval = 3000;
-	$scope.slides = [
+
+	/*$scope.slides = [
 	    {
 	      image: 'http://i.imgur.com/6yDXeff.jpg'
 	    },
@@ -24,11 +25,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	    {
 	      image: 'http://i.imgur.com/TkLPzNn.jpg'
 	    }
-    ];
+    ];*/
 
     //to load all the articles from manage-apps shard
     $scope.find = function() {
         console.log("Called find()!");
+        $scope.imgs = Imgs.query();
         $scope.manageApps = ManageApps.query();
         $scope.newsFeeds = NewsFeeds.query();
     };

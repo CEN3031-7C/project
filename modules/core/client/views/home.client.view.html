@@ -2,12 +2,18 @@
    <!-- Carousel
   ================================================== -->
   <div class = "slides_control">
+
     <uib-carousel interval="myInterval">
       <uib-slide ng-repeat="slide in slides" active="slide.active">
         <img class = "cimage" ng-src="{{slide.image}}">
       </uib-slide>
     </uib-carousel>
+
   </div><!-- /.carousel -->
+
+  <div align="center">
+    <a href="/admin/imgs"><button style="margin-top: 50px;" type="button" class="btn btn-warning" ng-show="authentication.user">Edit Images</button></a>
+  </div>
 
   <!-- Featurettes -->
   <div class="container marketing">
