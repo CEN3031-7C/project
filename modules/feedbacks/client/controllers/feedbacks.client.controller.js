@@ -30,7 +30,7 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 			if ( feedback ) { feedback.$remove();
 
 				for (var i in $scope.feedbacks ) {
-					if ($scope.feedbacks [i] === feedback ) {X
+					if ($scope.feedbacks [i] === feedback ) {
 						$scope.feedbacks.splice(i, 1);
 					}
 				}
