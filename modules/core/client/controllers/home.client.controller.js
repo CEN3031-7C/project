@@ -9,24 +9,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     // Code for functionality of carousel
 	$scope.myInterval = 3000;
 
-	/*$scope.slides = [
-	    {
-	      image: 'http://i.imgur.com/6yDXeff.jpg'
-	    },
-	    {
-	      image: 'http://khalil-shreateh.com/khalil.shtml/images/articles/facebook/trolling.jpg'
-	    },
-	    {
-	      image: 'http://i.imgur.com/2hlP4Wt.jpg'
-	    },
-	    {
-	      image: 'http://i.imgur.com/meC86aq.jpg'
-	    },
-	    {
-	      image: 'http://i.imgur.com/TkLPzNn.jpg'
-	    }
-    ];*/
-
     //to load all the articles from manage-apps shard
     $scope.find = function() {
         console.log("Called find()!");
