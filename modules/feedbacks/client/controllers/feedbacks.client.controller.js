@@ -9,12 +9,14 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Feedback object
 			var feedback = new Feedbacks ({
-				name: this.name
+				name: this.name,
+				text: this.text
+
 			});
 
 			// Redirect after save
 			feedback.$save(function(response) {
-				$location.path('feedbacks/' + response._id);
+				$location.path('calendars/eventsList');
 
 				// Clear form fields
 				$scope.name = '';
@@ -34,7 +36,7 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 				}
 			} else {
 				$scope.feedback.$remove(function() {
-					$location.path('feedbacks');
+					$location.path('admin/feedbacks');
 				});
 			}
 		};
