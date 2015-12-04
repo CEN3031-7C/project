@@ -1,8 +1,4 @@
- <!--
-<style>
-th, td {text-align:left}
-</style>
--->
+
 <section ui-view ng-controller="ManageContactsController" ng-init="find()">
 
   <div class="container" style="margin-top: 20px; margin-left:10%; margin-right:10%">
@@ -10,28 +6,6 @@ th, td {text-align:left}
     <div class="contact_header">
       <h1>Contact Information By County</h1>
     </div>
-    <!--Contact List-->
-	<!--
-    <hr class="featurette-divider" ng-show="contactToShow();">
-
-    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="contactToShow();">Contact Information By County</h2>
-	--><!--
-	<div class="contact_table">
-      <table class="table">
-
-          <tr>
-            <th>County</th>
-            <th>Zip Code</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-          </tr>
-        </table>
--->
-	<!--
-    <div data-ng-repeat="manageContact in manageContacts"  class="list-group-item" ng-show="!manageContact.hidden" style="background: rgba(0, 0, 0, 0.0)">
-	-->
-
     <hr>
     <div class="row" style="font-weight: bold; text-align:center">
       <div class="col-md-2 col-md-offset-1">County</div>
@@ -53,6 +27,6 @@ th, td {text-align:left}
     <hr>
 
 
-  <!-- /.container -->
+  
   </div>
 </section>
