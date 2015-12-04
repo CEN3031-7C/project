@@ -13,8 +13,8 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 				name: this.name,
 				description: this.description,
 				date: this.date,
-				imageURL: this.imageURL,
 				link: this.link,
+				imageURL: this.imageURL,
 				pending: false,
 				position: $scope.getPosition()
 			});
@@ -26,6 +26,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 				// Clear form fields
 				$scope.name = '';
 				$scope.description = '';
+				$scope.date = '';
 				$scope.imageURL = '';
 				$scope.link = '';
 			}, function(errorResponse) {

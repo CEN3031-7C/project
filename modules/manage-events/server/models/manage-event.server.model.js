@@ -25,10 +25,7 @@ var ManageEventSchema = new Schema({
 		ref: 'User'
 	},
 	description: String,
-	date: {
-		type : Date,
-		default: Date.now
-	},
+	date: Date,
 	link : String,
 	imageURL : String,
 	pending : Boolean
