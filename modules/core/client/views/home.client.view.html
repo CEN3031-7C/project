@@ -2,11 +2,11 @@
    <!-- Carousel
   ================================================== -->
   <div class="slides_control">
-    <carousel interval="myInterval">
-      <slide ng-repeat="img in imgs" active="img.active">
+    <uib-carousel interval="myInterval">
+      <uib-slide ng-repeat="img in imgs" active="img.active">
         <img class = "img-responsive cimage" ng-src="{{img.name}}">
-      </slide>
-    </carousel>
+      </uib-slide>
+    </uib-carousel>
   </div><!-- /.carousel -->
 
   <div align="center">

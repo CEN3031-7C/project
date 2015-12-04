@@ -12,15 +12,6 @@
                     </div>
                     <!-- same as manage-app except for date -->
                     
-                    <!-- <div class="col-md-6"> -->
-                           <!--  <p class="input-group">
-                              <input type="date" class="form-control" uib-datepicker-popup ng-model="date" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                              <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                              </span>
-                            </p>
-                        </div> -->
-                    <!-- </div> -->
                     <!-- Enter the description of the app -->
                     <label class="control-label" for="description">Description of the Event</label>
                     <div class="controls">
@@ -37,20 +28,7 @@
                     <div class="controls">
                         <input type="text" data-ng-model="link" id="link" class="form-control" placeholder="https://www.eventpage.com" required>
                     </div>
-                  <!--   <label class="control-label" for="date">Date of the Event</label>
-                    <div class="controls">
-                        <input type="date" ng-model="date" id="date" class="form-control" placeholder="Date" required>
-                    </div>
-                    <div>
-                        <label for="exampleInput">Time of the Event</label>
-                        <input type="time" id="date" name="input" ng-model="date" placeholder="Time" required />
-                        <div role="alert">
-                            <span class="error" ng-show="myForm.input.$error.required">
-                             Required!</span>
-                            <span class="error" ng-show="myForm.input.$error.time">
-                             Not a valid time!</span>
-                       </div>
-                    </div> -->
+
                     <div style="display:inline-block; min-height:290px;">
                         <label class="control-label" for="date">Date of the Event</label>
                         <datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>

@@ -16,6 +16,7 @@ angular.module('news-feeds').controller('NewsFeedsController', ['$scope', '$stat
 				imageURL: this.imageURL,
 				articleLink: this.articleLink,
 				date: this.date,
+				hidden: false,
 				position: $scope.getPosition()
 
 			});

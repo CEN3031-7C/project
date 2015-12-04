@@ -1,0 +1,67 @@
+<section data-ng-controller="ManageContactsController" data-ng-init="find()" xmlns:style="http://www.w3.org/1999/xhtml">
+  <section class="container">
+  <div class="page-header">
+    <h1 class="text-center">Manage Contacts</h1>
+  </div>
+    <a href="/#!/admin/manage-contacts/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Contact</button></a>
+    <div class="list-group">
+        <div data-ng-repeat="manageContact in manageContacts" data-ng-href="/#!/manage-contacts/{{manageContact._id}}" class="list-group-item">
+          <!--
+			<small class="list-group-item-text">
+				Added on
+				<span data-ng-bind="manageContact.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="manageContact.user.displayName"></span>
+			</small>
+			-->
+			<!-- h4 class="list-group-item-heading" data-ng-bind="manageContact.name"></h4>
+
+
+  <!-- EDIT BUTTONS -->
+  <div class="pull-right">
+    <!-- push up -->
+    <a class="btn btn-primary" data-ng-click="pushUp(manageContact);">
+      <i class="glyphicon glyphicon-menu-up"></i>
+    </a>
+    <!-- push down -->
+    <a class="btn btn-primary" data-ng-click="pushDown(manageContact);">
+      <i class="glyphicon glyphicon-menu-down"></i>
+    </a>
+    <!-- hide Contact -->
+    <a class="btn btn-primary" data-ng-click="hide(manageContact);" ng-show="!manageContact.hidden">
+      <i class="glyphicon glyphicon-minus"></i>
+    </a>
+    <!-- show Contact -->
+    <a class="btn btn-primary" data-ng-click="show(manageContact);" ng-show="manageContact.hidden">
+      <i class="glyphicon glyphicon-plus"></i>
+    </a>
+    <!-- edit Contact CHANGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe -->
+    <a class="btn btn-primary" href="/#!/admin/manage-contacts/{{manageContact._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <!-- delete Contact -->
+    <a class="btn btn-danger" data-ng-click="remove(manageContact);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+          <div class="container-fluid">
+            <h4 style="padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ng-show="manageContact.hidden"></h4>
+            <!--<div class="row" ng-show="!manageContact.hidden">-->
+                <div class="row" style="font-weight: bold; text-align: center">
+                    <div class="col-md-1" data-ng-bind="manageContact.county"></div>
+                    <div class="col-md-1 col-md-offset-1" data-ng-bind="manageContact.zip_code"></div>
+                    <div class="col-md-1 col-md-offset-1" data-ng-bind="manageContact.name"></div>
+                    <div class="col-md-2" data-ng-bind="manageContact.email"></div>
+                    <div class="col-md-1 col-md-offset-1" data-ng-bind="manageContact.phone_number"></div>
+                </div>
+                </div>
+          </div>
+                </div>
+            <!--</div>-->
+
+    <div class="alert alert-warning text-center" data-ng-hide="!manageContacts.$resolved || manageContacts.length">
+    	No Manage contacts yet, why don't you <a href="/#!/manage-contacts/create">create one</a>?
+    </div>
+
+</section>
+</section>

@@ -1,58 +1,9 @@
 <section class="container" data-ng-controller="ManageEventsController" data-ng-init="find()">
     <div class="page-header">
-        <br>
-        <h1>Manage events
-        <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-info">Create an Event</button></a>
-        </h1>
+        <h1 class="text-center">Manage events</h1>
     </div>
+    <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
     <br>
-<!--     <span dropdown on-toggle="toggled(open)">
-      <a href id="simple-dropdown" dropdown-toggle>
-        Click me for a dropdown, yo!
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
-        <li ng-repeat="choice in items">
-          <a href>{{choice}}</a>
-        </li>
-      </ul>
-    </span> -->
-
-    <!-- <div class="list-group">
-        <div data-ng-repeat="manageEvent in manageEvents"  class="list-group-item">  -->
-        <!-- <a data-ng-repeat="manageEvent in manageEvents"  class="list-group-item" popover-placement="left" popover="On the Bottom!" type="button" class="btn btn-default"> -->
-        <!-- data-ng-href="/#!/admin/manage-events/{{manageEvent._id}}/edit" -->
-           <!--  <div> -->
-           <!-- <button popover-placement="bottom" popover="On the Bottom!" type="button" class="btn btn-default"> -->
-    			<!-- <small class="list-group-item-text">
-    				Posted on
-    				<span data-ng-bind="manageEvent.created | date:'medium'"></span>
-    				by
-    				<span data-ng-bind="manageEvent.user.displayName"></span>
-
-    			</small>
-                
-                <div class="pull-right"> -->
-                    <!-- edit app -->
-                    <!-- <a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
-                        <i class="glyphicon glyphicon-edit"></i>
-                    </a>  -->  
-                    <!-- delete app -->
-                <!--     <a class="btn btn-danger" data-ng-click="remove(manageEvent);">
-                        <i class="glyphicon glyphicon-trash"></i>
-                    </a> 
-                </div> -->
-                
-           <!--  </button> -->
-           <!--  </div> -->
-         <!--    <div class="pull-right">
-                <a class="btn btn-danger" data-ng-click="remove(manageEvent);">
-                        <i class="glyphicon glyphicon-trash"></i>
-                </a>
-            </div> -->
-		<!-- 	<h4 class="list-group-item-heading" data-ng-bind="manageEvent.name"></h4>
-
-        </div>
-    </div> -->
 
     <ul class="event-list">                                             
         <li data-ng-repeat="manageEvent in manageEvents" class="list-group-item">                
@@ -77,7 +28,7 @@
                 </small>
                 <ul>
                     <li style="width:40%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
-                    <li style="width:40%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+                    <li style="width:40%;"><a data-ng-href="/#!/admin/feedbacks"><span class="fa fa-envelope"></span> Attendees' Feedback</a></li>
                     <li style="width:2%;"><a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i></a></li>
                     <li style="width:0.5%;"></li>
