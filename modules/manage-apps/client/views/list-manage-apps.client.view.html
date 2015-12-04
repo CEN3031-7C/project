@@ -6,29 +6,6 @@
     </div>
     
     <a href="/#!/admin/manage-apps/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New App</button></a>
-
-
-
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">'Im a modal!'</h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
-
-
     
     <div>
         <div data-ng-repeat="manageApp in manageApps">
@@ -58,7 +35,7 @@
                         <i class="glyphicon glyphicon-plus"></i>
                     </a>    
                     <!-- edit app -->
-                    <a class="btn btn-primary" ng-click="open('lg', manageApp)">
+                    <a class="btn btn-primary" data-ng-href="/#!/admin/manage-apps/{{manageApp._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
                     </a>  
                     <!-- delete app -->
@@ -67,7 +44,7 @@
                     </a>   
                 </div>      
                 <div class="container-fluid">  
-                    <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-   bind="manageApp.name" ng-show="manageApp.hidden"></h4> 
+                    <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name" ng-show="manageApp.hidden"></h4> 
                     <div class="row" ng-show="!manageApp.hidden">
                         <div class="col-xs-2">
                             <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
