@@ -60,5 +60,6 @@ angular.module('calendars').config(['$stateProvider',
 			url: '',
 			templateUrl: 'modules/calendars/client/views/contact.client.view.html'
 		});
+
 	}
 ]);
