@@ -1,16 +1,16 @@
 <section ui-view ng-controller="HomeController" ng-init="find()">
    <!-- Carousel
   ================================================== -->
-  <div class = "slides_control">
+  <div class="slides_control">
     <carousel interval="myInterval">
       <slide ng-repeat="img in imgs" active="img.active">
-        <img class = "cimage" ng-src="{{img.name}}">
+        <img class = "img-responsive cimage" ng-src="{{img.name}}">
       </slide>
     </carousel>
   </div><!-- /.carousel -->
 
   <div align="center">
-    <a href="/admin/imgs"><button style="margin-top: 50px;" type="button" class="btn btn-warning" ng-show="authentication.user">Edit Images</button></a>
+    <a href="/admin/imgs"><button style="margin-top: 50px;" type="button" class="btn btn-warning" ng-show="authentication.user.roles[1] === 'admin'">Edit Images</button></a>
   </div>
 
   <!-- Featurettes -->
@@ -73,34 +73,17 @@
 
     <!-- Manage Apps End -->
 
-    <hr class="featurette-divider">
-
-    <h2 class="featurette-heading text-center" style="margin-top: 0px; margin-bottom: 80px">Related Sites</h2>
-    <div class ="row featurette">
-      <div class="col-md-2">
-        <a href="www.ufl.edu"><img class="featurette-link img-responsive center-block" src="http://cdn3.sbnation.com/imported_assets/562347/modufseal.jpg"/></a>
-      </div>
-      <div class="col-md-offset-2 col-md-3">
-        <a href="http://www.ifas.ufl.edu/"><img class="featurette-link img-responsive center-block" src="http://orange.ifas.ufl.edu/templates/images/uf_sig_ifas_blue.gif"/></a>
-      </div>
-      <div class="col-md-offset-2 col-md-2">
-        <a href="twitter.com"><img class="featurette-link img-responsive center-block" src="http://sandy-lo.com/wp-content/uploads/2013/02/twittericon.png"/></a>
-      </div>
-    </div>
-    <div class = "footer">
       <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
 
          <!-- FOOTER -->
         <div class = "row footer">
-          <div class = "col-md-4">
-            <p>&copy; Water Extenstion 2015 | University Of Florida</p>
+          <div align="center">
+            <p>&copy; Water Extenstion 2015 | Contact: Kati at klwhite@ufl.edu</p>
           </div>
         </div>
         <div class = "row footer">
-          <div class = "col-md-5">
-            <p> Contact: katy... | P.O. Box 110180 Gainesville, FL 32611-0180</p>
+          <div align="center">
+            <p> University Of Florida | P.O. Box 110180 Gainesville, FL 32611-0180</p>
           </div>
         </div>
     </div>

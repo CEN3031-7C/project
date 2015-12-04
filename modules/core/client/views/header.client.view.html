@@ -26,6 +26,12 @@
     
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+      <li>
+        <a href="https://twitter.com/irrigatoruf" class="navbar-brand" style=" padding-top: 5px;"><img src="http://sandy-lo.com/wp-content/uploads/2013/02/twittericon.png" style="height: 45px;"></a>
+      </li>
+      <li>
+        <a href="http://www.ufl.edu" class="navbar-brand" style=" padding-top: 5px;"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtUQyKV23m43bwH0Csxb8W6G0n2HO-QvIKn72g16g-QlEheItVm9wSftxI" style="height: 45px;"></a>
+      </li>
       <li ui-sref-active="active">
         <a ui-sref="authentication.signup">Sign Up</a>
       </li>
@@ -35,6 +41,12 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+      <li>
+        <a href="https://twitter.com/irrigatoruf" class="navbar-brand" style=" padding-top: 5px;"><img src="http://sandy-lo.com/wp-content/uploads/2013/02/twittericon.png" style="height: 45px;"></a>
+      </li>
+      <li>
+        <a href="http://www.ufl.edu" class="navbar-brand" style=" padding-top: 5px;"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtUQyKV23m43bwH0Csxb8W6G0n2HO-QvIKn72g16g-QlEheItVm9wSftxI" style="height: 45px;"></a>
+      </li>
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
           <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />

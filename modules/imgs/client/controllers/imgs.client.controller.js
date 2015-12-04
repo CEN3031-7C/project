@@ -5,6 +5,8 @@ angular.module('imgs').controller('ImgsController', ['$scope', '$stateParams', '
 	function($scope, $stateParams, $location, Authentication, Imgs) {
 		$scope.authentication = Authentication;
 
+		$scope.myInterval = 3000;
+
 		// Find a list of Imgs
 		$scope.find = function() {
 			$scope.imgs = Imgs.query();
@@ -61,7 +63,7 @@ angular.module('imgs').controller('ImgsController', ['$scope', '$stateParams', '
 			var img = $scope.img ;
 
 			img.$update(function() {
-				$location.path('admin/imgs/' + img._id);
+				$location.path('admin/imgs');
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
