@@ -171,6 +171,15 @@ body {
   color: orange;
 }
 
+/*footer*/
+#bottom {
+  text-align: center;
+  color: #E1E1E1 ;
+  background-color: #0000cc ;
+  padding-top: 25px;
+  padding-bottom: 25px; 
+}
+
 /* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;
