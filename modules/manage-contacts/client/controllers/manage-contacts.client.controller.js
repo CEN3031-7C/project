@@ -5,6 +5,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 	function($scope, $stateParams, $location, Authentication, ManageContacts ) {
 		$scope.authentication = Authentication;
 		$scope.manageContacts = ManageContacts.query();
+		console.log("inside manage contacts controller");
 
 		// Create new Manage contact
 		$scope.create = function() {
@@ -128,6 +129,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 		// Find a list of Manage contacts
 		$scope.find = function() {
 			$scope.manageContacts = ManageContacts.query();
+			console.log("called find()");
 		};
 
 		// Find existing Manage contact

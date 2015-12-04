@@ -11,7 +11,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
     //to load all the articles from manage-apps shard
     $scope.find = function() {
-        console.log("Called find()!");
+        //console.log("Called find()!");
         $scope.imgs = Imgs.query();
         $scope.manageApps = ManageApps.query();
         $scope.newsFeeds = NewsFeeds.query();
@@ -22,24 +22,26 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     	var i;
     	for (i = 0; i < $scope.manageApps.length; i++) {
     		if ($scope.manageApps[i].hidden === false) {
-    			console.log("returning true for apps to show");
+    			//console.log("returning true for apps to show");
     			return true;
     		}
     	}
-    	console.log("returning false for apps to show");
+    	//console.log("returning false for apps to show");
     	return false;
     };
 
     //see if there is any apps to showcase
     $scope.newsToShow = function() {
+        //console.log($scope.newsFeeds.length);
         var i;
         for (i = 0; i < $scope.newsFeeds.length; i++) {
+            //console.log($scope.newsFeeds[i]);
             if ($scope.newsFeeds[i].hidden === false) {
-                console.log("returning true for news to show");
+               // console.log("returning true for news to show");
                 return true;
             }
         }
-        console.log("returning false for news to show");
+        //console.log("returning false for news to show");
         return false;
     };
 
