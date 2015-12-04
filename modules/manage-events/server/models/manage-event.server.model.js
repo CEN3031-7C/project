@@ -34,16 +34,6 @@ var ManageEventSchema = new Schema({
 	pending : Boolean
 });	
 
-//IMPLEMENT FOR FEEDBACK
-var feedbackSchema = new Schema({
-	feedback: {
-		type: String,
-		default: "No Feedback"
-	},
-	id : String
-});
-
 
 
 mongoose.model('ManageEvent', ManageEventSchema);
-mongoose.model('feedback', feedbackSchema);

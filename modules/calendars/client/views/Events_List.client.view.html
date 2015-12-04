@@ -3,7 +3,7 @@
     <div class="page-header">
     	<br>	
 		<h1> Upcoming Events
-		<a href="/#!/calendars/submitEvent"  ><button style="margin-bottom: 20px;" type="button" class="btn btn-info">Submit an Event</button></a>
+		<a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-info btn-xs">Submit an Event</button></a>
 		</h1>
     </div>				
 	
@@ -14,8 +14,7 @@
 		<li data-ng-repeat="manageEvent in manageEvents" ng-show="!manageEvent.pending"> 			
 			<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 			<img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
-			<!--img src="{{calendar.imageURL}}"-->
-			<!--img class="app-image-list center-block" ng-src="{{calendar.imageURL}}"-->
+
 			<time >
 				<span class="month" data-ng-bind="manageEvent.date | date:'mediumDate'"></span>
                 <span class="month" data-ng-bind="manageEvent.date | date:'shortTime'"></span>
@@ -30,14 +29,11 @@
 					<p>							
 						<br>
 						<span data-ng-bind="manageEvent.description"></span>
-						<!--span data-ng-bind="calendar.user.displayName"></span-->
 					</p>
 				</small>
-				<!--The following will be linked to a feedback page, and the actual Event Page -->
-				<!--p data-ng-bind="calendar.imageURL" />-->
 				<ul>
 					<li style="width:33%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
-					<li style="width:33%;"><a data-ng-href="/#!/calendars/{{calendar._id}}/feedback"><span class="fa fa-envelope"></span> Feedback</a></li>
+					<li style="width:33%;"><a data-ng-href="/#!/feedbacks/create"><span class="fa fa-envelope"></span> Give Feedback</a></li>
 				</ul>							
 			</div>	
 		</li>						
