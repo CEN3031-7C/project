@@ -1,11 +1,14 @@
 
 <div ui-view ng-controller="ManageContactsController" ng-init="find()">
 
-  <div class="container" style="margin-top: 20px; margin-left:12%; margin-right:12%">
-
-    <div class="contact_header">
+  <div class="container-fluid" style="margin-top: 20px; margin-left:12%; margin-right:12%">
+    <div class="col-md-3" style="margin-top: 2em; position:relative">
+      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by County" ng-change="figureOutItemsToDisplay()" />
+    </div>
+    <div class="contact_header" style="margin-right: 24%">
       <h1>Contact Information By County</h1>
     </div>
+
     <hr>
     <div  class="row" style="font-weight: bold; font-size: 125%; font-family: Bookman, Georgia, Times New Roman, serif;text-align:center ">
       <div class="col-md-2 col-md-offset-1">County</div>
