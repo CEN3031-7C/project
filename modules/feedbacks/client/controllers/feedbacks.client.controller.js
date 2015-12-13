@@ -16,7 +16,8 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 
 			// Redirect after save
 			feedback.$save(function(response) {
-				$location.path('calendars/eventsList');
+				//$location.path('calendars/eventsList');
+				$location.path('feedbacks/'+feedback._id+'/edit');
 
 				// Clear form fields
 				$scope.name = '';
@@ -46,7 +47,7 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 			var feedback = $scope.feedback ;
 
 			feedback.$update(function() {
-				$location.path('feedbacks/' + feedback._id);
+				$location.path('calendars/eventsList');
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
