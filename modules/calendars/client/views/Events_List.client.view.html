@@ -31,7 +31,7 @@
 				</small>
 				<ul>
 					<li style="width:33%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
-					<li style="width:33%;"><a data-ng-href="/#!/feedbacks/create"><span class="fa fa-envelope"></span> Give Feedback</a></li>
+					<li style="width:33%;" ng-click="createFeedback(manageEvent.name)"> <!--<a data-ng-href="/#!/feedbacks/create"> --><span class="fa fa-envelope"></span> Give Feedback</a></li>
 				</ul>							
 			</div>	
 		</li>						
