@@ -8,7 +8,6 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		// Create new Manage event
 		$scope.create = function() {
 			// Create new Manage event object
-			console.log("BLAAAAAAAAAAAAAAAAAAAA");
 			var manageEvent = new ManageEvents ({
 				name: this.name,
 				description: this.description,
