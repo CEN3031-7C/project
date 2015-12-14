@@ -1,4 +1,4 @@
-[![MEAN.JS Logo](http://ifas.ufl.edu/media/ifasufledu/ifas-dark-blue/style-assets/css/images/UF-IFAS-logo-white.png)](http://ifas.ufl.edu/)
+[![MEAN.JS Logo](http://ics.ifas.ufl.edu/images/branding/web-logos/IFASWeb2013.png)](http://ifas.ufl.edu/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/meanjs/mean.svg?branch=master)](https://travis-ci.org/meanjs/mean)
