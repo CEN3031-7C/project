@@ -43,7 +43,7 @@
   background-color: white;
 }
 
-.navbar .navbar-nav .open 
+.navbar .navbar-nav .open
 .dropdown-menu > .active > a {
   color: white;
   background-color: #0021a5;
@@ -52,7 +52,7 @@
   border-bottom: 1px solid #f56f02;
   border-top: 1px solid #f56f02;
 }
-.navbar .navbar-nav .open 
+.navbar .navbar-nav .open
 .dropdown-menu > .active > a:hover {
   color: white;
   background-color: #0021a5;
@@ -62,9 +62,9 @@
   border-top: 1px solid #f56f02;
 }
 
-.navbar .navbar-nav .open 
+.navbar .navbar-nav .open
  .dropdown-menu > .active > a {
-  
+
  }
 /*nav bar end */
 
@@ -115,7 +115,7 @@ a:hover .header-profile-image {
 .app-image-list {
   height: 100%;
   width: 100%;
-  
+
   display:block;
   max-height: 100px;
   max-width: 100px;
@@ -175,9 +175,12 @@ body {
 #bottom {
   text-align: center;
   color: #E1E1E1 ;
-  background-color: #0000cc ;
+  background-color: #0021a5 ;
   padding-top: 25px;
-  padding-bottom: 25px; 
+  padding-bottom: 15px;
+  border-top: 1px solid #f56f02;
+  margin-top: 40px;
+  margin-bottom: 35px;
 }
 
 /* Thin out the marketing headings */
@@ -213,7 +216,7 @@ body {
 }
 
 /* Divider properties */
-hr { 
+hr {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -248,11 +251,11 @@ hr {
   color: #E1E1E1;
   background-color: #1E1E1E;
   padding-top: 25px;
-  padding-bottom: 25px; 
+  padding-bottom: 25px;
 }
 
 
-/*------ - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/*------ - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 .eventBox {
@@ -284,7 +287,7 @@ hr {
   border-radius: 5px;
 }
 
-.page_events { 
+.page_events {
    padding-top: 15%;
  }
 
@@ -293,7 +296,7 @@ hr {
     body {
     padding: 60px 0px;
   }
-    
+
     .event-list {
     list-style: none;
     font-family: 'Lato', sans-serif;
@@ -378,19 +381,19 @@ hr {
     width: 100%;
     color: rgb(30, 30, 30);
     text-decoration: none;
-  } 
-    .event-list > li > .social > ul > li {    
+  }
+    .event-list > li > .social > ul > li {
         padding: 0px;
     }
     .event-list > li > .social > ul > li > a {
         padding: 3px 0px;
-  } 
+  }
   .event-list > li > .info > ul > li:hover,
   .event-list > li > .social > ul > li:hover {
     color: rgb(30, 30, 30);
     background-color: rgb(200, 200, 200);
   }
-  
+
   @media (min-width: 768px) {
     .event-list > li {
       position: relative;
@@ -424,8 +427,8 @@ hr {
       height: 120px;
       text-align: left;
       padding-right: 40px;
-    } 
-    .event-list > li > .info > .title, 
+    }
+    .event-list > li > .info > .title,
     .event-list > li > .info > .desc {
       padding: 0px 10px;
     }
@@ -444,7 +447,7 @@ hr {
         .event-list > li > .social > ul {
             border-left: 1px solid rgb(230, 230, 230);
         }
-    .event-list > li > .social > ul > li {      
+    .event-list > li > .social > ul > li {
       display: block;
             padding: 0px;
     }

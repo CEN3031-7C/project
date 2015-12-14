@@ -7,8 +7,8 @@
     <a href="/#!/admin/news-feed/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Article</button></a>
 
     <div>
-        <div data-ng-repeat="newsFeed in newsFeeds">          
-            <div class="well well-sm">    
+        <div data-ng-repeat="newsFeed in newsFeeds">
+            <div class="well well-sm">
                 <!-- EDIT BUTTONS -->
                 <div class="pull-right">
                      <!--expand -->
@@ -18,29 +18,29 @@
                     <!-- push up -->
                     <a class="btn btn-primary" data-ng-click="pushUp(newsFeed);">
                         <i class="glyphicon glyphicon-menu-up"></i>
-                    </a>  
+                    </a>
                     <!-- push down -->
                     <a class="btn btn-primary" data-ng-click="pushDown(newsFeed);">
                         <i class="glyphicon glyphicon-menu-down"></i>
-                    </a>   
+                    </a>
                     <!-- hide app -->
                     <a class="btn btn-primary" data-ng-click="hide(newsFeed);" ng-show="!newsFeed.hidden">
                         <i class="glyphicon glyphicon-minus"></i>
-                    </a>    
+                    </a>
                     <!-- show app -->
                     <a class="btn btn-primary" data-ng-click="show(newsFeed);" ng-show="newsFeed.hidden">
                         <i class="glyphicon glyphicon-plus"></i>
-                    </a>   
+                    </a>
                     <!-- edit app -->
                     <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
-                    </a>    
+                    </a>
                     <!-- delete app -->
                     <a class="btn btn-danger" data-ng-click="remove(newsFeed);">
                         <i class="glyphicon glyphicon-trash"></i>
-                    </a>    
-                </div> 
-			 <div class="container-fluid">               
+                    </a>
+                </div>
+			 <div class="container-fluid">
                     <h4 class="list-group-item-heading" data-ng-bind="newsFeed.title" ng-show="newsFeed.hidden"     style="margin-top: 10px"></h4>
                     <div class="row" ng-show="!newsFeed.hidden">
                         <div class="col-xs-2">

@@ -2,9 +2,8 @@
 
 		<div class ="pad-section">
 	      <div class="row text-center">
-	        <div class="contact_header">
+	        <div class="contact_header text-center">
 	          <h1>
-	            <ul></ul>
 	            <ul>Pending Events</ul></h1>
 	        </div>
 	      </div>
@@ -45,20 +44,18 @@
 		        <h1>{{ test }}</h1>
 		        <h2>{{ promo }}</h2>
 
-		        <div ng-repeat="event in events" class="col-md-6"> 
-		  			<div class="thumbnail"> 
-	    				<img ng-src="{{ events.img }}"> 
-	    				<p class="title">{{ events.name }}</p> 
-					    <p class="location">{{ events.location }}</p> 
-					    <p class="date">{{ events.date | date }}</p> 
+		        <div ng-repeat="event in events" class="col-md-6">
+		  			<div class="thumbnail">
+	    				<img ng-src="{{ events.img }}">
+	    				<p class="title">{{ events.name }}</p>
+					    <p class="location">{{ events.location }}</p>
+					    <p class="date">{{ events.date | date }}</p>
 					    <div class="rating">
 					    	<p class="attending" ng-click="plusOne($index)"> +{{events.attending}}</p>
 					    </div>
-		  			</div> 
+		  			</div>
 				</div>
 
       		</div>
     	</div>
  -->
- 		
-
