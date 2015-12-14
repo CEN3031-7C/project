@@ -25,10 +25,6 @@ angular.module('manage-events').config(['$stateProvider',
 		state('admin.manage-events.edit', {
 			url: '/:manageEventId/edit',
 			templateUrl: 'modules/manage-events/client/views/edit-manage-event.client.view.html'
-		}).
-		state('admin.manage-events.feedback.list', {
-			url: '/feedbackfiltered',
-			templateUrl: 'modules/manage-events/client/views/list-feedback.client.view.html'
 		});
 
 	}

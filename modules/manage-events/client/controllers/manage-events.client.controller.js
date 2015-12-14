@@ -8,6 +8,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		$scope.hideArray=[];
 
 
+
 		$scope.pushHideArray=function() {
 			for(var i=0; i < ManageEvents.length; i++){
 				$scope.hideArray.push(false);
@@ -28,7 +29,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 			console.log(index);
 		}
 
-		
+
 
 		// Create new Manage event
 		$scope.create = function() {
