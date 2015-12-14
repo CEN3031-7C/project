@@ -2,11 +2,15 @@
     <div class="page-header">
         <h1 class="text-center">Manage events</h1>
     </div>
+
+    <div class="col-md-3" style="margin: 5px, 0, 5; position:relative">
+      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search for Event"/>
+    </div>
     <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
     <br>
 
     <ul class="event-list">                                             
-        <li data-ng-repeat="manageEvent in manageEvents" class="list-group-item">                
+        <li data-ng-repeat="manageEvent in manageEvents | filter:search:strict" class="list-group-item">                
         <img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
             <time >
                 <span class="month" data-ng-bind="manageEvent.date | date:'mediumDate'"></span>
