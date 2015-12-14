@@ -1,4 +1,18 @@
-[![MEAN.JS Logo](http://ics.ifas.ufl.edu/images/branding/web-logos/IFASWeb2013.png)](http://ifas.ufl.edu/)
+[![IFAS Logo](http://ics.ifas.ufl.edu/images/branding/web-logos/IFASWeb2013.png)](http://ifas.ufl.edu/)
+
+"The Mission of UF/IFAS is to develop knowledge in agricultural, human and natural resources and to make that knowledge accessible to sustain and enhance the quality of human life."
+
+The 1914 Smith-Lever Act provided federal support for land-grant institutions to offer educational programs to enhance the application of useful and practical information beyond their campuses through cooperative extension efforts with states and local communities. 
+
+UF/IFAS Extension provides Floridians with life-long learning programs in cooperation with county government, the United States Department of Agriculture, and Florida A & M University. The educational programs offered in each county respond to the local needs of residents, schools, regulatory agencies, community organizations and industry.
+
+UF/IFAS Extension programs promote:
+*sustainable agriculture
+*environmental stewardship
+*financial literacy
+*food nutrition and safety
+*consumer and parenting skills
+
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/meanjs/mean.svg?branch=master)](https://travis-ci.org/meanjs/mean)
