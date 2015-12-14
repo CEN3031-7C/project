@@ -1,6 +1,6 @@
 <section data-ng-controller="NewsFeedsController" ng-init="find()">
 <section class="container">
-    <div class="page-header">
+    <div class="page-header text-center">
         <h1>New News feed</h1>
     </div>
     <div class="col-md-12">
@@ -38,8 +38,8 @@
                     <br>
                     <div style="display:inline-block; min-height:250px; max-height:250px; background: rgba(0, 0, 0, 0.0)">
                         <datepicker ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
-                    </div>                                                   
-                    
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Submit" class="btn btn-default">
