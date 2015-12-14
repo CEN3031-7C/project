@@ -13,7 +13,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 			for(var i=0; i < ManageEvents.length; i++){
 				$scope.hideArray.push(false);
 			}
-		}
+		};
 
 		// $scope.createNumFeedback=function() {
 		// 	var counter = 0;
@@ -39,7 +39,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 			else $scope.hideArray[index] = true;
 			console.log('toggleHideArray called');
 			console.log(index);
-		}
+		};
 
 
 
