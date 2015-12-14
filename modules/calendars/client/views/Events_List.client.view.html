@@ -3,13 +3,17 @@
     <div class="page-header text-center">	
 		<h1> Upcoming Events
 		</h1>
-    </div>		
-    <a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Submit an Event</button></a>		
+    </div>
+    <div class="col-md-3" style="margin: 5px, 0, 5; position:relative">
+      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search for Event"/>
+  	</div>
+
+    <div><a href="/#!/calendars/submitEvent"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Submit an Event</button></a></div>		
 	
 	<!-- submit an event -->
     
 	<ul class="event-list">												
-		<li data-ng-repeat="manageEvent in manageEvents" ng-show="!manageEvent.pending"> 			
+		<li data-ng-repeat="manageEvent in manageEvents | filter:search:strict" ng-show="!manageEvent.pending"> 			
 			<!-- We will replace this image by one from the Events_List or the event, or use upload -->
 			<img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
 

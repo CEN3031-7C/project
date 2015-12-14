@@ -3,7 +3,7 @@
 
   <div class="container-fluid" style="margin-top: 20px; margin-left:12%; margin-right:12%">
     <div class="col-md-3" style="margin-top: 2em; position:relative">
-      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by County" ng-change="SearchByCounty()" />
+      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by County"/>
     </div>
     <div class="contact_header" style="margin-right: 24%">
       <h1>Contact Information By County</h1>
@@ -34,7 +34,7 @@
     -->
       <div class="row" style="text-align:center; font-size: 110%;font-weight: bold">
         <br>
-        <div data-ng-repeat="manageContact in manageContacts" ng-show="!manageContact.hidden">
+        <div data-ng-repeat="manageContact in manageContacts | filter:search:strict" ng-show="!manageContact.hidden">
           <div class="col-md-2 col-md-offset-1" data-ng-bind="manageContact.county"></div>
           <div class="col-md-2" data-ng-bind="manageContact.zip_code"></div>
           <div class="col-md-2" data-ng-bind="manageContact.name"></div>
