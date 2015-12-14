@@ -7,11 +7,11 @@ The 1914 Smith-Lever Act provided federal support for land-grant institutions to
 UF/IFAS Extension provides Floridians with life-long learning programs in cooperation with county government, the United States Department of Agriculture, and Florida A & M University. The educational programs offered in each county respond to the local needs of residents, schools, regulatory agencies, community organizations and industry.
 
 UF/IFAS Extension programs promote:
-*sustainable agriculture
-*environmental stewardship
-*financial literacy
-*food nutrition and safety
-*consumer and parenting skills
+* sustainable agriculture
+* environmental stewardship
+* financial literacy
+* food nutrition and safety
+* consumer and parenting skills
 
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
