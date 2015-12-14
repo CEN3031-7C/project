@@ -6,7 +6,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		$scope.authentication = Authentication;
 
 		$scope.hideArray=[];
-
+		$scope.numFeedbackArray=[];
 
 
 		$scope.pushHideArray=function() {
@@ -14,6 +14,18 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 				$scope.hideArray.push(false);
 			}
 		}
+
+		// $scope.createNumFeedback=function() {
+		// 	var counter = 0;
+		// 	for(var i=0; i < ManageEvents.length; i++){
+		// 		counter = 0;
+		// 		for (var j = 0; j < Feedbacks.length; j++){
+		// 			if (ManageEvents.name===$scope.feedbacks.name) counter = counter + 1;
+		// 		}
+		// 		$scope.numFeedbackArray.push(counter);
+		// 		console.log(counter);
+		// 	}
+		// }
 
 		// set string Compare
 		$scope.stringCompare = function( string1,string2 ) {
