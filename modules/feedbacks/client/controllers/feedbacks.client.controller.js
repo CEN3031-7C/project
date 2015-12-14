@@ -5,6 +5,15 @@ angular.module('feedbacks').controller('FeedbacksController', ['$scope', '$state
 	function($scope, $stateParams, $location, Authentication, Feedbacks ) {
 		$scope.authentication = Authentication;
 
+
+		$scope.stringCompare = "";
+
+		// set string Compare
+		$scope.setStringCompare = function( stringTest ) {
+			$scope.stringCompare = stringTest;
+			console.log("setStringCompare value");
+		};
+
 		// Create new Feedback
 		$scope.create = function() {
 			// Create new Feedback object

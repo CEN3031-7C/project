@@ -1,9 +1,34 @@
 'use strict';
 
 // Manage events controller
-angular.module('manage-events').controller('ManageEventsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageEvents',
-	function($scope, $stateParams, $location, Authentication, ManageEvents ) {
+angular.module('manage-events').controller('ManageEventsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageEvents', 'Feedbacks', 
+	function($scope, $stateParams, $location, Authentication, ManageEvents, Feedbacks ) {
 		$scope.authentication = Authentication;
+
+		$scope.hideArray=[];
+
+
+		$scope.pushHideArray=function() {
+			for(var i=0; i < ManageEvents.length; i++){
+				$scope.hideArray.push(false);
+			}
+		}
+
+		// set string Compare
+		$scope.stringCompare = function( string1,string2 ) {
+			if(string1===string2) return true;
+			else return false;
+		};
+
+		$scope.toggleHideArray=function(item) {
+			var index = $scope.manageEvents.indexOf(item);
+			if($scope.hideArray[index] === true) $scope.hideArray[index] = false;
+			else $scope.hideArray[index] = true;
+			console.log('toggleHideArray called');
+			console.log(index);
+		}
+
+		
 
 		// Create new Manage event
 		$scope.create = function() {
@@ -69,6 +94,19 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		$scope.findOne = function() {
 			$scope.manageEvent = ManageEvents.get({ 
 				manageEventId: $stateParams.manageEventId
+			});
+			console.log($scope.manageEvent.name);
+		};
+
+		//find feedbacks
+		$scope.findFeedback = function() {
+			$scope.feedbacks = Feedbacks.query();
+		};
+
+		// Find existing Feedback
+		$scope.findOneFeedback = function() {
+			$scope.feedback = Feedbacks.get({ 
+				feedbackId: $stateParams.feedbackId
 			});
 		};
 
