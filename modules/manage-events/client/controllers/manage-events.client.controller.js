@@ -8,7 +8,7 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		$scope.hideArray=[];
 		$scope.numFeedbackArray=[];
 
-
+		//creates array of falses which correlate to each event
 		$scope.pushHideArray=function() {
 			for(var i=0; i < ManageEvents.length; i++){
 				$scope.hideArray.push(false);
@@ -27,12 +27,13 @@ angular.module('manage-events').controller('ManageEventsController', ['$scope', 
 		// 	}
 		// }
 
-		// set string Compare
+		// compares to strings
 		$scope.stringCompare = function( string1,string2 ) {
 			if(string1===string2) return true;
 			else return false;
 		};
 
+		//used to toggle hidearray to display or hide individual feedbacks
 		$scope.toggleHideArray=function(item) {
 			var index = $scope.manageEvents.indexOf(item);
 			if($scope.hideArray[index] === true) $scope.hideArray[index] = false;

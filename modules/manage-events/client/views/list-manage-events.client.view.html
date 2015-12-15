@@ -11,7 +11,7 @@
     <br>
 
     <ul class="event-list" data-ng-repeat="manageEvent in manageEvents | filter:search:strict" class="list-group-item">
-
+    <!--repeats manageEvents data as well as feedbacks, but feedbacks are hidden depending on event and button click -->
         <li>                
         <img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
             <time >
