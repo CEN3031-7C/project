@@ -54,16 +54,3 @@ Potential features [not actually requested by client but would be nice to have]
 
 ![manageappspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manage_apps.png)
 *picture of manage apps page*
-
-More info about IFAS:
-
-UF/IFAS Extension provides Floridians with life-long learning programs in cooperation with county government, the United States Department of Agriculture, and Florida A & M University. The educational programs offered in each county respond to the local needs of residents, schools, regulatory agencies, community organizations and industry.
-
-UF/IFAS Extension programs promote:
-* sustainable agriculture
-* environmental stewardship
-* financial literacy
-* food nutrition and safety
-* consumer and parenting skills
-
-
