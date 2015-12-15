@@ -57,3 +57,7 @@ Potential features [not actually requested by client but would be nice to have]
 
 ![manageappspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manage_apps.png)
 *picture of manage apps page*
+
+**bootstrap and angular were used as sources for code**
+[bootstrap](http://getbootstrap.com/javascript/)
+[angular](https://angularjs.org/)
