@@ -15,14 +15,17 @@ The purpose of this web-app is the following
 
 
 Current Features
-- [x] homepage with editable carousal, About text, etc
+- [x] homepage with carousal, About text, etc  
+  - [x] admin can edit carousel pictures, about text, etc
 - [x] editable news clippings and "apps" on homepage
+  - [x] admin can hide and rearrange clippings and apps, as well as edit or delete them
 - [x] editable contacts list
+  - [x] admin can hide and rearrange contacts, as well as edit or delete them
 - [x] editable events list
   - [x] user or admin can create events
   - [x] admin can approve user created events and edit all events
   - [x] users can submit feedback for each event
-   - [x] admin can view feedback for every event or for individual events
+  - [x] admin can view feedback for every event or for individual events
 - [x] users can create their own account, or login through social media
 
 Potential features [not actually requested by client but would be nice to have]
