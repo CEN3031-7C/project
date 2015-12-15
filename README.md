@@ -31,6 +31,17 @@ Potential features [not actually requested by client but would be nice to have]
 
 :clap: :sunny: :peach:
 
+[![homepage1](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage.png)
+*picture of homepage with carousel*
+
+[![homepage2](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage2.png)
+*picture of homepage scrolled down*
+
+
+[![eventspage](https://github.com/CEN3031-7C/project/blob/master/pictures/events.png?raw=true)
+
+
+
 
 More info about IFAS:
 
