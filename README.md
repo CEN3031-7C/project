@@ -27,7 +27,7 @@ Current Features
 
 Potential features [not actually requested by client but would be nice to have]
 - [ ] have number display how many feedbacks there are per event 
-- [x] have delete safety features, "Are you sure you want to delete?"
+- [ ] have delete safety features, "Are you sure you want to delete?"
 
 :clap: :sunny: :peach:
 
