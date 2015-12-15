@@ -31,28 +31,28 @@ Potential features [not actually requested by client but would be nice to have]
 
 :clap: :sunny: :peach:
 
-[![homepage1](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage.png)]
+![homepage1](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage.png)
 *picture of homepage with carousel*
 
-[![homepage2](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage2.png)]
+![homepage2](https://github.com/CEN3031-7C/project/blob/master/pictures/homepage2.png)
 *picture of homepage scrolled down*
 
-[![eventspage](https://github.com/CEN3031-7C/project/blob/master/pictures/events.png)]
+![eventspage](https://github.com/CEN3031-7C/project/blob/master/pictures/events.png)
 *picture of events page*
 
-[![contactspage](https://github.com/CEN3031-7C/project/blob/master/pictures/contacts.png)]
+![contactspage](https://github.com/CEN3031-7C/project/blob/master/pictures/contacts.png)
 *picture of contacts page*
 
-[![manageeventspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageEvents.png)]
+![manageeventspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageEvents.png)
 *picture of manage events page with first events feedback button pressed. Note how only this events feedback is shown*
 
-[![managecontactspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageContacts.png)]
+![managecontactspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageContacts.png)
 *picture of manage contacts page*
 
-[![managenewsfeedspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageNewsfeed.png)]
+![managenewsfeedspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manageNewsfeed.png)
 *picture of manage newsfeedspage page*
 
-[![manageappspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manage_apps.png)]
+![manageappspage](https://github.com/CEN3031-7C/project/blob/master/pictures/manage_apps.png)
 *picture of manage apps page*
 
 More info about IFAS:
