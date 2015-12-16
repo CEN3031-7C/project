@@ -59,9 +59,6 @@
 
 /*nav bar end */
 
-
-
-
 .content {
   margin-top: 30px;
 }
@@ -137,6 +134,8 @@ body {
 -------------------------------------------------- */
 
 /*Carousel*/
+
+ /* Image properties in carousel */
 .cimage{
   width: 100%;
   height: auto;
@@ -154,27 +153,7 @@ body {
 }
 /*End Carousel*/
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px; /* Space out the Bootstrap <hr> more */
-  color: orange;
-}
-
-/*footer*/
-.footer-bottom {
-  text-align: center;
-  color: #E1E1E1 ;
-  background-color: #0021a5 ;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  border-top: 1px solid #f56f02;
-  margin-top: 40px;
-  margin-bottom: 35px;
-}
-
-/* Thin out the marketing headings */
+/* About description properties */
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
@@ -182,23 +161,19 @@ body {
   margin-bottom: 50px;
 }
 
+.featurette-heading {
+  font-size: 50px;
+}
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+.featurette-image {
+  height: 500px;
+  width: 500px;
+}
 
-  .featurette-heading {
-    font-size: 50px;
-  }
-
-  .featurette-image {
-    height: 500px;
-    width: 500px;
-  }
-
-  .featurette-link {
-    height: 75px;
-    width: auto;
-  }
+.featurette-link {
+  height: 75px;
+  width: auto;
+}
 
 @media (min-width: 992px) {
   .featurette-heading {
@@ -207,6 +182,12 @@ body {
 }
 
 /* Divider properties */
+
+.featurette-divider {
+  margin: 80px; /* Space out the Bootstrap <hr> more */
+  color: orange;
+}
+
 hr {
     display: block;
     margin: 0.5em auto 0.5em auto;
@@ -447,3 +428,15 @@ hr {
       padding: 10px 0 9px;
     }
   }
+
+/*footer*/
+.footer-bottom {
+  text-align: center;
+  color: #E1E1E1 ;
+  background-color: #0021a5 ;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-top: 1px solid #f56f02;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
