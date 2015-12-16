@@ -4,7 +4,7 @@
         <h1 class="text-center">News Feed</h1>
     </div>
 
-    <a href="/#!/admin/news-feed/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Article</button></a>
+    <a ng-model="New_Article_Button" href="/#!/admin/news-feed/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Article</button></a>
 
     <div>
         <div data-ng-repeat="newsFeed in newsFeeds">          
@@ -16,27 +16,27 @@
                         <i class="glyphicon glyphicon-fullscreen"></i>
                     </a>
                     <!-- push up -->
-                    <a class="btn btn-primary" data-ng-click="pushUp(newsFeed);">
+                    <a ng-model="Up_Button" class="btn btn-primary" data-ng-click="pushUp(newsFeed);">
                         <i class="glyphicon glyphicon-menu-up"></i>
                     </a>  
                     <!-- push down -->
-                    <a class="btn btn-primary" data-ng-click="pushDown(newsFeed);">
+                    <a ng-model="Down_Button" class="btn btn-primary" data-ng-click="pushDown(newsFeed);">
                         <i class="glyphicon glyphicon-menu-down"></i>
                     </a>   
                     <!-- hide app -->
-                    <a class="btn btn-primary" data-ng-click="hide(newsFeed);" ng-show="!newsFeed.hidden">
+                    <a ng-model="Hide_Button" class="btn btn-primary" data-ng-click="hide(newsFeed);" ng-show="!newsFeed.hidden">
                         <i class="glyphicon glyphicon-minus"></i>
                     </a>    
                     <!-- show app -->
-                    <a class="btn btn-primary" data-ng-click="show(newsFeed);" ng-show="newsFeed.hidden">
+                    <a ng-model="Show_Button" class="btn btn-primary" data-ng-click="show(newsFeed);" ng-show="newsFeed.hidden">
                         <i class="glyphicon glyphicon-plus"></i>
                     </a>   
                     <!-- edit app -->
-                    <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
+                    <a ng-model="Edit_Button" class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
                     </a>    
                     <!-- delete app -->
-                    <a class="btn btn-danger" data-ng-click="remove(newsFeed);">
+                    <a ng-model="Delete_Button" class="btn btn-danger" data-ng-click="remove(newsFeed);">
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>    
                 </div> 

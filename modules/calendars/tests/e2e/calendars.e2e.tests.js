@@ -1,10 +1,8 @@
 'use strict';
 
-describe('Calendars E2E Tests:', function() {
-	describe('Test Calendars page', function() {
-		it('Should not include new Calendars', function() {
-			browser.get('http://localhost:3000/#!/calendars');
-			expect(element.all(by.repeater('calendar in calendars')).count()).toEqual(0);
-		});
-	});
+/**
+ * Chat e2e tests
+ */
+describe('Chat E2E Tests:', function () {
+  // TODO: Add chat e2e tests
 });
