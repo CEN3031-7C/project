@@ -10,7 +10,7 @@ describe('News feeds E2E Tests:', function() {
 		});
 		it('Should only be accessible by the admin', function() {
 			browser.get('http://localhost:3000/admin/news-feed');
-			browser.sleep(5000); //wait for the attempted redirect
+			//browser.sleep(5000); //wait for the attempted redirect
 			expect(browser.getLocationAbsUrl()).not
     			.toBe('http://localhost:3000/admin/news-feed'); //make sure we weren't allowed to go here.
 
@@ -28,90 +28,119 @@ describe('News feeds E2E Tests:', function() {
 
 		it('Should be able to add a new item', function() {
 
-			browser.sleep(5000);
+			//browser.sleep(5000);
 			element.all(by.repeater('newsFeed in newsFeeds')).count().then(function (count) {
     			var currentCount = count;
-    			console.log(count);
+
+    			element(by.model('New_Article_Button')).click();
+				//browser.refresh();
+				browser.sleep(5000);
+				expect(browser.getLocationAbsUrl())
+	    			.toBe('/admin/news-feed/create');
+
+	    		element(by.model('Submit_Button')).click();
+	     		element(by.binding('error')).getText().then(function (errorText) {
+	        		expect(errorText).toBe('Please fill News feed name');
+	        	});
+
+	     		element(by.model('title')).sendKeys("Protractor Test News Feed");
+	     		element(by.model('Submit_Button')).click();
+	     		//browser.refresh();
+	     		currentCount++;
+	     		browser.sleep(5000);
+	     		expect(newsFeeds.count()).toEqual(currentCount);
 			});
-
-			element(by.model('New_Article_Button')).click();
-			//browser.refresh();
-			browser.sleep(5000);
-			expect(browser.getLocationAbsUrl())
-    			.toBe('/admin/news-feed/create');
-
-    		element(by.model('Submit_Button')).click();
-     		element(by.binding('error')).getText().then(function (errorText) {
-        		expect(errorText).toBe('Please fill News feed name');
-        	});
-
-     		element(by.model('title')).sendKeys("Protractor Test News Feed");
-     		element(by.model('Submit_Button')).click();
-     		//browser.refresh();
-     		currentCount++;
-     		console.log("Current Count + 1 is: ");
-     		console.log(currentCount)
-     		browser.sleep(5000);
-     		expect(newsFeeds.count()).toEqual(currentCount);
-
 		});
 
 		it('Should be able to change the order of the news feed articles', function() {
 			var currentFirst;
-			currentFirst = element( by.repeater('newsFeed in newsFeeds').row(0).column('title'));
+			//element.all(by.repeater('newsFeed in newsFeeds')).get(0).all(by.tagName('div')).get(1).element(by.model('NewsFeed_Title')).getText()
+    		//					.then( function(text){
+    		//element(by.repeater('newsFeed in newsFeeds').
+    							//row(0).column('newsFeed.title')).getText().then(function(text){
+    		element.all(by.model('NewsFeed_Title')).getText().then(function(text) {
 
-			sleep(1000);
-			element.all(by.model('Down_Button')).get(0).click();
-			sleep(1000);
-			expect(element.all(by.repeater('newsFeed in newsFeeds')).get(0)).not
-				.toBe(currentFirst);
+    			if(text[0] == '')
+    				currentFirst = text[1];
+    			else
+    				currentFirst = text[0];
 
-			element.all(by.model('Up_Button')).get(1).click();
-			sleep(1000);
-			expect(element(by.repeater('newsFeed in newsFeeds')).row(0).column('title'))
-				.toBe(currentFirst);
-			sleep(1000);
+    			//console.log(currentFirst);
+    			browser.sleep(1000);
+				element.all(by.model('Down_Button')).get(0).click();
+				browser.sleep(1000);
+				//expect(element(by.repeater('newsFeed in newsFeeds').row(0).column('title')).getText()[1]).not
+				//	.toBe(currentFirst);
+				expect(element.all(by.model('NewsFeed_Title')).get(1).getText()).not.toBe(currentFirst);
 
+				element.all(by.model('Up_Button')).get(1).click();
+				browser.sleep(1000);
+				//expect(element(by.repeater('newsFeed in newsFeeds').row(0).column('title')).getText()[1])
+				//	.toBe(currentFirst);
+				expect(element.all(by.model('NewsFeed_Title')).get(1).getText()).toBe(currentFirst);
+				browser.sleep(1000);
+    		});
 		});
 		it('Should be able to hide/show the event on the front page', function() {
-			browser.get('http://localhost:3000/');
-			browser.sleep(3000);
+			//browser.get('http://localhost:3000/');
+			//browser.sleep(3000);
 
 			var currentCount = 4;
 
 			newsFeeds.count().then(function (count) {
     			currentCount = count;
-    			console.log(count);
+    			browser.get('http://localhost:3000/admin/news-feed');
+				element.all(by.model('Hide_Button')).get(0).click();
+
+				browser.get('http://localhost:3000/');
+				expect(element.all(by.repeater('newsFeed in newsFeeds')).count()).toBe(currentCount);
+
+				browser.get('http://localhost:3000/admin/news-feed');
+				element.all(by.model('Show_Button')).get(0).click();
+
+				browser.get('http://localhost:3000/');
+				expect(element.all(by.repeater('newsFeed in newsFeeds')).count()).toBe(currentCount);
 			});
-
-			browser.get('http://localhost:3000/admin/news-feed');
-			element.all(by.model('Hide_Button')).get(0).click();
-			browser.sleep(1000);
-
-			console.log("First Expect!");
-
-			browser.get('http://localhost:3000/');
-			browser.sleep(5000);
-			expect(element.all(by.repeater('newsFeed in newsFeeds')).count()).toBe(currentCount - 1);
-
-			browser.sleep(1000);
-			browser.get('http://localhost:3000/admin/news-feed');
-			element.all(by.model('Show_Button')).get(0).click();
-
-			console.log("Second Expect!");
-
-			browser.sleep(1000);
-			browser.get('http://localhost:3000/');
-			browser.sleep(5000);
-			expect(element.all(by.repeater('newsFeed in newsFeeds')).count()).toBe(currentCount);
-
 
 		});
 		it('Should be able to edit the event information', function() {
+			browser.get('http://localhost:3000/admin/news-feed');
+			browser.sleep(1000);
+			var currentFirst;
+		
+    		element.all(by.model('NewsFeed_Title')).getText().then(function(text) {
 
+    			if(text[0] == '')
+    				currentFirst = text[1];
+    			else
+    				currentFirst = text[0];
+
+				element.all(by.model('Edit_Button')).get(0).click();
+				browser.sleep(7000);
+				
+				element(by.model('newsFeed.title')).sendKeys("Protractor Test Edited Name");
+				browser.sleep(1000);
+				element(by.model('Update_Button')).click();
+				browser.sleep(8000);
+
+				browser.get('http://localhost:3000/admin/news-feed');
+				browser.sleep(3000);
+
+				expect(element.all(by.model('NewsFeed_Title')).get(1).getText()).not.toBe(currentFirst);
+				browser.sleep(1000);
+    		});
 		});
 		it('Should be able to delete the event', function() {
+			browser.get('http://localhost:3000/admin/news-feed');
+			browser.sleep(1000);
+			var currentCount = 4;
 
+			newsFeeds.count().then(function (count) {
+    			currentCount = count;
+				element.all(by.model('Delete_Button')).get(0).click();
+				browser.sleep(500);
+				expect(element.all(by.repeater('newsFeed in newsFeeds')).count()).toBe(currentCount - 1);
+			});
 		});
 	});
 });

@@ -4,32 +4,32 @@
     </div>
 
     <div align="center">
-    <a href="/admin/imgs/create"><button style="margin-bottom: 25px;" type="button" class="btn btn-warning">Add New Image</button></a>
+    <a ng-model="New_Button" href="/admin/imgs/create"><button style="margin-bottom: 25px;" type="button" class="btn btn-warning">Add New Image</button></a>
     </div>
 
     <div data-ng-repeat="img in imgs">
         <div class="well well-sm" align="center">
             <div class="media">
-                <img class="media-img" width="200" height="200" ng-src="{{img.name}}"/> 
+                <img ng-model="Img_Title" class="media-img" width="200" height="200" ng-src="{{img.name}}"/> 
             </div>
             <div class="media">
                 <div class="media-body">
                     <!-- EDIT BUTTONS -->
                     <div class ="media-right media-middle"> 
                         <!-- push image up -->
-                        <a class="btn btn-primary" data-ng-click="pushUp(img);" >
+                        <a ng-model="Up_Button" class="btn btn-primary" data-ng-click="pushUp(img);" >
                             <i class="glyphicon glyphicon-menu-up"></i>
                         </a>  
                         <!-- push image down -->
-                        <a class="btn btn-primary" data-ng-click="pushDown(img);">
+                        <a ng-model="Down_Button" class="btn btn-primary" data-ng-click="pushDown(img);">
                             <i class="glyphicon glyphicon-menu-down"></i>
                         </a>      
                         <!-- edit image -->
-                        <a class="btn btn-primary" href="/admin/imgs/{{img._id}}/edit">
+                        <a ng-model="Edit_Button" class="btn btn-primary" href="/admin/imgs/{{img._id}}/edit">
                             <i class="glyphicon glyphicon-edit"></i>
                         </a>    
                         <!-- delete image -->
-                        <a class="btn btn-danger" data-ng-click="remove(img);">
+                        <a ng-model="Delete_Button" class="btn btn-danger" data-ng-click="remove(img);">
                             <i class="glyphicon glyphicon-trash"></i>
                         </a>
                     </div>    
