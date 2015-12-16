@@ -6,7 +6,7 @@
   <div class="col-md-3" style="margin: 5px, 0, 5; position:relative">
       <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search"/>
   </div>
-    <a href="/#!/admin/manage-contacts/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Contact</button></a>
+    <a ng-model="New_Button" href="/#!/admin/manage-contacts/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Contact</button></a>
     <div class="list-group">
         <div data-ng-repeat="manageContact in manageContacts | filter:search:strict" data-ng-href="/#!/manage-contacts/{{manageContact._id}}" class="list-group-item">
           <!--
@@ -23,33 +23,33 @@
   <!-- EDIT BUTTONS -->
   <div class="pull-right">
     <!-- push up -->
-    <a class="btn btn-primary" data-ng-click="pushUp(manageContact);">
+    <a ng-model="Up_Button" class="btn btn-primary" data-ng-click="pushUp(manageContact);">
       <i class="glyphicon glyphicon-menu-up"></i>
     </a>
     <!-- push down -->
-    <a class="btn btn-primary" data-ng-click="pushDown(manageContact);">
+    <a ng-model="Down_Button" class="btn btn-primary" data-ng-click="pushDown(manageContact);">
       <i class="glyphicon glyphicon-menu-down"></i>
     </a>
     <!-- hide Contact -->
-    <a class="btn btn-primary" data-ng-click="hide(manageContact);" ng-show="!manageContact.hidden">
+    <a ng-model="Hide_Button" class="btn btn-primary" data-ng-click="hide(manageContact);" ng-show="!manageContact.hidden">
       <i class="glyphicon glyphicon-minus"></i>
     </a>
     <!-- show Contact -->
-    <a class="btn btn-primary" data-ng-click="show(manageContact);" ng-show="manageContact.hidden">
+    <a ng-model="Show_Button" class="btn btn-primary" data-ng-click="show(manageContact);" ng-show="manageContact.hidden">
       <i class="glyphicon glyphicon-plus"></i>
     </a>
-    <!-- edit Contact CHANGE -->
-    <a class="btn btn-primary" href="/#!/admin/manage-contacts/{{manageContact._id}}/edit">
+    <!-- edit Contact CHANGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe -->
+    <a ng-model="Edit_Button" class="btn btn-primary" href="/#!/admin/manage-contacts/{{manageContact._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
     <!-- delete Contact -->
-    <a class="btn btn-danger" data-ng-click="remove(manageContact);">
+    <a ng-model="Delete_Button" class="btn btn-danger" data-ng-click="remove(manageContact);">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
           <div class="container-fluid">
 
-            <h4 style=" font-weight: bold;color: #0000f6; font-family: Bookman, Georgia, Times New Roman, serif ;padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4>
+            <h4 ng-model="ManageContact_Title" style=" font-weight: bold;color: #0000f6; font-family: Bookman, Georgia, Times New Roman, serif ;padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4>
 <!--
             <h4 style="color: #0000f6; padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4> -->
 

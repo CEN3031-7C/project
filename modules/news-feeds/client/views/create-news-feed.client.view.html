@@ -1,3 +1,4 @@
+<!--<section data-ng-controller="NewsFeedsController" data-ng-init="findOne()">-->
 <section data-ng-controller="NewsFeedsController" ng-init="find()">
 <section class="container">
     <div class="page-header text-center">
@@ -42,7 +43,7 @@
 
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-default">
+                    <input ng-model="Submit_Button" type="submit" value="Submit" class="btn btn-default">
                 </div>
                 <div data-ng-show="error" class="text-danger">
                     <strong data-ng-bind="error"></strong>

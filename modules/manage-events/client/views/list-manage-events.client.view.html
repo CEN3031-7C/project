@@ -6,7 +6,8 @@
     <div class="col-md-3" style="margin: 5px, 0, 5; position:relative">
       <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search for Event"/>
     </div>
-    <a href="/#!/admin/manage-events/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
+    <a href="/#!/admin/manage-events/create"><button ng-model="New_Article_Button" style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
+    <a href="/#!/admin/manage-events/create"><button ng-model="New_Article_Button" style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
     <a href="/#!/admin/feedbacks"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">View all Feedback</button></a>
     <br>
 
@@ -21,7 +22,7 @@
 
             <div class="info">
                 <!-- Event Info --> 
-                <h2 class="title"> <b>{{manageEvent.name}}</b> <sub>by <em>{{manageEvent.user.displayName}}</em></sub></h2>
+                <h2 class="title"> <b ng-model="ManageEvents_Title">{{manageEvent.name}}</b> <sub>by <em>{{manageEvent.user.displayName}}</em></sub></h2>
                <!--  <h2 class="title" data-ng-bind="manageEvent.name"> </h2> -->
                 <small class="list-group-item-text" >
                     <style>
@@ -33,20 +34,20 @@
                     </p>
                 </small>
                 <ul>
-                    <li style="width:40%;"> <a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
+                    <li style="width:40%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
                     <li style="width:40%;" data-ng-click="toggleHideArray(manageEvent);"> <span class="fa fa-envelope"></span> Attendees' Feedback: </li>
-                    <li style="width:2%;"><a class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
+                    <li style="width:2%;"><a ng-model="Edit_Button" class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i></a></li>
                     <li style="width:0.5%;"></li>
-                    <li style="width:2%;"><a class="btn btn-danger" data-ng-click="remove(manageEvent);">
+                    <li style="width:2%;"><a class="btn btn-danger" ng-model="Delete_Button" data-ng-click="remove(manageEvent);">
                     <i class="glyphicon glyphicon-trash"></i></a></li>
                     <li style="width:0.5%;"></li>
                     <!-- hide app -->
-                    <li style="width:2%;"> <a class="btn btn-warning" data-ng-click="show(manageEvent);" ng-show="manageEvent.pending">
+                    <li style="width:2%;"> <a ng-model="Show_Button" class="btn btn-warning" data-ng-click="show(manageEvent);" ng-show="manageEvent.pending">
                         <i class="glyphicon glyphicon-floppy-saved"></i>
                     </a>   
                     <!-- show app -->
-                    <a class="btn btn-success" data-ng-click="hide(manageEvent);" ng-show="!manageEvent.pending">
+                    <a ng-model="Hide_Button" class="btn btn-success" data-ng-click="hide(manageEvent);" ng-show="!manageEvent.pending">
                         <i class="glyphicon glyphicon-check"></i>
                     </a>
                     </li> 
