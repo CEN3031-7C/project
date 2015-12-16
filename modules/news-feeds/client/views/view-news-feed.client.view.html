@@ -1,5 +1,4 @@
-<section data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
-<section class="container">
+<section class="container" data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
 	<div class="page-header text-center">
 		<h1 data-ng-bind="newsFeed.title"></h1>
 	</div>
@@ -10,15 +9,13 @@
 	        <a class="btn btn-primary" href="/#!/admin/news-feed/{{newsFeed._id}}/edit">
 	            <i class="glyphicon glyphicon-edit"></i>
 	        </a>
-
 	        <!-- delete app -->
 	        <a class="btn btn-danger" data-ng-click="remove(newsFeed);">
 	            <i class="glyphicon glyphicon-trash"></i>
 	        </a>
-
 	    </div>
-		<div class="container-fluid">
-
+			<!-- full view of the article -->
+			<div class="container-fluid">
 	        <div class="row">
 	            <div class="col-xs-2">
 	                <img class="app-image-list center-block" ng-src="{{newsFeed.imageURL}}">
@@ -31,5 +28,4 @@
     	    </div>
     	</div>
     </div>
-</section>
 </section>

@@ -37,7 +37,7 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 
 		// Remove existing Manage app
 		$scope.remove = function( manageApp ) {
-			if ( manageApp ) { 
+			if ( manageApp ) {
 				manageApp.$remove();
 
 				for (var i in $scope.manageApps ) {
@@ -62,21 +62,21 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 				$scope.error = errorResponse.data.message;
 			});
 		};
-
+		//hide the app from front page
 		$scope.hide = function(manageApp) {
 			if (manageApp) {
 				manageApp.hidden = true;
 			}
 			manageApp.$update();
 		};
-
+		//show the app on front page
 		$scope.show = function(manageApp) {
 			if (manageApp) {
 				manageApp.hidden = false;
 			}
 			manageApp.$update();
 		};
-
+		//move the app one position up
 		$scope.pushUp = function(manageApp) {
 			//console.log("The size of Array is", $scope.manageApps.length);
 			var i;
@@ -90,7 +90,7 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 					var x = $scope.manageApps[i].position;
 					var y = $scope.manageApps[i-1].position;
 					$scope.manageApps[i].position = y;
-					$scope.manageApps[i-1].position = x;	
+					$scope.manageApps[i-1].position = x;
 					$scope.manageApps [i] = $scope.manageApps [i-1];
 					$scope.manageApps [i-1] = manageApp;
 					$scope.manageApps[i].$update();
@@ -98,9 +98,9 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 					break;
 				}
 			}
-				
-		};
 
+		};
+		//move the position of this app down
 		$scope.pushDown = function(manageApp) {
 			//console.log("The size of Array is", $scope.manageApps.length);
 			var i;
@@ -118,25 +118,25 @@ angular.module('manage-apps').controller('ManageAppsController', ['$scope', '$st
 					$scope.manageApps [i] = $scope.manageApps [i+1];
 					$scope.manageApps [i+1] = manageApp;
 					$scope.manageApps[i].$update();
-					$scope.manageApps[i+1].$update();	
+					$scope.manageApps[i+1].$update();
 					break;
 				}
 			}
-			
+
 		};
 
 		// Find a list of Manage apps
 		$scope.find = function() {
 			$scope.manageApps = ManageApps.query();
 		};
-
+		//get the position that the new app should have
 		$scope.getPosition = function() {
 			return $scope.manageApps.length;
 		};
 
 		// Find existing Manage app
 		$scope.findOne = function() {
-			$scope.manageApp = ManageApps.get({ 
+			$scope.manageApp = ManageApps.get({
 				manageAppId: $stateParams.manageAppId
 			});
 		};

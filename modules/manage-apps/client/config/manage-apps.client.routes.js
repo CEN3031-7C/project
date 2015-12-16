@@ -18,10 +18,6 @@ angular.module('manage-apps').config(['$stateProvider',
 			url: '/create',
 			templateUrl: 'modules/manage-apps/client/views/create-manage-app.client.view.html'
 		}).
-		state('admin.manage-apps.view', {
-			url: '/:manageAppId',
-			templateUrl: 'modules/manage-apps/client/views/view-manage-app.client.view.html'
-		}).
 		state('admin.manage-apps.edit', {
 			url: '/:manageAppId/edit',
 			templateUrl: 'modules/manage-apps/client/views/edit-manage-app.client.view.html'
