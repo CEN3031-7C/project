@@ -3,6 +3,7 @@
         <h1>Edit Manage event</h1>
     </div>
     <div class="col-md-12">
+        <!--form for manageEvent schema input-->
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
@@ -25,13 +26,13 @@
                     </div>
                     <div style="display:inline-block; min-height:290px;" >
                         <label class="control-label" for="date">Date of the Event</label>
-                        <datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+                        <uib-datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
                     </div>
-                    <div>
-                        <label class="control-label" for="eventLink">Time the Event</label>
-                        <timepicker data-ng-model="manageEvent.date" hour-step="1" minute-step="15" show-meridian="true"><timepicker>
-                    </div>
-                </div>                    
+                    <div >
+                        <label class="control-label" for="date">Time the Event</label>
+                        <uib-timepicker data-ng-model="manageEvent.date" hour-step="1" minute-step="15" show-meridian="true"><uib-timepicker>
+                    </div>                    
+                </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">
                 </div>

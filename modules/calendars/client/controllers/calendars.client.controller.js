@@ -1,13 +1,14 @@
 'use strict';
 
 // Calendars controller
-angular.module('calendars').controller('CalendarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Calendars', 'ManageEvents',
-	function($scope, $stateParams, $location, Authentication, Calendars, ManageEvents ) {
+angular.module('calendars').controller('CalendarsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Calendars', 'ManageEvents', 'Feedbacks',
+	function($scope, $stateParams, $location, Authentication, Calendars, ManageEvents, Feedbacks ) {
 		$scope.authentication = Authentication;
 
 		// Create new Calendar
 		$scope.create = function() {
 			// Create new Calendar object
+			console.log("TESTTTTTTT");
 			var calendar = new Calendars ({
 				summary: this.summary
 			});
@@ -18,6 +19,26 @@ angular.module('calendars').controller('CalendarsController', ['$scope', '$state
 
 				// Clear form fields
 				$scope.summary = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+		// Create new Feedback
+		$scope.createFeedback = function(stringTest) {
+			// Create new Feedback object
+			console.log("createFeedback called");
+			var feedback = new Feedbacks ({
+				name: stringTest,
+			});
+
+			// // Redirect after save
+			feedback.$save(function(response) {
+			// 	//$location.path('calendars/eventsList');
+			 	$location.path('feedbacks/'+feedback._id+'/edit');
+
+				// Clear form fields
+				//$scope.name = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

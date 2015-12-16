@@ -1,15 +1,16 @@
 <section data-ng-controller="ManageAppsController" data-ng-init="find()">
 <section class="container">
-   
+
     <div class="page-header">
         <h1 class="text-center">Manage Apps</h1>
     </div>
-    
+    <!-- create a new app button -->
     <a href="/#!/admin/manage-apps/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New App</button></a>
-    
+
     <div>
+        <!-- recursively show all apps -->
         <div data-ng-repeat="manageApp in manageApps">
-            <div class="well well-sm">    
+            <div class="well well-sm">
                 <small class="list-group-item-text" ng-show="!manageApp.hidden">
                     Added on
                     <span data-ng-bind="manageApp.created | date:'medium'"></span>
@@ -17,34 +18,35 @@
                     <span data-ng-bind="manageApp.user.displayName"></span>
                 </small>
                 <!-- EDIT BUTTONS -->
-                <div class="pull-right">                   
+                <div class="pull-right">
                     <!-- push up -->
                     <a class="btn btn-primary" data-ng-click="pushUp(manageApp);">
                         <i class="glyphicon glyphicon-menu-up"></i>
-                    </a>   
+                    </a>
                     <!-- push down -->
                     <a class="btn btn-primary" data-ng-click="pushDown(manageApp);">
                         <i class="glyphicon glyphicon-menu-down"></i>
-                    </a>    
+                    </a>
                     <!-- hide app -->
                     <a class="btn btn-primary" data-ng-click="hide(manageApp);" ng-show="!manageApp.hidden">
                         <i class="glyphicon glyphicon-minus"></i>
-                    </a>   
+                    </a>
                     <!-- show app -->
                     <a class="btn btn-primary" data-ng-click="show(manageApp);" ng-show="manageApp.hidden">
                         <i class="glyphicon glyphicon-plus"></i>
-                    </a>    
+                    </a>
                     <!-- edit app -->
                     <a class="btn btn-primary" data-ng-href="/#!/admin/manage-apps/{{manageApp._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
-                    </a>  
+                    </a>
                     <!-- delete app -->
                     <a class="btn btn-danger" data-ng-click="remove(manageApp);">
                         <i class="glyphicon glyphicon-trash"></i>
-                    </a>   
-                </div>      
-                <div class="container-fluid">  
-                    <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name" ng-show="manageApp.hidden"></h4> 
+                    </a>
+                </div>
+                <!-- content about the app -->
+                <div class="container-fluid">
+                    <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="manageApp.name" ng-show="manageApp.hidden"></h4>
                     <div class="row" ng-show="!manageApp.hidden">
                         <div class="col-xs-2">
                             <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
@@ -61,6 +63,6 @@
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!manageApps.$resolved || manageApps.length">
         No Apps yet, why don't you <a href="/#!/admin/manage-apps/create">add one</a>?
-    </div> 
+    </div>
 </section>
 </section>

@@ -3,9 +3,12 @@
   <div class="page-header">
     <h1 class="text-center">Manage Contacts</h1>
   </div>
+  <div class="col-md-3" style="margin: 5px, 0, 5; position:relative">
+      <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by County"/>
+  </div>
     <a href="/#!/admin/manage-contacts/create"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">New Contact</button></a>
     <div class="list-group">
-        <div data-ng-repeat="manageContact in manageContacts" data-ng-href="/#!/manage-contacts/{{manageContact._id}}" class="list-group-item">
+        <div data-ng-repeat="manageContact in manageContacts | filter:search:strict" data-ng-href="/#!/manage-contacts/{{manageContact._id}}" class="list-group-item">
           <!--
 			<small class="list-group-item-text">
 				Added on
@@ -45,11 +48,11 @@
     </a>
   </div>
           <div class="container-fluid">
-<<<<<<< HEAD
+
             <h4 style=" font-weight: bold;color: #0000f6; font-family: Bookman, Georgia, Times New Roman, serif ;padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4>
-=======
-            <h4 style="color: #0000f6; padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4>
->>>>>>> 298a81fba342cff81cae3be60614ba7ee79ce89e
+<!--
+            <h4 style="color: #0000f6; padding-top:10px; padding-right: 50px" class="list-group-item-heading" data-ng-bind="manageContact.name" ></h4> -->
+
             <!--<div class="row" ng-show="!manageContact.hidden">-->
                 <div class="row" style="font-weight: bold; text-align: center" ng-show="!manageContact.hidden">
                     <div class="col-md-1" data-ng-bind="manageContact.county"></div>

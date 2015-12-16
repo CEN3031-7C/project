@@ -28,17 +28,18 @@
                     <div class="controls">
                         <input type="text" data-ng-model="link" id="link" class="form-control" placeholder="https://www.eventpage.com" required>
                     </div>
+
                     <div style="display:inline-block; min-height:290px;" >
                         <label class="control-label" for="date">Date of the Event</label>
-                        <uib-datepicker data-ng-model="date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
+                        <uib-datepicker data-ng-model="manageEvent.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
                     </div>
-                    <div>
-                        <label class="control-label" for="eventLink">Time the Event</label>
-                        <uib-timepicker data-ng-model="date" hour-step="1" minute-step="15" show-meridian="true"></uib-timepicker>
+                    <div >
+                        <label class="control-label" for="date">Time the Event</label>
+                        <uib-timepicker data-ng-model="manageEvent.date" hour-step="1" minute-step="15" show-meridian="true"></uib-timepicker>
                     </div> 
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" value="Submit" class="btn btn-default">
                 </div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>

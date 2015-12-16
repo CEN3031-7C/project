@@ -1,11 +1,10 @@
 'use strict';
 
 // Manage contacts controller
-angular.module('manage-contacts').controller('ManageContactsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageContacts',
-	function($scope, $stateParams, $location, Authentication, ManageContacts ) {
+angular.module('manage-contacts').controller('ManageContactsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ManageContacts', '$filter',
+	function($scope, $stateParams, $location, Authentication, ManageContacts, $filter) {
 		$scope.authentication = Authentication;
 		$scope.manageContacts = ManageContacts.query();
-		console.log("inside manage contacts controller");
 
 		// Create new Manage contact
 		$scope.create = function() {
@@ -50,6 +49,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 				});
 			}
 		};
+
 		// Hide
 		$scope.hide = function(manageContact) {
 			if (manageContact) {
@@ -57,6 +57,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 			}
 			manageContact.$update();
 		};
+
 		// Show
 		$scope.show = function(manageContact) {
 			if (manageContact) {
@@ -64,6 +65,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 			}
 			manageContact.$update();
 		};
+
 		// Update existing Manage contact
 		$scope.update = function() {
 			var manageContact = $scope.manageContact ;
@@ -74,6 +76,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 				$scope.error = errorResponse.data.message;
 			});
 		};
+
 		// Push Up
 		$scope.pushUp = function(manageContact) {
 			//console.log("The size of Array is", $scope.manageContacts.length);
@@ -96,8 +99,8 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 					break;
 				}
 			}
-
 		};
+
 		// Push Down
 		$scope.pushDown = function(manageContact) {
 			//console.log("The size of Array is", $scope.manageContacts.length);
@@ -120,8 +123,8 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 					break;
 				}
 			}
-
 		};
+
 		$scope.getPosition = function() {
 			return $scope.manageContacts.length;
 		};
