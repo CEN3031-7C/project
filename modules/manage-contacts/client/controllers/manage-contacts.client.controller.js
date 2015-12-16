@@ -138,5 +138,17 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 				manageContactId: $stateParams.manageContactId
 			});
 		};
+		/*
+		// Search for an Item "County"
+		$scope.SearchByCounty = function () {
+			$scope.filteredItems = $filter('filter')($scope.manageContact, {
+				$: $scope.search
+			});
+			$scope.filterLength = $scope.filteredItems.length;
+			var begin = (($scope.currentPage - 1) * $scope.itemsPerPage);
+			var end = begin + $scope.itemsPerPage;
+			$scope.pagedItems = $scope.filteredItems.slice(begin, end);
+		};
+		*/
 	}
 ]);

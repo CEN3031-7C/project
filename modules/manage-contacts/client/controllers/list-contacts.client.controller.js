@@ -1,21 +1,21 @@
 'use strict';
 
-angular.module('users.admin').controller('UserListController', ['$scope', '$filter', 'Admin',
-  function ($scope, $filter, Admin) {
-    Admin.query(function (data) {
-      $scope.users = data;
-      $scope.buildPager();
-    });
+angular.module('manage-contacts').controller('SearchContactsController', ['$scope', '$filter', 'Authentication', 'ManageContacts',
+  function ($scope, $filter, Authentication, ManageContacts) {
+    $scope.authentication = Authentication;
+    $scope.manageContacts = ManageContacts.query();
+    $scope.buildPager();
+
 
     $scope.buildPager = function () {
       $scope.pagedItems = [];
       $scope.itemsPerPage = 15;
       $scope.currentPage = 1;
-      $scope.figureOutItemsToDisplay();
+      $scope.SearchByCounty();
     };
 
-    $scope.figureOutItemsToDisplay = function () {
-      $scope.filteredItems = $filter('filter')($scope.users, {
+    $scope.SearchByCounty = function () {
+      $scope.filteredItems = $filter('filter')($scope.manageContact, {
         $: $scope.search
       });
       $scope.filterLength = $scope.filteredItems.length;
@@ -25,7 +25,7 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
     };
 
     $scope.pageChanged = function () {
-      $scope.figureOutItemsToDisplay();
+      $scope.SearchByCounty();
     };
   }
 ]);
