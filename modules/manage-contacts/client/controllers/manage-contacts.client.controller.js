@@ -124,7 +124,7 @@ angular.module('manage-contacts').controller('ManageContactsController', ['$scop
 				}
 			}
 		};
-
+		// Get Position
 		$scope.getPosition = function() {
 			return $scope.manageContacts.length;
 		};

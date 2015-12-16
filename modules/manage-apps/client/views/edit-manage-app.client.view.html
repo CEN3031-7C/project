@@ -1,26 +1,30 @@
 <section data-ng-controller="ManageAppsController" data-ng-init="findOne()">
 <section class="container">
 <div class="jumbatron">
-    <div class="page-header">
+    <div class="page-header text-center">
         <h1>Edit {{manageApp.name}}</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
+                    <!-- edit name of the app -->
                     <label class="control-label" for="name">Name of the App</label>
                     <div class="controls">
                         <input type="text" data-ng-model="manageApp.name" id="name" class="form-control" placeholder="Name" required>
                     </div>
+                    <!-- edit the description of the app -->
                     <label class="control-label" for="description">Description of the App</label>
                     <div class="controls">
                         <textarea rows="4" maxlength="2500" type="text" data-ng-model="manageApp.description" id="description" class="form-control" placeholder="Description" required>
                         </textarea>
                     </div>
+                    <!-- edit the link to the app picture -->
                     <label class="control-label" for="imageURL">Link to an App's image</label>
                     <div class="controls">
                         <input type="text" data-ng-model="manageApp.imageURL" id="imageURL" class="form-control" placeholder="image URL" required>
                     </div>
+                    <!-- edit the link to the app -->
                     <label class="control-label" for="appLink">Link to the App <small>(Please include http:// or https:// in the link)</small></label>
                     <div class="controls">
                         <input type="text" data-ng-model="manageApp.appLink" id="manageApp.appLink" class="form-control" placeholder="Link to the App" required>
@@ -36,4 +40,5 @@
         </form>
     </div>
 </div>
+</section>
 </section>

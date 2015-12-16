@@ -1,8 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
-
-
-
 /* navbar */
 
 .navbar-nav > li > a {
@@ -10,11 +5,11 @@
 }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .body {
-  padding: 0px;
+  padding: 0;
   background-color: white;
 }
 
@@ -43,7 +38,7 @@
   background-color: white;
 }
 
-.navbar .navbar-nav .open 
+.navbar .navbar-nav .open
 .dropdown-menu > .active > a {
   color: white;
   background-color: #0021a5;
@@ -52,7 +47,7 @@
   border-bottom: 1px solid #f56f02;
   border-top: 1px solid #f56f02;
 }
-.navbar .navbar-nav .open 
+.navbar .navbar-nav .open
 .dropdown-menu > .active > a:hover {
   color: white;
   background-color: #0021a5;
@@ -62,14 +57,7 @@
   border-top: 1px solid #f56f02;
 }
 
-.navbar .navbar-nav .open 
- .dropdown-menu > .active > a {
-  
- }
 /*nav bar end */
-
-
-
 
 .content {
   margin-top: 30px;
@@ -115,7 +103,7 @@ a:hover .header-profile-image {
 .app-image-list {
   height: 100%;
   width: 100%;
-  
+
   display:block;
   max-height: 100px;
   max-width: 100px;
@@ -126,7 +114,7 @@ a:hover .header-profile-image {
 /* Article list */
 
 .web-link {
-  margin: 0px;
+  margin: 0;
 }
 
 /* Article list end */
@@ -146,6 +134,8 @@ body {
 -------------------------------------------------- */
 
 /*Carousel*/
+
+ /* Image properties in carousel */
 .cimage{
   width: 100%;
   height: auto;
@@ -158,29 +148,12 @@ body {
   width: 100%;
   height: auto;
   max-height: 500px;
-  left:0%;
+  left:0;
   top:20px;
 }
 /*End Carousel*/
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px; /* Space out the Bootstrap <hr> more */
-  color: orange;
-}
-
-/*footer*/
-#bottom {
-  text-align: center;
-  color: #E1E1E1 ;
-  background-color: #0000cc ;
-  padding-top: 25px;
-  padding-bottom: 25px; 
-}
-
-/* Thin out the marketing headings */
+/* About description properties */
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
@@ -188,23 +161,19 @@ body {
   margin-bottom: 50px;
 }
 
+.featurette-heading {
+  font-size: 50px;
+}
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+.featurette-image {
+  height: 500px;
+  width: 500px;
+}
 
-  .featurette-heading {
-    font-size: 50px;
-  }
-
-  .featurette-image {
-    height: 500px;
-    width: 500px;
-  }
-
-  .featurette-link {
-    height: 75px;
-    width: auto;
-  }
+.featurette-link {
+  height: 75px;
+  width: auto;
+}
 
 @media (min-width: 992px) {
   .featurette-heading {
@@ -213,12 +182,15 @@ body {
 }
 
 /* Divider properties */
-hr { 
+
+.featurette-divider {
+  margin: 80px; /* Space out the Bootstrap <hr> more */
+  color: orange;
+}
+
+hr {
     display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0.5em auto 0.5em auto;
     border-style: inset;
     border-width: 1px;
     border-color: orange;
@@ -248,11 +220,11 @@ hr {
   color: #E1E1E1;
   background-color: #1E1E1E;
   padding-top: 25px;
-  padding-bottom: 25px; 
+  padding-bottom: 25px;
 }
 
 
-/*------ - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/*------ - - - - - - - -  - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
 .eventBox {
@@ -284,28 +256,30 @@ hr {
   border-radius: 5px;
 }
 
-.page_events { 
+.page_events {
    padding-top: 15%;
  }
 
  /* ---- ISSA's css */
 
+
     body {
-    padding: 60px 0px;
+    padding: 60px 0;
   }
-    
+
+
     .event-list {
     list-style: none;
     font-family: 'Lato', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
   }
   .event-list > li {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px rgb(51, 51, 51);
-    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
-    padding: 0px;
-    margin: 0px 0px 20px;
+    box-shadow: 0 0 5px rgb(51, 51, 51);
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.7);
+    padding: 0;
+    margin: 0 0 20px;
   }
   .event-list > li > time {
     display: inline-block;
@@ -345,24 +319,24 @@ hr {
   .event-list > li > .info > .title {
     font-size: 17pt;
     font-weight: 700;
-    margin: 0px;
+    margin: 0;
   }
   .event-list > li > .info > .desc {
     font-size: 13pt;
     font-weight: 300;
-    margin: 0px;
+    margin: 0;
   }
   .event-list > li > .info > ul,
   .event-list > li > .social > ul {
     display: table;
     list-style: none;
-    margin: 10px 0px 0px;
-    padding: 0px;
+    margin: 10px 0 0;
+    padding: 0;
     width: 100%;
     text-align: center;
   }
   .event-list > li > .social > ul {
-    margin: 0px;
+    margin: 0;
   }
   .event-list > li > .info > ul > li,
   .event-list > li > .social > ul > li {
@@ -371,33 +345,33 @@ hr {
     color: rgb(30, 30, 30);
     font-size: 11pt;
     font-weight: 300;
-        padding: 3px 0px;
+        padding: 3px 0;
   }
     .event-list > li > .info > ul > li > a {
     display: block;
     width: 100%;
     color: rgb(30, 30, 30);
     text-decoration: none;
-  } 
-    .event-list > li > .social > ul > li {    
-        padding: 0px;
+  }
+    .event-list > li > .social > ul > li {
+        padding: 0;
     }
     .event-list > li > .social > ul > li > a {
-        padding: 3px 0px;
-  } 
+        padding: 3px 0;
+  }
   .event-list > li > .info > ul > li:hover,
   .event-list > li > .social > ul > li:hover {
     color: rgb(30, 30, 30);
     background-color: rgb(200, 200, 200);
   }
-  
+
   @media (min-width: 768px) {
     .event-list > li {
       position: relative;
       display: block;
       width: 100%;
       height: 120px;
-      padding: 0px;
+      padding: 0;
     }
     .event-list > li > time,
     .event-list > li > img  {
@@ -416,41 +390,53 @@ hr {
     .event-list > li > img {
       width: 120px;
       height: 120px;
-      padding: 0px;
-      margin: 0px;
+      padding: 0;
+      margin: 0;
     }
     .event-list > li > .info {
       position: relative;
       height: 120px;
       text-align: left;
       padding-right: 40px;
-    } 
-    .event-list > li > .info > .title, 
+    }
+    .event-list > li > .info > .title,
     .event-list > li > .info > .desc {
-      padding: 0px 10px;
+      padding: 0 10;
     }
     .event-list > li > .info > ul {
       position: absolute;
-      left: 0px;
-      bottom: 0px;
+      left: 0;
+      bottom: 0;
     }
     .event-list > li > .social {
       position: absolute;
-      top: 0px;
-      right: 0px;
+      top: 0;
+      right: 0;
       display: block;
       width: 40px;
     }
         .event-list > li > .social > ul {
             border-left: 1px solid rgb(230, 230, 230);
         }
-    .event-list > li > .social > ul > li {      
+    .event-list > li > .social > ul > li {
       display: block;
-            padding: 0px;
+            padding: 0;
     }
     .event-list > li > .social > ul > li > a {
       display: block;
       width: 40px;
-      padding: 10px 0px 9px;
+      padding: 10px 0 9px;
     }
   }
+
+/*footer*/
+.footer-bottom {
+  text-align: center;
+  color: #E1E1E1 ;
+  background-color: #0021a5 ;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-top: 1px solid #f56f02;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}

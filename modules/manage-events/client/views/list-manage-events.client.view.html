@@ -1,4 +1,4 @@
-<section class="container" data-ng-controller="ManageEventsController" data-ng-init="find()">
+<section class="container" data-ng-controller="ManageEventsController" data-ng-init="find();findFeedback();pushHideArray();createNumFeedback();">
     <div class="page-header">
         <h1 class="text-center">Manage events</h1>
     </div>
@@ -7,10 +7,13 @@
       <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search for Event"/>
     </div>
     <a href="/#!/admin/manage-events/create"><button ng-model="New_Article_Button" style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
+    <a href="/#!/admin/manage-events/create"><button ng-model="New_Article_Button" style="margin-bottom: 20px;" type="button" class="btn btn-primary">Create an Event</button></a>
+    <a href="/#!/admin/feedbacks"><button style="margin-bottom: 20px;" type="button" class="btn btn-primary">View all Feedback</button></a>
     <br>
 
-    <ul class="event-list">                                             
-        <li data-ng-repeat="manageEvent in manageEvents | filter:search:strict" class="list-group-item">                
+    <ul class="event-list" data-ng-repeat="manageEvent in manageEvents | filter:search:strict" class="list-group-item">
+    <!--repeats manageEvents data as well as feedbacks, but feedbacks are hidden depending on event and button click -->
+        <li>                
         <img alt = "No Picture" ng-src="{{manageEvent.imageURL}}">
             <time >
                 <span class="month" data-ng-bind="manageEvent.date | date:'mediumDate'"></span>
@@ -32,7 +35,7 @@
                 </small>
                 <ul>
                     <li style="width:40%;"><a href="{{manageEvent.link}}"><span class="fa fa-globe"></span> Website</a></li>
-                    <li style="width:40%;"><a data-ng-href="/#!/admin/feedbacks"><span class="fa fa-envelope"></span> Attendees' Feedback</a></li>
+                    <li style="width:40%;" data-ng-click="toggleHideArray(manageEvent);"> <span class="fa fa-envelope"></span> Attendees' Feedback: </li>
                     <li style="width:2%;"><a ng-model="Edit_Button" class="btn btn-primary" href="/#!/admin/manage-events/{{manageEvent._id}}/edit">
                     <i class="glyphicon glyphicon-edit"></i></a></li>
                     <li style="width:0.5%;"></li>
@@ -50,8 +53,29 @@
                     </li> 
                 </ul>                           
             </div>  
-            
-        </li>                       
+        </li>                      
+    <div data-ng-repeat="feedback in feedbacks" ng-show="hideArray[manageEvents.indexOf(manageEvent)] && stringCompare(feedback.name,manageEvent.name)">
+        <div class="well well-sm">
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="feedback.created | date:'medium'"></span>
+                by
+                <span data-ng-bind="feedback.user.displayName"></span>
+            </small>
+
+            <div class="pull-right">
+                <a class="btn btn-danger" data-ng-click="remove(feedback);">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </div>
+
+            <div class="container-fluid">
+                <h4 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="feedback.name"></h4>
+                <h5 style="padding-top:10px" class="list-group-item-heading" data-ng-bind="feedback.text"></h5>
+            </div>
+        </div>
+    </div>
+    <br>
     </ul>
     <div class="alert alert-warning text-center" data-ng-hide="!manageEvents.$resolved || manageEvents.length">
     	No events yet, would you like to <a href="/#!/admin/manage-events/create">create one</a>?

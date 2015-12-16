@@ -1,6 +1,7 @@
-<section class="container" data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
-    <div class="page-header">
-        <h1>Edit News event</h1>
+<section data-ng-controller="NewsFeedsController" data-ng-init="findOne()">
+<section class="container">
+    <div class="page-header text-center">
+        <h1>Edit News feed</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
@@ -12,21 +13,30 @@
                     </div>
                     <label class="control-label" for="description">Description of the Event</label>
                     <div class="controls">
-                        <textarea rows="2" maxlength="512" type="text" data-ng-model="newsFeed.description" id="description" class="form-control" placeholder="Description" required>
+                        <input type="text" data-ng-model="newsFeed.author" id="author" class="form-control" placeholder="Author's name" required>
+                    </div>
+                    <!-- Enter the description of the article -->
+                    <label class="control-label" for="body_text">The body of the article</label>
+                    <div class="controls">
+                        <textarea rows="4" type="text" data-ng-model="newsFeed.body_text" id="body_text" class="form-control" placeholder="Articles body" required>
                         </textarea>
                     </div>
-                    <label class="control-label" for="imageURL">Link to an Event's image</label>
+                    <!-- link to article image -->
+                    <label class="control-label" for="imageURL">Link to an Articles image</label>
                     <div class="controls">
                         <input type="text" data-ng-model="newsFeed.imageURL" id="imageURL" class="form-control" placeholder="https://www.imageURL.com" required>
                     </div>
-                    <label class="control-label" for="eventLink">Link to the Event</label>
+                    <!-- link to the article -->
+                    <label class="control-label" for="articleLink">Link to the Article</label>
                     <div class="controls">
                         <input type="text" data-ng-model="newsFeed.link" id="newsFeed.link" class="form-control" placeholder="Link to the Event" required>
                     </div>
-                    <div style="display:inline-block; min-height:290px;" >
-                        <label class="control-label" for="date">Date of the Event</label>
-                        <uib-datepicker data-ng-model="newsFeed.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
-                    </div>                 
+                    <!--article date -->
+                    <label class="control-label" for="date">Date of the article</label>
+                    <br>
+                    <div style="display:inline-block; min-height:250px; max-height:250px; background: rgba(0, 0, 0, 0.0)">
+                        <datepicker ng-model="newsFeed.date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input ng-model="Update_Button" type="submit" value="Update" class="btn btn-default">
@@ -37,4 +47,5 @@
             </fieldset>
         </form>
     </div>
+</section>
 </section>

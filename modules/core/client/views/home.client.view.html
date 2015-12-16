@@ -15,9 +15,6 @@
 
   <!-- Featurettes -->
   <div class="container marketing">
-
-    <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
 
     <div class="row featurette">
@@ -33,7 +30,7 @@
     <!--News articles -->
     <hr class="featurette-divider" ng-show="newsToShow();" style="margin-bottom: 30px">
     <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="newsToShow();">News Articles</h2>
-    <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item well" ng-show="!newsFeed.hidden" style="background: rgba(0, 0, 0, 0.0); border-width : 1px 1px 1px 1px; margin-top : 20px;">   
+    <div data-ng-repeat="newsFeed in newsFeeds"  class="list-group-item well" ng-show="!newsFeed.hidden" style="background: rgba(0, 0, 0, 0.0); border-width : 1px 1px 1px 1px; margin-top : 20px;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-2">
@@ -53,9 +50,9 @@
 
     <!-- Manage Apps List -->
     <hr class="featurette-divider" ng-show="appsToShow();" style="margin-bottom: 30px">
-    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="appsToShow();">Recommended Applications</h2>  
-    <div data-ng-repeat="manageApp in manageApps" class="list-group-item" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0); border-width : 1px 1px 1px 1px; margin-top : 20px;">
-      <div class="container-fluid">  
+    <h2 class="featurette-heading text-center" style="margin: 0px" ng-show="appsToShow();">Recommended Applications</h2>
+    <div data-ng-repeat="manageApp in manageApps" class="list-group-item well" ng-show="!manageApp.hidden" style="background: rgba(0, 0, 0, 0.0); border-width : 1px 1px 1px 1px; margin-top : 20px;">
+      <div class="container-fluid">
         <div class="row" >
           <div class="col-xs-2">
             <img class="app-image-list center-block" ng-src="{{manageApp.imageURL}}">
@@ -73,5 +70,5 @@
 
     <!-- Manage Apps End -->
 
-  </div><!-- /.container -->    
+  </div><!-- /.container -->
 </section>
