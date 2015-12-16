@@ -3,6 +3,9 @@
 	<div class="page-header text-center">
 		<h1 data-ng-bind="manageContact.name"></h1>
 	</div>
+    <!--
+    Finding the Contacts List and display it using the findone() Angular build-in function
+    -->
 	<div class="pull-right" data-ng-show="authentication.user._id == manageContact.user._id">
 		<a class="btn btn-primary" href="/#!/admin/manage-contacts/{{manageContact._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>

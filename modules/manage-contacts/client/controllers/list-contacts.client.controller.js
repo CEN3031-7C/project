@@ -6,14 +6,14 @@ angular.module('manage-contacts').controller('SearchContactsController', ['$scop
     $scope.manageContacts = ManageContacts.query();
     $scope.buildPager();
 
-
+//BuildPager Function as a helper function to the SearchBYCounty Function
     $scope.buildPager = function () {
       $scope.pagedItems = [];
       $scope.itemsPerPage = 15;
       $scope.currentPage = 1;
       $scope.SearchByCounty();
     };
-
+// SearchByCounty Function that Search into the Contact List looking for whatever is typed inside the Search Bar
     $scope.SearchByCounty = function () {
       $scope.filteredItems = $filter('filter')($scope.manageContact, {
         $: $scope.search
