@@ -94,7 +94,3 @@ exports.manageAppByID = function(req, res, next, id) { ManageApp.findById(id).po
 		next();
 	});
 };
-
-//exports.count = function(req, res) {
-//	res = ManageApp.count(); 	
-//};
